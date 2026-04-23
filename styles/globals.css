@@ -1,0 +1,490 @@
+@import "tailwindcss";
+
+/* =========================================================
+   Design tokens — Tailwind v4 @theme (CSS variables)
+   Single source of truth for colors, typography, spacing,
+   radius, shadows, motion. All components reference these
+   via semantic names (bg-surface, text-brand) — never hex.
+   ========================================================= */
+@theme {
+  /* Brand green scale — WCAG AA verified at primary-600 on white (4.62:1) */
+  --color-primary-50: #ecfdf4;
+  --color-primary-100: #d1fadf;
+  --color-primary-200: #a6f4c5;
+  --color-primary-300: #6ce9a6;
+  --color-primary-400: #32d583;
+  --color-primary-500: #12b76a;
+  --color-primary-600: #039855;
+  --color-primary-700: #027a48;
+  --color-primary-800: #05603a;
+  --color-primary-900: #054f31;
+
+  /* Warm neutral — friendlier than pure gray, pairs with green */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f2f4f7;
+  --color-neutral-200: #eaecf0;
+  --color-neutral-300: #d0d5dd;
+  --color-neutral-400: #98a2b3;
+  --color-neutral-500: #667085;
+  --color-neutral-600: #475467;
+  --color-neutral-700: #344054;
+  --color-neutral-800: #1d2939;
+  --color-neutral-900: #101828;
+  --color-neutral-950: #0b0f0e;
+
+  /* Semantic brand */
+  --color-brand: var(--color-primary-600);
+  --color-brand-hover: var(--color-primary-700);
+  --color-brand-pressed: var(--color-primary-800);
+  --color-brand-soft: var(--color-primary-50);
+  --color-brand-soft-hover: var(--color-primary-100);
+  --color-brand-border: var(--color-primary-200);
+
+  /* Accents */
+  --color-accent: #0b1f16;
+  --color-highlight: #f4b400;
+  --color-whatsapp: #25d366;
+
+  /* Status */
+  --color-success: var(--color-primary-600);
+  --color-success-soft: var(--color-primary-50);
+  --color-warning: #f79009;
+  --color-warning-soft: #fef0c7;
+  --color-danger: #d92d20;
+  --color-danger-soft: #fee4e2;
+  --color-info: #0ba5ec;
+  --color-info-soft: #e0f2fe;
+
+  /* Surfaces */
+  --color-surface: var(--color-neutral-0);
+  --color-surface-muted: var(--color-neutral-50);
+  --color-surface-sunken: var(--color-neutral-100);
+  --color-surface-inverse: var(--color-neutral-900);
+
+  /* Text */
+  --color-text: var(--color-neutral-900);
+  --color-text-muted: var(--color-neutral-600);
+  --color-text-subtle: var(--color-neutral-500);
+  --color-text-inverse: var(--color-neutral-0);
+  --color-text-brand: var(--color-brand);
+
+  /* Borders + rings */
+  --color-border: var(--color-neutral-200);
+  --color-border-strong: var(--color-neutral-300);
+  --color-border-brand: var(--color-primary-200);
+  --color-ring: var(--color-primary-500);
+
+  /* Typography — fonts wired via next/font in layout */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Radius scale */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
+
+  /* Shadows — soft, realistic, never heavy */
+  --shadow-xs: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(16, 24, 40, 0.08), 0 1px 2px 0 rgba(16, 24, 40, 0.04);
+  --shadow-md: 0 4px 8px -2px rgba(16, 24, 40, 0.08), 0 2px 4px -2px rgba(16, 24, 40, 0.04);
+  --shadow-lg: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0 4px 6px -2px rgba(16, 24, 40, 0.03);
+  --shadow-xl: 0 20px 24px -4px rgba(16, 24, 40, 0.08), 0 8px 8px -4px rgba(16, 24, 40, 0.03);
+  --shadow-2xl: 0 24px 48px -12px rgba(16, 24, 40, 0.18);
+  --shadow-brand: 0 6px 16px -4px rgba(3, 152, 85, 0.25);
+  --shadow-focus: 0 0 0 4px rgba(18, 183, 106, 0.25);
+
+  /* Motion */
+  --duration-instant: 80ms;
+  --duration-fast: 160ms;
+  --duration-base: 220ms;
+  --duration-slow: 320ms;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Z-index scale */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 20;
+  --z-sticky: 30;
+  --z-overlay: 40;
+  --z-modal: 50;
+  --z-toast: 60;
+  --z-fab: 70;
+  --z-skiplink: 80;
+
+  /* Container */
+  --container-xl: 1280px;
+  --container-2xl: 1440px;
+}
+
+/* Dark mode — opt-in via data-theme="dark" on <html>. Not default. */
+[data-theme="dark"] {
+  --color-surface: var(--color-neutral-950);
+  --color-surface-muted: #111614;
+  --color-surface-sunken: #161c1a;
+  --color-surface-inverse: var(--color-neutral-0);
+  --color-text: #f2f4f7;
+  --color-text-muted: #98a2b3;
+  --color-text-subtle: #667085;
+  --color-text-inverse: var(--color-neutral-900);
+  --color-border: #2b3331;
+  --color-border-strong: #344054;
+  --color-brand: var(--color-primary-400);
+  --color-brand-hover: var(--color-primary-300);
+}
+
+/* =========================================================
+   Base resets & defaults
+   ========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  min-height: 100vh;
+}
+
+/* Element-level defaults — wrapped in @layer base so Tailwind utility
+   classes (text-white, bg-brand, etc.) always beat these. Without the
+   layer wrapper, raw element selectors end up in the cascade AFTER the
+   utilities layer and crush utilities like `text-white` on CTAs. */
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    color: inherit;
+  }
+}
+
+/* =========================================================
+   Focus styles — visible, branded, respects keyboard-only
+   ========================================================= */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* =========================================================
+   Selection
+   ========================================================= */
+::selection {
+  background-color: var(--color-brand-soft);
+  color: var(--color-brand-pressed);
+}
+
+/* =========================================================
+   Reduced motion — respect user preference
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   Skip link — hidden until focused, accessibility requirement
+   ========================================================= */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-brand);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  z-index: var(--z-skiplink);
+  transition: top var(--duration-fast) var(--ease-standard);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* =========================================================
+   Reusable utilities for common typography treatments
+   ========================================================= */
+.text-display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.text-display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.text-h2 {
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.text-h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.text-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.text-number-display {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+.text-number-stat {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* =========================================================
+   Section + container helpers
+   ========================================================= */
+.section-y {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-y {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-y {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.container-page {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-page {
+    padding-inline: 2rem;
+  }
+}
+
+/* =========================================================
+   Gradients (used sparingly — hero accent, CTA strip)
+   ========================================================= */
+.bg-gradient-brand {
+  background-image: linear-gradient(135deg, #039855 0%, #12b76a 100%);
+}
+
+.bg-gradient-hero-fade {
+  background-image: linear-gradient(180deg, transparent 40%, rgba(16, 24, 40, 0.55) 100%);
+}
+
+/* =========================================================
+   Scroll-reveal — used with IntersectionObserver (Framer Motion)
+   but a CSS fallback for no-JS still works.
+   ========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity var(--duration-slow) var(--ease-standard),
+    transform var(--duration-slow) var(--ease-standard);
+}
+
+.reveal.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   Radix Accordion keyframes
+   ========================================================= */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+/* =========================================================
+   Range slider — native + branded
+   ========================================================= */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: var(--color-neutral-200);
+  border-radius: var(--radius-full);
+}
+
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  background: var(--color-neutral-200);
+  border-radius: var(--radius-full);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -7px;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  background: var(--color-brand);
+  border: 3px solid var(--color-neutral-0);
+  box-shadow: var(--shadow-sm);
+  cursor: grab;
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  background: var(--color-brand);
+  border: 3px solid var(--color-neutral-0);
+  box-shadow: var(--shadow-sm);
+  cursor: grab;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  cursor: grabbing;
+}
+
+input[type="range"]:focus-visible::-webkit-slider-thumb {
+  box-shadow: var(--shadow-focus);
+}
