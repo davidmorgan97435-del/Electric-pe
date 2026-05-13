@@ -31,7 +31,7 @@ export async function generateMetadata({
   }).format(minPrice);
 
   const title = `${theme.displayName} Electric Scooter — ${theme.tagline} | ElectricPe`;
-  const description = `${theme.positioning} Starting from ${formattedPrice}. ARAI-approved, no licence required, 3-year warranty. Book a free test ride.`;
+  const description = `${theme.positioning} Starting from ${formattedPrice}. ARAI-approved, no licence required, component-level warranty. Book a free test ride.`;
 
   return {
     title,

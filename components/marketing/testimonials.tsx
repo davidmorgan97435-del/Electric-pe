@@ -113,10 +113,10 @@ export function Testimonials() {
                 className={cn(
                   "group relative overflow-hidden rounded-2xl aspect-[3/5] lg:aspect-[3/5.6]",
                   "bg-[var(--color-neutral-900)] cursor-pointer outline-none",
-                  "transition-all duration-[var(--duration-slow)] ease-[var(--ease-standard)]",
+                  "transition-[transform,filter,opacity,box-shadow] duration-[var(--duration-slow)] ease-[var(--ease-standard)]",
                   "focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] focus-visible:ring-offset-2",
                   isDimmed && "blur-[1.5px] opacity-70 scale-[0.98]",
-                  isFocused && "scale-[1.02] shadow-[var(--shadow-xl)]",
+                  isFocused && "scale-[1.035] -translate-y-1 shadow-[var(--shadow-xl)]",
                   "motion-reduce:transform-none motion-reduce:blur-0 motion-reduce:opacity-100",
                 )}
                 aria-label={`${t.customerName} on ${fearLabel}`}

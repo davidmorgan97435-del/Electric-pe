@@ -1,22 +1,33 @@
+"use client";
+
+import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { ArrowRight, ArrowUpRight, Zap, Gauge, Battery } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
-import { scootersByBrand } from "@/content/scooters";
-import { BRAND_ORDER, BRAND_THEMES } from "@/content/brands";
+import { scootersByBrand, getBrandFlagship } from "@/content/scooters";
+import { BRAND_THEMES } from "@/content/brands";
 import { cn } from "@/lib/utils/cn";
+
+const EASE = [0.22, 1, 0.36, 1] as const;
 
 /**
  * HP — Product showcase.
  *
- * Four brand tiles, one per brand, each linking to its dedicated brand
- * page. Scooter cutouts sit on a brand-themed background with the wordmark
- * rendered as real typography — no crop, no letterbox, no duplicated
- * brand text. Starting price + model count are derived from the data so
- * the tiles stay in sync with the catalogue.
+ * Per the client feedback (#4 + #7): only 1–2 hero products on the homepage,
+ * with larger cards. We feature Xypro and Jett — the two flagship lineups
+ * with the broadest variant coverage. Each card renders the brand's flagship
+ * variant with key specs at-a-glance and routes to the brand landing page on
+ * click, where the customer picks their variant.
+ *
+ * EP City+ is intentionally NOT surfaced (removed per #7); 4ALL stays
+ * available through the "Explore all models" CTA below.
  */
+
+const FEATURED_BRANDS = ["xypro", "jett"] as const;
 
 function formatPrice(inr: number) {
   return new Intl.NumberFormat("en-IN", {
@@ -27,96 +38,167 @@ function formatPrice(inr: number) {
 }
 
 export function ProductShowcase() {
+  const reduced = useReducedMotion();
+  const gridRef = React.useRef<HTMLOListElement>(null);
+  const gridInView = useInView(gridRef, { once: true, margin: "-60px" });
+
   return (
     <Section className="bg-[var(--color-surface-muted)]">
       <Reveal>
         <SectionHeader
-          eyebrow="Explore top EV brands"
-          title="Four brands, one promise — ride home today."
-          description="Pick the brand that fits your ride. Every model is ARAI-approved, licence-free, and fully supported by our 30+ Mobility Centres."
+          eyebrow="Featured rides"
+          title="Two scooters, every Indian need."
+          description="Pick the silhouette that fits your day. Every model is ARAI-approved, licence-free, and serviced by our 30+ Mobility Centres."
         />
       </Reveal>
 
-      <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-        {BRAND_ORDER.map((slug, i) => {
+      <motion.ol
+        ref={gridRef}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8"
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.12, delayChildren: 0.15 },
+          },
+        }}
+        initial={reduced ? false : "hidden"}
+        animate={
+          !reduced && gridInView ? "visible" : reduced ? undefined : "hidden"
+        }
+      >
+        {FEATURED_BRANDS.map((slug) => {
           const brand = BRAND_THEMES[slug];
           const variants = scootersByBrand[slug] ?? [];
+          const flagship = getBrandFlagship(slug);
+          if (!flagship) return null;
           const startingPrice = variants.reduce(
             (min, v) => Math.min(min, v.priceOnRoad),
             Number.POSITIVE_INFINITY,
           );
-          const modelCount = variants.length;
+          const maxRange = Math.max(...variants.map((v) => v.specs.rangeKm));
 
           return (
-            <Reveal as="li" key={slug} delay={i * 60}>
+            <motion.li
+              key={slug}
+              variants={{
+                hidden: { opacity: 0, y: 28 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.65, ease: EASE },
+                },
+              }}
+              whileHover={
+                reduced
+                  ? undefined
+                  : {
+                      y: -6,
+                      transition: { type: "spring", stiffness: 400, damping: 28 },
+                    }
+              }
+            >
               <Link
                 href={`/ev/${slug}`}
-                aria-label={`Explore ${brand.displayName} — ${modelCount} model${modelCount === 1 ? "" : "s"} from ${formatPrice(startingPrice)}`}
-                className="group block h-full rounded-3xl overflow-hidden bg-white border border-[var(--color-border)] transition-[border-color,box-shadow] duration-[var(--duration-base)] hover:border-[var(--color-brand)] hover:shadow-[0_20px_60px_-20px_rgba(15,23,42,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand)] focus-visible:ring-offset-2"
+                aria-label={`Explore ${brand.displayName} — starting from ${formatPrice(startingPrice)}`}
+                className="group block h-full rounded-3xl overflow-hidden bg-white border border-[var(--color-border)] transition-[border-color,box-shadow] duration-[var(--duration-base)] hover:border-[var(--color-brand)] hover:shadow-[0_30px_80px_-30px_rgba(15,23,42,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand)] focus-visible:ring-offset-2"
               >
+                {/* Large image area */}
                 <figure
                   className={cn(
-                    "relative aspect-[4/5] overflow-hidden",
+                    "relative aspect-[16/11] overflow-hidden",
                     brand.tint,
                   )}
                 >
-                  {/* Brand wordmark — real type, no image text */}
                   <figcaption
                     className={cn(
-                      "absolute inset-x-0 top-0 pt-4 text-center z-10 pointer-events-none",
+                      "absolute inset-x-0 top-0 pt-5 md:pt-6 text-center z-10 pointer-events-none",
                       brand.onTint,
                     )}
                   >
-                    <span className="font-display font-black text-2xl md:text-3xl tracking-[0.04em] uppercase drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]">
+                    <span className="font-display font-black text-3xl md:text-4xl lg:text-5xl tracking-[0.04em] uppercase drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]">
                       {brand.displayName}
                     </span>
                   </figcaption>
-
-                  {/* Scooter cutout — contained, bottom-anchored */}
                   <Image
                     src={brand.cutout}
                     alt={`${brand.displayName} electric scooter`}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-contain object-bottom px-3 pb-2 pt-11 md:px-4 md:pb-3 md:pt-12 transition-transform duration-[500ms] ease-out group-hover:scale-[1.04] motion-reduce:group-hover:scale-100"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-contain object-bottom px-6 pb-3 pt-16 md:px-8 md:pb-4 md:pt-20 transition-transform duration-[600ms] ease-out group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
                   />
                 </figure>
 
-                <div className="p-5 md:p-6">
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <h3 className="text-lg md:text-xl font-display font-bold text-[var(--color-text)] leading-tight">
-                      {brand.displayName}
-                    </h3>
+                {/* Body */}
+                <div className="p-6 md:p-8">
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-display font-bold text-[var(--color-text)] leading-tight">
+                        {brand.displayName}
+                      </h3>
+                      <p className="mt-1 text-sm md:text-base text-[var(--color-text-muted)]">
+                        {brand.tagline}
+                      </p>
+                    </div>
                     <ArrowUpRight
-                      className="h-5 w-5 text-[var(--color-text-subtle)] shrink-0 mt-1 transition-colors duration-[var(--duration-base)] group-hover:text-[var(--color-brand)]"
+                      className="h-6 w-6 text-[var(--color-text-subtle)] shrink-0 mt-1 transition-colors duration-[var(--duration-base)] group-hover:text-[var(--color-brand)]"
                       aria-hidden
                     />
                   </div>
-                  <p className="text-sm text-[var(--color-text-muted)] leading-relaxed line-clamp-2 mb-4">
-                    {brand.tagline}
-                  </p>
-                  <div className="flex items-center justify-between gap-3 pt-4 border-t border-[var(--color-border)]">
+
+                  {/* Key spec chips */}
+                  <ul className="grid grid-cols-3 gap-2 md:gap-3 my-5">
+                    <li className="flex flex-col items-center gap-1 rounded-lg bg-[var(--color-surface-muted)] p-3">
+                      <Zap className="h-4 w-4 text-[var(--color-brand)]" aria-hidden />
+                      <span className="font-semibold text-sm text-[var(--color-text)] tabular-nums">
+                        {maxRange} km
+                      </span>
+                      <span className="text-[10px] uppercase tracking-wider text-[var(--color-text-subtle)]">
+                        Range
+                      </span>
+                    </li>
+                    <li className="flex flex-col items-center gap-1 rounded-lg bg-[var(--color-surface-muted)] p-3">
+                      <Gauge className="h-4 w-4 text-[var(--color-brand)]" aria-hidden />
+                      <span className="font-semibold text-sm text-[var(--color-text)] tabular-nums">
+                        {flagship.specs.topSpeedKmh} km/h
+                      </span>
+                      <span className="text-[10px] uppercase tracking-wider text-[var(--color-text-subtle)]">
+                        Top speed
+                      </span>
+                    </li>
+                    <li className="flex flex-col items-center gap-1 rounded-lg bg-[var(--color-surface-muted)] p-3">
+                      <Battery className="h-4 w-4 text-[var(--color-brand)]" aria-hidden />
+                      <span className="font-semibold text-sm text-[var(--color-text)] tabular-nums">
+                        {flagship.specs.chargeTimeHours}h
+                      </span>
+                      <span className="text-[10px] uppercase tracking-wider text-[var(--color-text-subtle)]">
+                        Charge
+                      </span>
+                    </li>
+                  </ul>
+
+                  <div className="flex items-end justify-between gap-3 pt-5 border-t border-[var(--color-border)]">
                     <div>
-                      <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-subtle)] mb-0.5">
+                      <p className="text-[11px] uppercase tracking-[0.18em] text-[var(--color-text-subtle)] mb-1">
                         Starting from
                       </p>
-                      <p className="text-base md:text-lg font-display font-bold text-[var(--color-text)] tabular-nums">
+                      <p className="text-xl md:text-2xl font-display font-bold text-[var(--color-text)] tabular-nums">
                         {formatPrice(startingPrice)}
                       </p>
                     </div>
-                    <span className="text-xs md:text-sm text-[var(--color-text-subtle)] tabular-nums">
-                      {modelCount} model{modelCount === 1 ? "" : "s"}
+                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-brand)] group-hover:gap-2 transition-all">
+                      Explore {brand.displayName}
+                      <ArrowRight className="h-4 w-4" aria-hidden />
                     </span>
                   </div>
                 </div>
               </Link>
-            </Reveal>
+            </motion.li>
           );
         })}
-      </ol>
+      </motion.ol>
 
-      <Reveal delay={80}>
-        <div className="mt-10 md:mt-12 flex justify-center">
+      <Reveal delay={120}>
+        <div className="mt-12 md:mt-14 flex justify-center">
           <Button
             asChild
             variant="outline"

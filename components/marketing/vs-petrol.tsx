@@ -1,10 +1,16 @@
+"use client";
+
+import * as React from "react";
 import Link from "next/link";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { Check, Minus } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { buildWhatsAppLink, WHATSAPP_DEFAULTS } from "@/lib/utils/whatsapp";
 import { globals } from "@/content/globals";
+
+const EASE = [0.22, 1, 0.36, 1] as const;
 
 type Row = {
   label: string;
@@ -46,6 +52,10 @@ const ROWS: Row[] = [
 ];
 
 export function VsPetrol() {
+  const reduced = useReducedMotion();
+  const tableRef = React.useRef<HTMLDivElement>(null);
+  const tableInView = useInView(tableRef, { once: true, margin: "-60px" });
+
   return (
     <Section>
       <Reveal>
@@ -57,8 +67,27 @@ export function VsPetrol() {
       </Reveal>
 
       <Reveal className="max-w-4xl mx-auto">
-        <div className="grid grid-cols-[1fr_auto_auto] md:grid-cols-[1.5fr_1fr_1fr] rounded-2xl border border-[var(--color-border)] bg-white overflow-hidden shadow-[var(--shadow-sm)]">
-          <div className="contents">
+        <motion.div
+          ref={tableRef}
+          className="grid grid-cols-[1fr_auto_auto] md:grid-cols-[1.5fr_1fr_1fr] rounded-2xl border border-[var(--color-border)] bg-white overflow-hidden shadow-[var(--shadow-sm)]"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.07, delayChildren: 0.1 },
+            },
+          }}
+          initial={reduced ? false : "hidden"}
+          animate={
+            !reduced && tableInView ? "visible" : reduced ? undefined : "hidden"
+          }
+        >
+          <motion.div
+            className="contents"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { duration: 0.4 } },
+            }}
+          >
             <div className="p-4 md:p-5 bg-[var(--color-surface-sunken)] border-b border-[var(--color-border)]" />
             <div className="p-4 md:p-5 bg-[var(--color-brand-soft)] border-b border-[var(--color-border)] text-center">
               <span className="font-display font-bold text-[var(--color-brand-pressed)]">
@@ -70,10 +99,20 @@ export function VsPetrol() {
                 Petrol
               </span>
             </div>
-          </div>
+          </motion.div>
 
           {ROWS.map((row, i) => (
-            <div key={row.label} className="contents">
+            <motion.div
+              key={row.label}
+              className="contents"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { duration: 0.5, ease: EASE },
+                },
+              }}
+            >
               <div
                 className={
                   i % 2 === 0
@@ -106,9 +145,9 @@ export function VsPetrol() {
               >
                 {row.petrol.text}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="mt-8 text-center">
           <p className="text-[var(--color-text-muted)] mb-4">Still not sure? Talk to us.</p>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import * as React from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
   Store,
@@ -60,11 +61,11 @@ const PILLARS: Pillar[] = [
   },
   {
     icon: ShieldCheck,
-    title: "3-Year Warranty, No Conditions",
+    title: "Warranty on Battery, Motor & Controller",
     proof:
-      "Covers motor, controller and frame. No asterisks. Read it once, understand all of it.",
-    metricEyebrow: "In writing",
-    metric: "36 months · motor, controller, frame.",
+      "Each core component has its own warranty window. Walk into any store or call us — we'll share the exact coverage for your scooter in writing.",
+    metricEyebrow: "Coverage scope",
+    metric: "Battery · Motor · Controller. Details on inquiry.",
     image: "/img/promise/03-warranty.png",
     imageAlt:
       "A plain ElectricPe warranty document with pen and key on a service counter.",
@@ -120,6 +121,7 @@ function useActivePillar(count: number) {
 
 export function ServicePromise() {
   const { active, setRef } = useActivePillar(PILLARS.length);
+  const reduced = useReducedMotion();
 
   return (
     <Section>
@@ -127,7 +129,7 @@ export function ServicePromise() {
         <SectionHeader
           eyebrow="Why ElectricPe"
           title="Electric scooter service you can walk into — across India."
-          description="Most EV brands sell you a scooter and wish you luck. ElectricPe backs yours with 30+ Mobility Centres across India, a 24-hour service SLA, and a 3-year warranty on motor, controller and frame — in writing."
+          description="Most EV brands sell you a scooter and wish you luck. ElectricPe backs yours with 30+ Mobility Centres, a 24-hour service SLA, and component-level warranty on battery, motor and controller — coverage varies by component, shared in writing."
         />
       </Reveal>
 
@@ -246,13 +248,20 @@ export function ServicePromise() {
           const Icon = p.icon;
           return (
             <Reveal as="li" key={p.title} delay={i * 60}>
-              <figure className="relative aspect-[4/3] max-h-[60vh] w-full rounded-2xl overflow-hidden bg-[var(--color-neutral-900)] mb-6 shadow-[0_12px_40px_-16px_rgba(15,23,42,0.25)]">
+              <motion.figure
+                whileHover={
+                  reduced
+                    ? undefined
+                    : { y: -4, transition: { type: "spring", stiffness: 400, damping: 28 } }
+                }
+                className="group relative aspect-[4/3] max-h-[60vh] w-full rounded-2xl overflow-hidden bg-[var(--color-neutral-900)] mb-6 shadow-[0_12px_40px_-16px_rgba(15,23,42,0.25)] hover:shadow-[0_22px_60px_-20px_rgba(15,23,42,0.4)] transition-shadow"
+              >
                 <Image
                   src={p.image}
                   alt={p.imageAlt}
                   fill
                   sizes="100vw"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04] motion-reduce:group-hover:scale-100"
                 />
                 <figcaption className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-black/55 backdrop-blur-sm px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-white">
                   <span className="tabular-nums font-semibold">
@@ -261,7 +270,7 @@ export function ServicePromise() {
                   <span className="opacity-50">·</span>
                   <span className="opacity-90">{p.title}</span>
                 </figcaption>
-              </figure>
+              </motion.figure>
               <div className="flex items-start gap-5">
                 <span
                   aria-hidden
@@ -271,10 +280,19 @@ export function ServicePromise() {
                 </span>
                 <div className="flex-1 pt-1">
                   <div className="flex items-center gap-2.5 mb-2">
-                    <Icon
-                      className="h-5 w-5 text-[var(--color-brand)] shrink-0"
-                      aria-hidden
-                    />
+                    <motion.span
+                      whileHover={
+                        reduced
+                          ? undefined
+                          : { rotate: 8, scale: 1.15, transition: { type: "spring", stiffness: 400, damping: 18 } }
+                      }
+                      className="inline-flex"
+                    >
+                      <Icon
+                        className="h-5 w-5 text-[var(--color-brand)] shrink-0"
+                        aria-hidden
+                      />
+                    </motion.span>
                     <h3 className="text-xl md:text-2xl font-display font-bold text-[var(--color-text)] leading-tight">
                       {p.title}
                     </h3>

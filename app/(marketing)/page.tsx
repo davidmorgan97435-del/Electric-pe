@@ -2,18 +2,24 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/marketing/hero";
 import { ServicePromise } from "@/components/marketing/service-promise";
 import { ProductShowcase } from "@/components/marketing/product-showcase";
-import { GreenerTomorrow } from "@/components/marketing/greener-tomorrow";
 import { SavingsCalculatorHome } from "@/components/marketing/savings-calculator";
+import { VsPetrol } from "@/components/marketing/vs-petrol";
 import { StorePresence } from "@/components/marketing/store-presence";
 import { Testimonials } from "@/components/marketing/testimonials";
-import { VsPetrol } from "@/components/marketing/vs-petrol";
-import { FinanceStrip } from "@/components/marketing/finance-strip";
 import { FinalCta } from "@/components/marketing/final-cta";
 
+/**
+ * Homepage — final composition after client feedback round 2.
+ *
+ * Removed: GreenerTomorrow sustainability band (#8), FinanceStrip EMI strip
+ * (#11). Reordered: VsPetrol now sits immediately under SavingsCalculator
+ * (#9) so the rupee-figure → comparison sequence reads as one money story.
+ */
+
 export const metadata: Metadata = {
-  title: "ElectricPe — Electric Scooters, Chargers & 30+ Stores Across India",
+  title: "ElectricPe — Affordable Electric Scooters for Everyday India",
   description:
-    "Buy low-speed electric scooters from Xypro, Jett, EP & 4ALL. 30+ Mobility Centers, 24-hour service, 3-year warranty. Book a free test ride today.",
+    "Reliable, easy-to-ride EV scooters with trusted service and stores near you. No licence required, low running cost. Book a free test ride today.",
   alternates: { canonical: "/" },
 };
 
@@ -23,31 +29,25 @@ export default function HomePage() {
       {/* HP-01 Hero */}
       <Hero />
 
-      {/* HP-02 Service Promise — why ElectricPe */}
+      {/* HP-02 Service Promise */}
       <ServicePromise />
 
-      {/* HP-03 Product Showcase */}
+      {/* HP-03 Product Showcase — 2 featured brands (Xypro, Jett) */}
       <ProductShowcase />
-
-      {/* HP-03.5 Greener Tomorrow — sustainability impact band */}
-      <GreenerTomorrow />
 
       {/* HP-04 Savings Calculator */}
       <SavingsCalculatorHome />
 
-      {/* HP-05 Store Presence */}
-      <StorePresence />
-
-      {/* HP-06 Testimonials */}
-      <Testimonials />
-
-      {/* HP-07 vs Petrol */}
+      {/* HP-05 vs Petrol — sits right under the savings calc per feedback #9 */}
       <VsPetrol />
 
-      {/* HP-08 EMI + Finance */}
-      <FinanceStrip />
+      {/* HP-06 Store Presence */}
+      <StorePresence />
 
-      {/* HP-09 Final CTA */}
+      {/* HP-07 Testimonials */}
+      <Testimonials />
+
+      {/* HP-08 Final CTA */}
       <FinalCta />
     </>
   );

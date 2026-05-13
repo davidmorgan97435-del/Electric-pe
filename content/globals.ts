@@ -15,7 +15,7 @@ export const globals: GlobalSettings = {
   slaThisMonthPct: 94,
   announcementBar: {
     enabled: true,
-    text: "Book a free test ride — we'll bring it to your doorstep",
+    text: "Book a free test ride. We'll bring it to your doorstep",
     ctaText: "Book now",
     ctaHref: "/book-test-ride",
     dismissKey: "ann-2026-04",

@@ -3,7 +3,7 @@ import type { JobPosting } from "../types";
 export const jobPostings: JobPosting[] = [
   {
     slug: "store-executive-bengaluru",
-    title: "Store Executive — Bengaluru",
+    title: "Store Executive, Bengaluru",
     department: "retail",
     city: "Bengaluru",
     type: "FT",
@@ -11,7 +11,7 @@ export const jobPostings: JobPosting[] = [
       "You'll be the face of ElectricPe at one of our Mobility Centers in Bengaluru. You'll guide customers through test rides, handle EMI applications, and build long-term relationships with owners.",
     responsibilities: [
       "Conduct test rides and walk-ins for new customers",
-      "Own the end-to-end purchase journey — paperwork, EMI, delivery",
+      "Own the end-to-end purchase journey: paperwork, EMI, delivery",
       "Maintain store floor presentation and inventory accuracy",
       "Build relationships with repeat customers for service and referrals",
       "Escalate technical issues to the in-house service technician",
@@ -20,19 +20,19 @@ export const jobPostings: JobPosting[] = [
       "1+ year in automotive retail, banking, or high-touch customer roles",
       "Fluent in Kannada and English (Hindi a plus)",
       "Comfortable with basic digital tools (CRM, WhatsApp Business)",
-      "Willingness to work Saturdays — it's our busiest day",
+      "Willingness to work Saturdays, our busiest day",
     ],
     niceToHave: ["Prior EV experience", "Two-wheeler licence"],
     publishedAt: "2026-03-01",
   },
   {
     slug: "senior-technician-chennai",
-    title: "Senior Technician — Chennai",
+    title: "Senior Technician, Chennai",
     department: "service",
     city: "Chennai",
     type: "FT",
     descriptionMdx:
-      "You'll run the service bay at our Anna Nagar Mobility Center. You'll own the 24-hour service SLA for every scooter that comes in — from diagnostics to parts to handover.",
+      "You'll run the service bay at our Anna Nagar Mobility Center. You'll own the 24-hour service SLA for every scooter that comes in, from diagnostics to parts to handover.",
     responsibilities: [
       "Diagnose and resolve mechanical + electrical issues on the full ElectricPe lineup",
       "Maintain service records and SLA metrics daily",
@@ -67,13 +67,13 @@ export const jobPostings: JobPosting[] = [
       "4+ years in B2C performance marketing",
       "Deep Google Ads + Meta Ads Manager expertise",
       "SQL comfort for analytics (or strong partnership with data)",
-      "Portfolio of campaigns in India — ideally for high-ticket B2C",
+      "Portfolio of campaigns in India, ideally for high-ticket B2C",
     ],
     publishedAt: "2026-02-20",
   },
   {
     slug: "fullstack-engineer-platform",
-    title: "Full-Stack Engineer — Platform",
+    title: "Full-Stack Engineer, Platform",
     department: "tech",
     city: "Remote (India)",
     type: "FT",
@@ -96,12 +96,12 @@ export const jobPostings: JobPosting[] = [
   },
   {
     slug: "operations-coordinator-north",
-    title: "Operations Coordinator — North India",
+    title: "Operations Coordinator, North India",
     department: "operations",
     city: "Delhi",
     type: "FT",
     descriptionMdx:
-      "You'll keep the retail network humming across Delhi, Gurugram, Jaipur, and Chandigarh. Inventory, delivery logistics, store launches — you'll own the coordination.",
+      "You'll keep the retail network humming across Delhi, Gurugram, Jaipur, and Chandigarh. Inventory, delivery logistics, store launches: you'll own the coordination.",
     responsibilities: [
       "Coordinate vehicle + parts supply to North India stores",
       "Own store-level KPIs (footfall, conversion, SLA)",
@@ -132,7 +132,7 @@ export const jobPostings: JobPosting[] = [
     requirements: [
       "4+ years in HR, ideally at a high-growth B2C or retail company",
       "Comfort recruiting blue + grey-collar roles as well as tech",
-      "Data-literate — you own offer-acceptance rates and attrition metrics",
+      "Data-literate: you own offer-acceptance rates and attrition metrics",
     ],
     publishedAt: "2026-01-14",
   },

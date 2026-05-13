@@ -35,7 +35,7 @@ export const blogPosts: BlogPostMeta[] = [
   },
   {
     slug: "why-low-speed-evs-dont-need-licence",
-    title: "Why low-speed EVs don't need a licence — full legal breakdown",
+    title: "Why low-speed EVs don't need a licence: full legal breakdown",
     dek: "A plain-English walkthrough of the Motor Vehicles Act exemption that makes all ElectricPe scooters licence-free.",
     coverImage: COVER,
     author: authors.raghav,
@@ -58,7 +58,7 @@ export const blogPosts: BlogPostMeta[] = [
   {
     slug: "xypro-vs-jett-which-fits-your-commute",
     title: "Xypro vs Jett: which ElectricPe fits your commute?",
-    dek: "Range, comfort, cargo capacity — and the single question that usually decides it.",
+    dek: "Range, comfort, cargo capacity, and the single question that usually decides it.",
     coverImage: COVER,
     author: authors.raghav,
     categories: ["Buying Guides"],
@@ -102,7 +102,7 @@ export const blogPosts: BlogPostMeta[] = [
   {
     slug: "lithium-vs-lead-acid-which-battery",
     title: "Lithium vs lead-acid: which battery is right for you?",
-    dek: "Upfront cost, lifespan, replacement economics — decoded without the jargon.",
+    dek: "Upfront cost, lifespan, replacement economics, decoded without the jargon.",
     coverImage: COVER,
     author: authors.avinash,
     categories: ["Buying Guides"],

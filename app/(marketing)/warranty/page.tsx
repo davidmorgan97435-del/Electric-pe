@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Warranty",
-  description: "ElectricPe's 3-year warranty on motor, controller, and frame. Lithium battery 3 years. Full terms in plain language.",
+  description: "ElectricPe's component-level warranty — motor 1 year, controller 1 year, lithium-ion battery 3 years or 10,000 km, charger 1 year. Coverage varies by component.",
   alternates: { canonical: "/warranty" },
 };
 
@@ -30,13 +30,17 @@ export default function WarrantyPage() {
 
           <div className="prose prose-neutral max-w-none mt-8 text-[var(--color-text)] leading-relaxed text-base space-y-6">
             <h2 className="text-h2 mt-8">What's covered</h2>
+            <p className="text-sm text-[var(--color-text-muted)]">
+              Coverage varies by component. The standard cover is summarised
+              below; the exact terms for your scooter are confirmed at handover
+              or on inquiry at any Mobility Center.
+            </p>
             <ul className="list-disc pl-5 space-y-1.5">
-              <li><strong>Motor:</strong> 3 years, unlimited kilometres.</li>
-              <li><strong>Controller:</strong> 3 years.</li>
-              <li><strong>Frame:</strong> 3 years against rust-through.</li>
-              <li><strong>Lithium-ion battery:</strong> 3 years or 30,000 km — whichever is earlier.</li>
+              <li><strong>Motor:</strong> 1 year.</li>
+              <li><strong>Controller:</strong> 1 year.</li>
+              <li><strong>Lithium-ion battery:</strong> 3 years or 10,000 km — whichever is earlier.</li>
               <li><strong>Lead-acid battery:</strong> 12 months, pro-rated replacement after 6 months.</li>
-              <li><strong>Charger:</strong> 2 years.</li>
+              <li><strong>Charger:</strong> 1 year.</li>
             </ul>
 
             <h2 className="text-h2 mt-8">What's not covered</h2>

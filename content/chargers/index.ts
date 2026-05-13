@@ -24,7 +24,7 @@ export const chargers: Charger[] = [
     },
     faqIds: [],
     seo: {
-      title: "Oakter 3.3 kW Home EV Charger — ₹4,999 | ElectricPe",
+      title: "Oakter 3.3 kW Home EV Charger | ₹4,999 | ElectricPe",
       description:
         "Oakter 3.3 kW home EV charger with installation included. Compatible with every ElectricPe scooter. Bharat AC-001 standard. 1-year warranty.",
     },
@@ -56,7 +56,7 @@ export const chargers: Charger[] = [
     seo: {
       title: "RIOD Powerpod 7.4 kW EV Charger | ElectricPe",
       description:
-        "RIOD Powerpod 7.4 kW smart Type-2 EV charger with OCPP 1.6J, Wi-Fi, and installation included. 3-year warranty.",
+        "RIOD Powerpod 7.4 kW smart Type-2 EV charger with OCPP 1.6J, Wi-Fi, and installation included. Manufacturer warranty included.",
     },
   },
   {

@@ -17,9 +17,9 @@ import { getFaqsByCategory } from "@/content/faqs";
 import { buildWhatsAppLink, WHATSAPP_DEFAULTS } from "@/lib/utils/whatsapp";
 
 export const metadata: Metadata = {
-  title: "Service Promise — 24-Hour SLA, 3-Year Warranty, Genuine Parts",
+  title: "Service Promise — 24-Hour SLA, Component-Level Warranty, Genuine Parts",
   description:
-    "Service within 24 hours at any ElectricPe Mobility Center. In-house technicians, genuine parts always in stock, 3-year warranty in plain language.",
+    "Service within 24 hours at any ElectricPe Mobility Center. In-house technicians, genuine parts always in stock. Warranty coverage varies by component — full terms shared on inquiry.",
   alternates: { canonical: "/service" },
 };
 
@@ -33,10 +33,10 @@ const PILLARS = [
   },
   {
     icon: ShieldCheck,
-    title: "3-year warranty, plain terms",
-    stat: "3 years",
-    statLabel: "On motor, controller, frame",
-    text: "Lithium-ion battery covered for 3 years or 30,000 km. Lead-acid battery 12 months. No asterisks — the full warranty is readable in one sitting.",
+    title: "Component-level warranty",
+    stat: "Varies",
+    statLabel: "By component",
+    text: "Motor and controller are covered for one year; the lithium-ion battery for three years or 10,000 km; the charger for one year. Coverage varies — exact terms shared on inquiry.",
   },
   {
     icon: Wrench,
@@ -71,11 +71,10 @@ const TECHNICIANS = [
 ];
 
 const WARRANTY_COVERED = [
-  "Motor (3 years, unlimited km)",
-  "Controller (3 years)",
-  "Frame (3 years, against rust-through)",
-  "Lithium-ion battery (3 years or 30,000 km)",
-  "Charger (2 years)",
+  "Motor — 1 year",
+  "Controller — 1 year",
+  "Lithium-Ion battery — 3 years or 10,000 km (whichever is earlier)",
+  "Charger — 1 year",
 ];
 
 const WARRANTY_NOT_COVERED = [
@@ -205,7 +204,8 @@ export default function ServicePage() {
       <Section className="bg-[var(--color-surface-muted)]">
         <SectionHeader
           eyebrow="Warranty"
-          title="What's covered — and what isn't"
+          title="Component-level coverage, in plain language"
+          description="Warranty coverage varies by component. Below is the standard cover; exact terms for your scooter are shared at handover or on inquiry at any Mobility Center."
           align="left"
         />
         <div className="grid md:grid-cols-2 gap-6">

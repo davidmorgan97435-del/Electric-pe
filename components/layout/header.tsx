@@ -14,11 +14,8 @@ type NavItem = { label: string; href: string };
 
 const PRIMARY_NAV: NavItem[] = [
   { label: "Scooters", href: "/ev" },
-  { label: "Chargers", href: "/charger" },
-  { label: "Charging Stations", href: "/ev-charging-stations" },
   { label: "Stores", href: "/stores" },
   { label: "Service", href: "/service" },
-  { label: "EMI", href: "/emi" },
   { label: "App", href: "/app" },
   { label: "Blog", href: "/blog" },
 ];

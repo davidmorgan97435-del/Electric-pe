@@ -3,6 +3,7 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Container } from "@/components/ui/container";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
+import { Reveal } from "@/components/ui/reveal";
 import {
   Accordion,
   AccordionItem,
@@ -35,7 +36,7 @@ const BRAND_NAMES: Record<string, string> = {
 const SERVICE_PILLARS = [
   { icon: Store, title: "Real stores", text: "30+ Mobility Centers across India" },
   { icon: Clock, title: "24h service", text: "SLA, not a promise" },
-  { icon: ShieldCheck, title: "3-year warranty", text: "Motor, controller, frame" },
+  { icon: ShieldCheck, title: "Component warranty", text: "Motor · Controller · Battery (details on inquiry)" },
   { icon: Wrench, title: "Genuine parts", text: "In stock, always" },
 ];
 
@@ -124,63 +125,81 @@ export function BrandPdp({ scooter }: { scooter: Scooter }) {
       <FeatureHighlights scooter={scooter} />
 
       <Section className="bg-[var(--color-surface-muted)]">
-        <SectionHeader
-          eyebrow="Specifications"
-          title="Every number, in plain language"
-          align="left"
-        />
-        <SpecTable scooter={scooter} />
+        <Reveal>
+          <SectionHeader
+            eyebrow="Specifications"
+            title="Every number, in plain language"
+            align="left"
+          />
+        </Reveal>
+        <Reveal delay={80}>
+          <SpecTable scooter={scooter} />
+        </Reveal>
       </Section>
 
       <Section>
-        <SectionHeader
-          eyebrow="EMI"
-          title={`Own it from ${new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(scooter.emiFrom)}/month`}
-          description="Slide the down-payment, pick a tenure — we'll show the monthly EMI in plain rupees."
-        />
-        <EmiWidget scooter={scooter} />
+        <Reveal>
+          <SectionHeader
+            eyebrow="EMI"
+            title={`Own it from ${new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(scooter.emiFrom)}/month`}
+            description="Slide the down-payment, pick a tenure — we'll show the monthly EMI in plain rupees."
+          />
+        </Reveal>
+        <Reveal delay={80}>
+          <EmiWidget scooter={scooter} />
+        </Reveal>
       </Section>
 
       <Section className="bg-[var(--color-surface-muted)]">
-        <PdpSavingsMini scooter={scooter} />
+        <Reveal>
+          <PdpSavingsMini scooter={scooter} />
+        </Reveal>
       </Section>
 
       <Section>
-        <SectionHeader
-          eyebrow="Every scooter, every store"
-          title="Backed by 30+ ElectricPe Mobility Centers"
-        />
+        <Reveal>
+          <SectionHeader
+            eyebrow="Every scooter, every store"
+            title="Backed by 30+ ElectricPe Mobility Centers"
+          />
+        </Reveal>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {SERVICE_PILLARS.map(({ icon: Icon, title, text }) => (
-            <Card key={title} className="p-5">
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--color-brand-soft)] text-[var(--color-brand-pressed)] mb-3">
-                <Icon className="h-5 w-5" aria-hidden />
-              </div>
-              <p className="font-display font-bold text-[var(--color-text)]">{title}</p>
-              <p className="text-sm text-[var(--color-text-muted)]">{text}</p>
-            </Card>
+          {SERVICE_PILLARS.map(({ icon: Icon, title, text }, i) => (
+            <Reveal key={title} delay={i * 70}>
+              <Card className="p-5 h-full transition-[transform,box-shadow] duration-[var(--duration-base)] hover:-translate-y-1 hover:shadow-[var(--shadow-md)]">
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--color-brand-soft)] text-[var(--color-brand-pressed)] mb-3">
+                  <Icon className="h-5 w-5" aria-hidden />
+                </div>
+                <p className="font-display font-bold text-[var(--color-text)]">{title}</p>
+                <p className="text-sm text-[var(--color-text-muted)]">{text}</p>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </Section>
 
       <Section className="bg-[var(--color-surface-muted)]">
-        <SectionHeader
-          eyebrow="Real owners"
-          title={`${brandName} owners talk to you`}
-        />
+        <Reveal>
+          <SectionHeader
+            eyebrow="Real owners"
+            title={`${brandName} owners talk to you`}
+          />
+        </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {visibleTestimonials.slice(0, 3).map((t) => {
+          {visibleTestimonials.slice(0, 3).map((t, i) => {
             const city = getCity(t.cityId);
             return (
-              <Card key={t.id} className="p-6 flex flex-col gap-3">
-                <p className="text-[var(--color-text)] leading-relaxed">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <p className="text-sm text-[var(--color-text-muted)] mt-auto">
-                  <span className="font-semibold text-[var(--color-text)]">{t.customerName}</span>
-                  {city ? ` · ${city.name}` : ""}
-                </p>
-              </Card>
+              <Reveal key={t.id} delay={i * 80}>
+                <Card className="p-6 flex flex-col gap-3 h-full transition-[transform,box-shadow] duration-[var(--duration-base)] hover:-translate-y-1 hover:shadow-[var(--shadow-md)]">
+                  <p className="text-[var(--color-text)] leading-relaxed">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <p className="text-sm text-[var(--color-text-muted)] mt-auto">
+                    <span className="font-semibold text-[var(--color-text)]">{t.customerName}</span>
+                    {city ? ` · ${city.name}` : ""}
+                  </p>
+                </Card>
+              </Reveal>
             );
           })}
         </div>
@@ -188,29 +207,37 @@ export function BrandPdp({ scooter }: { scooter: Scooter }) {
 
       {faqs.length > 0 && (
         <Section>
-          <SectionHeader
-            eyebrow="FAQs"
-            title={`${brandName} — honest answers`}
-            align="left"
-          />
-          <div className="rounded-2xl border border-[var(--color-border)] bg-white overflow-hidden">
-            <Accordion type="single" collapsible className="px-5 md:px-6">
-              {faqs.map((f) => (
-                <AccordionItem key={f.id} value={f.id}>
-                  <AccordionTrigger>{f.question}</AccordionTrigger>
-                  <AccordionContent>{f.answerMdx}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+          <Reveal>
+            <SectionHeader
+              eyebrow="FAQs"
+              title={`${brandName} — honest answers`}
+              align="left"
+            />
+          </Reveal>
+          <Reveal delay={60}>
+            <div className="rounded-2xl border border-[var(--color-border)] bg-white overflow-hidden">
+              <Accordion type="single" collapsible className="px-5 md:px-6">
+                {faqs.map((f) => (
+                  <AccordionItem key={f.id} value={f.id}>
+                    <AccordionTrigger>{f.question}</AccordionTrigger>
+                    <AccordionContent>{f.answerMdx}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </Reveal>
         </Section>
       )}
 
       <Section className="bg-[var(--color-surface-muted)]">
-        <SectionHeader eyebrow="You might also like" title="Other ElectricPe models" />
+        <Reveal>
+          <SectionHeader eyebrow="You might also like" title="Other ElectricPe models" />
+        </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {related.map((s) => (
-            <ProductCard key={`${s.brand}-${s.variantSlug}`} scooter={s} />
+          {related.map((s, i) => (
+            <Reveal key={`${s.brand}-${s.variantSlug}`} delay={i * 80}>
+              <ProductCard scooter={s} />
+            </Reveal>
           ))}
         </div>
       </Section>

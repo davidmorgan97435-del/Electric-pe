@@ -2,6 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
+import {
+  animate,
+  motion,
+  useInView,
+  useMotionValue,
+  useReducedMotion,
+  useTransform,
+} from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
@@ -10,6 +18,61 @@ import { cn } from "@/lib/utils/cn";
 import { formatInr, formatNumber } from "@/lib/utils/format";
 import { computeSavings, type FuelType } from "@/lib/calculators/savings";
 import { cities } from "@/content/cities";
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+/**
+ * AnimatedRupee — count-up rupee display.
+ *
+ * Animates from the previously-shown value to the new value with
+ * easeOut, formatted via Intl. Used for the headline "₹ saved per
+ * month" so a slider or city change feels alive instead of snapping
+ * to a new number.
+ */
+function AnimatedRupee({
+  value,
+  className,
+  reduced,
+}: {
+  value: number;
+  className?: string;
+  reduced: boolean;
+}) {
+  const mv = useMotionValue(value);
+  const formatted = useTransform(mv, (v) =>
+    new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+      maximumFractionDigits: 0,
+    }).format(Math.round(v)),
+  );
+  const [text, setText] = React.useState(() =>
+    new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+      maximumFractionDigits: 0,
+    }).format(Math.round(value)),
+  );
+
+  React.useEffect(() => {
+    if (reduced) {
+      mv.set(value);
+      return;
+    }
+    const controls = animate(mv, value, { duration: 0.9, ease: "easeOut" });
+    const unsub = formatted.on("change", (v) => setText(v));
+    return () => {
+      controls.stop();
+      unsub();
+    };
+  }, [value, mv, formatted, reduced]);
+
+  return (
+    <motion.span className={className} aria-live="polite">
+      {text}
+    </motion.span>
+  );
+}
 
 /**
  * HP-04 Savings Calculator — per client PDF.
@@ -51,6 +114,9 @@ const DEFAULT_CITY = "bengaluru";
 const EV_ON_ROAD = 64999; // Xypro Lithium (most common pick)
 
 export function SavingsCalculatorHome() {
+  const reduced = useReducedMotion();
+  const sectionRef = React.useRef<HTMLDivElement>(null);
+  const inView = useInView(sectionRef, { once: true, margin: "-60px" });
   const [kmPerDay, setKmPerDay] = React.useState(25);
   const [vehicle, setVehicle] = React.useState<VehicleKind>("2w");
   const [city, setCity] = React.useState<string>(DEFAULT_CITY);
@@ -92,7 +158,19 @@ export function SavingsCalculatorHome() {
         />
       </Reveal>
 
-      <div className="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-start max-w-6xl mx-auto">
+      <motion.div
+        ref={sectionRef}
+        className="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-start max-w-6xl mx-auto"
+        initial={reduced ? false : { opacity: 0, y: 24 }}
+        animate={
+          reduced
+            ? undefined
+            : inView
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: 24 }
+        }
+        transition={{ duration: 0.65, ease: EASE }}
+      >
         {/* Inputs */}
         <div className="rounded-3xl bg-[var(--color-surface-muted)] border border-[var(--color-border)] p-6 md:p-8 space-y-7">
           {/* Km slider */}
@@ -229,11 +307,11 @@ export function SavingsCalculatorHome() {
           <p className="text-sm font-semibold uppercase tracking-wider text-[var(--color-text-muted)] mb-2">
             You could save
           </p>
-          <p
-            className="text-number-display text-[var(--color-brand)] leading-none"
-            aria-live="polite"
-          >
-            {formatInr(result.monthlySavingsInr)}
+          <p className="text-number-display text-[var(--color-brand)] leading-none tabular-nums block">
+            <AnimatedRupee
+              value={result.monthlySavingsInr}
+              reduced={!!reduced}
+            />
           </p>
           <p className="mt-2 text-lg text-[var(--color-text-muted)]">
             every month — with {activeCity?.name ?? "your city"}&apos;s
@@ -277,7 +355,7 @@ export function SavingsCalculatorHome() {
             </Button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </Section>
   );
 }

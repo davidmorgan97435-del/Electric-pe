@@ -16,9 +16,9 @@ import { absoluteUrl } from "@/lib/utils/site";
 import type { BrandSlug, Scooter, UseCase } from "@/content/types";
 
 export const metadata: Metadata = {
-  title: "Electric Scooters in India — Xypro, Jett, EP, 4ALL | ElectricPe",
+  title: "Electric Scooters in India — Xypro, Jett, 4ALL | ElectricPe",
   description:
-    "Compare and buy low-speed electric scooters from Xypro, Jett, EP and 4ALL. No licence required, EMI from ₹1,499/month, 3-year warranty, 30+ service centres.",
+    "Affordable low-speed electric scooters from Xypro, Jett and 4ALL. No licence required, low running cost, component-level warranty, 30+ service centres across India.",
   alternates: { canonical: "/ev" },
 };
 
@@ -93,9 +93,9 @@ export default async function EvListingPage({
             Electric scooters for every Indian ride
           </h1>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[var(--color-text-muted)]">
-            Xypro, Jett, EP and 4ALL — eight variants tuned to how Indians
-            actually commute. All low-speed, no-licence EVs backed by a real
-            store network and a 3-year warranty.
+            Xypro, Jett and 4ALL — affordable, low-speed, no-licence EVs tuned
+            to how Indians actually commute. Backed by a real store network and
+            component-level warranty in writing.
           </p>
 
           {/* Licence not required info strip */}

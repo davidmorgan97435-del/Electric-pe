@@ -67,8 +67,8 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-[var(--color-text-muted)] leading-relaxed mb-5">
-              India's largest trusted EV retail network — 30+ Mobility Centers
-              with 24-hour service and a 3-year warranty.
+              India's largest trusted EV retail network — 30+ Mobility Centers,
+              24-hour service, and component-level warranty on every scooter.
             </p>
             <div className="flex items-center gap-2">
               {SOCIAL.map(({ name, href, Icon }) => (

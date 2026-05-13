@@ -43,9 +43,9 @@ const STATS: Stat[] = [
     sublabel: "94% met this month",
   },
   {
-    value: "3 yr",
+    value: "Varies",
     label: "Warranty",
-    sublabel: "motor · controller · frame",
+    sublabel: "by component — details on inquiry",
   },
 ];
 

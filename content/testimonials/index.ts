@@ -24,7 +24,7 @@ export const testimonials: Testimonial[] = [
     brand: "xypro",
     rating: 5,
     quote:
-      "I commute 22 km a day from Yelahanka. The Xypro Lithium does it comfortably with 30% charge to spare. ElectricPe set up a home charging socket for me — zero hassle.",
+      "I commute 22 km a day from Yelahanka. The Xypro Lithium does it comfortably with 30% charge to spare. ElectricPe set up a home charging socket for me. Zero hassle.",
     photo: "/img/home_hero_section_2.webp",
     date: "2026-01-20",
     verified: true,
@@ -39,7 +39,7 @@ export const testimonials: Testimonial[] = [
     brand: "jett",
     rating: 5,
     quote:
-      "My husband works nights — the Jett is my independence. School run, groceries, pharmacy. No queue at the petrol pump. No licence needed. The team at ElectricPe explained everything twice, patiently.",
+      "My husband works nights, so the Jett is my independence. School run, groceries, pharmacy. No queue at the petrol pump. No licence needed. The team at ElectricPe explained everything twice, patiently.",
     photo: "/img/home_hero_section_2.webp",
     date: "2026-01-08",
     verified: true,
@@ -69,7 +69,7 @@ export const testimonials: Testimonial[] = [
     brand: "xypro",
     rating: 4.5,
     quote:
-      "I was skeptical — all these new EV brands come and go. ElectricPe had a real store, real people, real signboard. That's what convinced me. Six months later, zero problems.",
+      "I was skeptical. All these new EV brands come and go. ElectricPe had a real store, real people, real signboard. That's what convinced me. Six months later, zero problems.",
     photo: "/img/home_hero_section_2.webp",
     date: "2025-10-29",
     verified: true,
@@ -84,7 +84,7 @@ export const testimonials: Testimonial[] = [
     brand: "jett",
     rating: 5,
     quote:
-      "The top speed is 25 km/h. I was nervous about that at first — but honestly, in Gurugram traffic, I've never once wished it was faster. Safer and calmer than my old petrol scooter.",
+      "The top speed is 25 km/h. I was nervous about that at first. But honestly, in Gurugram traffic, I've never once wished it was faster. Safer and calmer than my old petrol scooter.",
     photo: "/img/home_hero_section_2.webp",
     date: "2026-03-02",
     verified: true,

@@ -3,8 +3,13 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, MapPin, ShieldCheck, Store, KeyRound } from "lucide-react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { ArrowRight, MapPin, Wallet, Store, KeyRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { TrustBar } from "./trust-bar";
@@ -31,9 +36,22 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 export function Hero() {
   const reduced = useReducedMotion();
+  const sectionRef = React.useRef<HTMLElement>(null);
+  // Track scroll progress as the hero section moves through the viewport.
+  // Used to apply a gentle parallax to the scooter lineup (and a soft
+  // counter-shift to the dot grid / glow) — adds depth without bouncing
+  // the section around. Reduced-motion users get static transforms.
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const scooterY = useTransform(scrollYProgress, [0, 1], [-20, 20]);
+  const glowY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const gridY = useTransform(scrollYProgress, [0, 1], [0, -30]);
 
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="hero-heading"
       className="relative isolate overflow-hidden"
       style={{
@@ -41,26 +59,44 @@ export function Hero() {
           "radial-gradient(120% 80% at 50% 0%, #eefaf3 0%, #f5fbf8 35%, #fbfdfc 65%, #ffffff 100%)",
       }}
     >
-      {/* Subtle dot-grid */}
-      <div
+      {/* Subtle dot-grid — drifts up gently on scroll for depth. */}
+      <motion.div
         aria-hidden
+        style={
+          reduced
+            ? {
+                backgroundImage:
+                  "radial-gradient(circle at 1px 1px, rgba(3,152,85,0.7) 1px, transparent 1.5px)",
+                backgroundSize: "26px 26px",
+              }
+            : {
+                backgroundImage:
+                  "radial-gradient(circle at 1px 1px, rgba(3,152,85,0.7) 1px, transparent 1.5px)",
+                backgroundSize: "26px 26px",
+                y: gridY,
+              }
+        }
         className="absolute inset-0 opacity-[0.045] pointer-events-none"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(3,152,85,0.7) 1px, transparent 1.5px)",
-          backgroundSize: "26px 26px",
-        }}
       />
 
-      {/* Soft brand glow behind the headline */}
-      <div
+      {/* Soft brand glow behind the headline — slow downward drift. */}
+      <motion.div
         aria-hidden
+        style={
+          reduced
+            ? {
+                background:
+                  "radial-gradient(closest-side, rgba(18,183,106,0.18) 0%, rgba(18,183,106,0.06) 45%, transparent 72%)",
+                filter: "blur(10px)",
+              }
+            : {
+                background:
+                  "radial-gradient(closest-side, rgba(18,183,106,0.18) 0%, rgba(18,183,106,0.06) 45%, transparent 72%)",
+                filter: "blur(10px)",
+                y: glowY,
+              }
+        }
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] max-w-[1100px] h-[500px] pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(closest-side, rgba(18,183,106,0.18) 0%, rgba(18,183,106,0.06) 45%, transparent 72%)",
-          filter: "blur(10px)",
-        }}
       />
 
       {/* Faint bottom divider */}
@@ -93,9 +129,8 @@ export function Hero() {
             className="mt-5 font-display font-bold text-[var(--color-text)] tracking-[-0.035em] leading-[1.02]"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.75rem)" }}
           >
-            Electric. <span className="text-[var(--color-brand)]">Affordable.</span>
-            <br />
-            Yours for life.
+            <span className="text-[var(--color-brand)]">Affordable</span> Electric
+            Scooters for Everyday India.
           </motion.h1>
 
           <motion.p
@@ -104,8 +139,8 @@ export function Hero() {
             transition={{ duration: reduced ? 0 : 0.55, delay: reduced ? 0 : 0.22, ease: EASE }}
             className="mt-5 max-w-2xl mx-auto text-base md:text-lg text-[var(--color-text-muted)] leading-relaxed"
           >
-            India&apos;s most trusted low-speed EV scooters — with stores across
-            the city and service you can count on.
+            Reliable, easy-to-ride EV scooters with trusted service and stores
+            near you. No license required, low running cost.
           </motion.p>
 
           <motion.div
@@ -139,36 +174,44 @@ export function Hero() {
             aria-label="Trust signals"
           >
             <li className="inline-flex items-center gap-1.5">
-              <ShieldCheck className="h-4 w-4 text-[var(--color-brand)]" aria-hidden />
-              3-Year Warranty
+              <KeyRound className="h-4 w-4 text-[var(--color-brand)]" aria-hidden />
+              No Licence Required
+            </li>
+            <li className="inline-flex items-center gap-1.5">
+              <Wallet className="h-4 w-4 text-[var(--color-brand)]" aria-hidden />
+              Low Running Cost
             </li>
             <li className="inline-flex items-center gap-1.5">
               <Store className="h-4 w-4 text-[var(--color-brand)]" aria-hidden />
               30+ Mobility Centers
             </li>
-            <li className="inline-flex items-center gap-1.5">
-              <KeyRound className="h-4 w-4 text-[var(--color-brand)]" aria-hidden />
-              No Licence Required
-            </li>
           </motion.ul>
         </div>
 
-        {/* Scooter lineup — full-width strip at the bottom */}
+        {/* Scooter lineup — full-width strip at the bottom.
+            Outer wrapper handles the entrance reveal; inner motion.div
+            applies the scroll-bound parallax (-20px → 20px) so the
+            lineup floats slightly relative to the headline. */}
         <motion.div
           initial={reduced ? false : { opacity: 0, y: 24 }}
           animate={reduced ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: reduced ? 0 : 0.8, delay: reduced ? 0 : 0.5, ease: EASE }}
           className="relative w-full h-[280px] sm:h-[340px] md:h-[400px] lg:h-[440px] mt-2"
         >
+          <motion.div
+            className="absolute inset-0"
+            style={reduced ? undefined : { y: scooterY }}
+          >
           <Image
             src="/img/cutouts/home_hero_section_2-cutout.png"
-            alt="The ElectricPe scooter lineup — Xypro, Jett, EP City+ and 4ALL, in every colour."
+            alt="The ElectricPe scooter lineup — Xypro, Jett and 4ALL, in every colour."
             fill
             priority
             quality={95}
             sizes="100vw"
             className="object-contain object-bottom drop-shadow-[0_24px_28px_rgba(16,24,40,0.14)]"
           />
+          </motion.div>
         </motion.div>
 
         {/* Trust bar overlap */}

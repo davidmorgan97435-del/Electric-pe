@@ -21,7 +21,7 @@ export const cities: City[] = [
     localFaqIds: ["bengaluru-rto", "bengaluru-charging"],
     testimonialIds: ["t-priya-chennai", "t-arvind-bengaluru"],
     introCopy:
-      "Bengaluru's stop-and-go traffic was made for electric scooters — predictable distances, short trips, and enough charging time at home. ElectricPe operates five Mobility Centers across the city, from Yeswanthpur to JP Nagar, each staffed with trained technicians who'll walk you through every detail before you buy. No licence required for any scooter in our lineup.",
+      "Bengaluru's stop-and-go traffic was made for electric scooters: predictable distances, short trips, and enough charging time at home. ElectricPe operates five Mobility Centers across the city, from Yeswanthpur to JP Nagar, each staffed with trained technicians who'll walk you through every detail before you buy. No licence required for any scooter in our lineup.",
     customerCount: "3,200+",
     scootersSoldCount: "1,100+",
   },
@@ -57,7 +57,7 @@ export const cities: City[] = [
     localFaqIds: [],
     testimonialIds: [],
     introCopy:
-      "Gurugram's corporate campuses and gated communities are perfect for the ElectricPe ownership model — predictable commutes, dedicated parking, and accessible charging. Our Sector 14 Mobility Center offers doorstep test rides across all NCR sectors.",
+      "Gurugram's corporate campuses and gated communities are perfect for the ElectricPe ownership model: predictable commutes, dedicated parking, and accessible charging. Our Sector 14 Mobility Center offers doorstep test rides across all NCR sectors.",
     customerCount: "620+",
     scootersSoldCount: "210+",
   },
@@ -75,7 +75,7 @@ export const cities: City[] = [
     localFaqIds: [],
     testimonialIds: [],
     introCopy:
-      "Jaipur riders have been some of the earliest ElectricPe adopters in Rajasthan — the combination of low top-speed legal advantages, minimal running cost, and doorstep service has resonated here. Visit our Malviya Nagar Mobility Center for a test ride.",
+      "Jaipur riders have been some of the earliest ElectricPe adopters in Rajasthan. The combination of low top-speed legal advantages, minimal running cost, and doorstep service has resonated here. Visit our Malviya Nagar Mobility Center for a test ride.",
     customerCount: "450+",
     scootersSoldCount: "160+",
   },
@@ -93,7 +93,7 @@ export const cities: City[] = [
     localFaqIds: [],
     testimonialIds: [],
     introCopy:
-      "Hyderabad's fast-growing IT corridor and wide arterial roads make the Jett our top seller here — the 12-inch wheels and longer seat suit the longer commutes from Madhapur and Gachibowli.",
+      "Hyderabad's fast-growing IT corridor and wide arterial roads make the Jett our top seller here. The 12-inch wheels and longer seat suit the longer commutes from Madhapur and Gachibowli.",
     customerCount: "540+",
     scootersSoldCount: "180+",
   },
@@ -111,7 +111,7 @@ export const cities: City[] = [
     localFaqIds: [],
     testimonialIds: ["t-priya-chennai", "t-kiran-chennai"],
     introCopy:
-      "Chennai's delivery-led commerce economy has driven EP City Plus adoption — last-mile partners love the low total cost of ownership. ElectricPe's Anna Nagar Mobility Center offers same-day service for fleet operators.",
+      "Chennai's delivery-led commerce economy has driven EP City Plus adoption. Last-mile partners love the low total cost of ownership. ElectricPe's Anna Nagar Mobility Center offers same-day service for fleet operators.",
     customerCount: "510+",
     scootersSoldCount: "170+",
   },

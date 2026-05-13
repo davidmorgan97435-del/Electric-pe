@@ -32,7 +32,7 @@ export const faqs: Faq[] = [
     id: "financing-zero-down",
     question: "Is zero down payment available?",
     answerMdx:
-      "Yes, at select stores and for select models. Our partner banks and NBFCs offer schemes from zero down payment up to 100% financing. Exact eligibility depends on your income profile and the model chosen — your local Mobility Center will walk you through the options.",
+      "Yes, at select stores and for select models. Our partner banks and NBFCs offer schemes from zero down payment up to 100% financing. Exact eligibility depends on your income profile and the model chosen. Your local Mobility Center will walk you through the options.",
     category: "financing",
     scope: "global",
     order: 4,
@@ -50,7 +50,7 @@ export const faqs: Faq[] = [
     id: "service-warranty",
     question: "What does the warranty cover?",
     answerMdx:
-      "Every ElectricPe scooter ships with a 3-year warranty on the motor, controller, and frame. Lithium-ion battery warranty is 3 years or 30,000 km (whichever is earlier). Lead-acid battery warranty is 12 months. The warranty does not cover wear-and-tear items (tyres, brake pads) or damage from accidents. Full terms are on the warranty page.",
+      "Warranty coverage varies by component. The motor and controller are covered for 1 year, the charger for 1 year, and the lithium-ion battery for 3 years or 10,000 km (whichever is earlier). Wear-and-tear items (tyres, brake pads), accidental damage and unauthorised modifications are not covered. Exact terms are shared at handover or on inquiry at any Mobility Center.",
     category: "service",
     scope: "global",
     order: 6,
@@ -68,7 +68,7 @@ export const faqs: Faq[] = [
     id: "charging-home",
     question: "Can I charge at home?",
     answerMdx:
-      "Yes. All ElectricPe scooters charge from any regular 5A domestic socket — no special wiring required. We also sell home chargers (Oakter, RIOD, Teltonika) for faster charging, and can arrange certified installation across 30+ cities.",
+      "Yes. All ElectricPe scooters charge from any regular 5A domestic socket. No special wiring required. We also sell home chargers (Oakter, RIOD, Teltonika) for faster charging, and can arrange certified installation across 30+ cities.",
     category: "charging",
     scope: "global",
     order: 8,
@@ -86,7 +86,7 @@ export const faqs: Faq[] = [
     id: "store-visit",
     question: "What should I bring to my store visit?",
     answerMdx:
-      "For a test ride: a valid ID proof (Aadhaar, licence, PAN, or voter card). To buy: Aadhaar and PAN for EMI, or any one ID for full payment. We'll take care of the rest — from paperwork to roadside registration (if applicable for higher-speed variants).",
+      "For a test ride: a valid ID proof (Aadhaar, licence, PAN, or voter card). To buy: Aadhaar and PAN for EMI, or any one ID for full payment. We'll take care of the rest, from paperwork to roadside registration (if applicable for higher-speed variants).",
     category: "store",
     scope: "global",
     order: 10,
@@ -95,7 +95,7 @@ export const faqs: Faq[] = [
     id: "xypro-range",
     question: "What's the real-world range of the Xypro?",
     answerMdx:
-      "The Xypro Lithium Ion delivers 90–100 km in real-world conditions — slightly better on flat roads, slightly less if you're carrying a pillion or climbing elevations. The Xypro Lead Acid delivers 55–60 km. These are rider-tested numbers, not lab figures.",
+      "The Xypro Lithium Ion delivers 90–100 km in real-world conditions: slightly better on flat roads, slightly less if you're carrying a pillion or climbing elevations. The Xypro Lead Acid delivers 55–60 km. These are rider-tested numbers, not lab figures.",
     category: "buying",
     scope: "brand",
     scopeId: "xypro",
@@ -115,7 +115,7 @@ export const faqs: Faq[] = [
     id: "ep-delivery",
     question: "Is the EP City Plus good for delivery work?",
     answerMdx:
-      "Yes — it's the most affordable in our lineup and designed for single-rider use with heavy daily mileage. Delivery partners on Swiggy, Zomato, and Zepto report average fuel savings of ₹250/day compared to petrol scooters.",
+      "Yes. It's the most affordable in our lineup and designed for single-rider use with heavy daily mileage. Delivery partners on Swiggy, Zomato, and Zepto report average fuel savings of ₹250/day compared to petrol scooters.",
     category: "buying",
     scope: "brand",
     scopeId: "ep",
@@ -135,7 +135,7 @@ export const faqs: Faq[] = [
     id: "xypro-swap-subscription",
     question: "How does the battery swap subscription work?",
     answerMdx:
-      "With the Xypro Swap, you own the vehicle but subscribe to the battery. Starting at ₹8/day, you can swap depleted batteries for fully charged ones at any partner swap station — typically in under 60 seconds. Perfect if you can't charge at home or run multiple shifts.",
+      "With the Xypro Swap, you own the vehicle but subscribe to the battery. Starting at ₹8/day, you can swap depleted batteries for fully charged ones at any partner swap station, typically in under 60 seconds. Perfect if you can't charge at home or run multiple shifts.",
     category: "charging",
     scope: "scooter",
     scopeId: "xypro-swap",

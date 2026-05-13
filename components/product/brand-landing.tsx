@@ -37,6 +37,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { ProductCard } from "@/components/marketing/product-card";
+import { BrandVariantTabs } from "./brand-variant-tabs";
 import { JsonLd, breadcrumbSchema } from "@/lib/seo/jsonld";
 import { buildWhatsAppLink } from "@/lib/utils/whatsapp";
 import { formatInr } from "@/lib/utils/format";
@@ -232,7 +233,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
         </Container>
       </section>
 
-      {/* ─── Variant strip ─── */}
+      {/* ─── Variant selection — tabs + dynamic spec panel (feedback #12) ─── */}
       <Section>
         <Reveal>
           <SectionHeader
@@ -245,27 +246,16 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
             description={
               variants.length === 1
                 ? "A single, well-specced variant — no bewildering trim-level matrix."
-                : `${variants.length} variants, three chemistries. Pick the budget, we'll match the range.`
+                : "Switch between chemistries to see the exact range, charge time and price for each."
             }
           />
         </Reveal>
-        <div
-          className={cn(
-            "grid gap-5 md:gap-6",
-            variants.length === 1
-              ? "md:grid-cols-[1fr_1fr] max-w-4xl mx-auto"
-              : variants.length === 2
-                ? "md:grid-cols-2"
-                : "md:grid-cols-2 lg:grid-cols-3",
-          )}
-        >
-          {variants.map((s, i) => (
-            <Reveal key={`${s.brand}-${s.variantSlug}`} delay={i * 70}>
-              <ProductCard scooter={s} />
-            </Reveal>
-          ))}
-          {variants.length === 1 && (
-            <Reveal delay={100}>
+        <Reveal delay={80}>
+          {variants.length >= 2 ? (
+            <BrandVariantTabs variants={variants} />
+          ) : (
+            <div className="grid md:grid-cols-[1fr_1fr] gap-5 md:gap-6 max-w-4xl mx-auto">
+              <ProductCard scooter={variants[0]!} />
               <div className="h-full rounded-2xl border border-dashed border-[var(--color-border)] bg-[var(--color-surface-muted)] p-8 flex flex-col justify-center text-center">
                 <p className="text-sm font-semibold text-[var(--color-text)] mb-2">
                   Looking for a different range or battery?
@@ -279,9 +269,9 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
                   <Link href="/ev">Explore all ElectricPe models</Link>
                 </Button>
               </div>
-            </Reveal>
+            </div>
           )}
-        </div>
+        </Reveal>
       </Section>
 
       {/* ─── Why this brand ─── */}
@@ -375,7 +365,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
             const Icon = item.icon;
             return (
               <Reveal as="li" key={item.title} delay={i * 40}>
-                <Card className="p-5 md:p-6 h-full flex flex-col gap-3">
+                <Card className="p-5 md:p-6 h-full flex flex-col gap-3 transition-[transform,box-shadow] duration-[var(--duration-base)] hover:-translate-y-1 hover:shadow-[var(--shadow-md)]">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-brand-soft)] text-[var(--color-brand-pressed)]">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
@@ -407,7 +397,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
             const Icon = stat.icon;
             return (
               <Reveal key={stat.label} delay={i * 70}>
-                <Card className="p-6 md:p-7 h-full bg-white border-l-4 border-l-[var(--color-primary-500)]">
+                <Card className="p-6 md:p-7 h-full bg-white border-l-4 border-l-[var(--color-primary-500)] transition-[transform,box-shadow] duration-[var(--duration-base)] hover:-translate-y-1 hover:shadow-[var(--shadow-md)]">
                   <div className="flex items-start justify-between gap-3 mb-4">
                     <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-brand-soft)] text-[var(--color-brand-pressed)]">
                       <Icon className="h-5 w-5" aria-hidden />
@@ -458,7 +448,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
             const city = getCity(t.cityId);
             return (
               <Reveal key={t.id} delay={i * 70}>
-                <Card className="p-6 flex flex-col gap-4 h-full">
+                <Card className="p-6 flex flex-col gap-4 h-full transition-[transform,box-shadow] duration-[var(--duration-base)] hover:-translate-y-1 hover:shadow-[var(--shadow-md)]">
                   <div
                     aria-hidden
                     className="font-display text-4xl leading-none text-[var(--color-brand)] opacity-40"
@@ -575,8 +565,8 @@ const INCLUDED_ITEMS: {
   },
   {
     icon: ShieldCheck,
-    title: "3-year warranty card",
-    detail: "Motor, controller and frame covered in writing. Battery terms vary by chemistry — see the warranty page.",
+    title: "Warranty card",
+    detail: "Motor, controller and battery covered — coverage period varies by component. Full terms shared at handover.",
   },
   {
     icon: Wrench,
