@@ -13,15 +13,17 @@ import {
 /**
  * AnimatedCounter
  *
- * Counts up from 0 to the numeric target as soon as the element
- * scrolls into view. Designed for trust-bar stats and savings numbers
- * where a punchy reveal reinforces the claim.
+ * Renders the supplied `value` string verbatim into the server-rendered
+ * HTML so crawlers (and users with JS disabled) see the real number —
+ * never "0". After hydration, if the user scrolls the element into view
+ * and motion is allowed, a brief count-up animation overlays the final
+ * value as a visual flourish; the count-up never overwrites SSR text on
+ * the first paint.
  *
- * The numeric part is extracted from the supplied `value` string so
- * we can render labels like "10,000+" — we animate the 10,000 and
- * concatenate the "+" / " Years" suffix at the end.
+ * The numeric part is parsed out of `value` so labels like "10,000+"
+ * keep their prefix/suffix during the ramp.
  *
- * Respects prefers-reduced-motion: snaps to final value on first render.
+ * Respects prefers-reduced-motion: skips the ramp entirely.
  */
 
 type Props = {
@@ -52,9 +54,17 @@ export function AnimatedCounter({ value, className, duration = 1.4 }: Props) {
 
   const { num, prefix, suffix } = React.useMemo(() => parseValue(value), [value]);
 
-  const count = useMotionValue(0);
+  // Track whether the client has hydrated and we should swap to the
+  // animated display. Until then we render the final value as plain text
+  // so server-rendered HTML matches the first client paint.
+  const [hydrated, setHydrated] = React.useState(false);
+  const [text, setText] = React.useState<string>(num === null ? value : formatInt(num));
+  const count = useMotionValue(num ?? 0);
   const display = useTransform(count, (v) => formatInt(v));
-  const [text, setText] = React.useState(num === null ? value : "0");
+
+  React.useEffect(() => {
+    setHydrated(true);
+  }, []);
 
   React.useEffect(() => {
     if (num === null) return;
@@ -63,6 +73,8 @@ export function AnimatedCounter({ value, className, duration = 1.4 }: Props) {
       return;
     }
     if (!inView) return;
+    count.set(0);
+    setText("0");
     const controls = animate(count, num, {
       duration,
       ease: [0.2, 0.8, 0.2, 1],
@@ -71,6 +83,7 @@ export function AnimatedCounter({ value, className, duration = 1.4 }: Props) {
     return () => {
       controls.stop();
       unsub();
+      setText(formatInt(num));
     };
   }, [num, inView, count, display, duration, reduced]);
 
@@ -78,6 +91,18 @@ export function AnimatedCounter({ value, className, duration = 1.4 }: Props) {
     return (
       <span ref={ref} className={className}>
         {value}
+      </span>
+    );
+  }
+
+  // SSR / pre-hydration: render the real, final value verbatim so the
+  // HTML payload contains "10,000+", "30+", "200,000+" — never "0+".
+  if (!hydrated) {
+    return (
+      <span ref={ref} className={className}>
+        {prefix}
+        {formatInt(num)}
+        {suffix}
       </span>
     );
   }

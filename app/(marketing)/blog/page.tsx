@@ -5,13 +5,24 @@ import { Section, SectionHeader } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
+import { JsonLd, breadcrumbSchema } from "@/lib/seo/jsonld";
+import { absoluteUrl } from "@/lib/utils/site";
 import { blogPosts } from "@/content/blog/posts";
 
+const BLOG_DESCRIPTION =
+  "Explore ElectricPe blog — EV buying guides, low-speed scooter reviews, charging tips, EMI explainers and ownership stories for Indian riders.";
+
 export const metadata: Metadata = {
-  title: "Blog — EV SCOOPS | ElectricPe",
-  description:
-    "Guides, ownership stories, and city walkthroughs for Indian EV riders. Written by the ElectricPe team.",
+  title: { absolute: "EV Scoops — EV Guides & Ownership Stories | ElectricPe" },
+  description: BLOG_DESCRIPTION,
   alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "EV Scoops — EV Guides & Ownership Stories",
+    description: BLOG_DESCRIPTION,
+    url: absoluteUrl("/blog"),
+    type: "website",
+  },
 };
 
 function formatDate(iso: string): string {
@@ -27,8 +38,16 @@ export default function BlogIndex() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", href: "/" },
+          { name: "Blog", href: "/blog" },
+        ])}
+      />
+
       <section className="pt-16 md:pt-24 pb-10 bg-[var(--color-surface-muted)]">
         <Container>
+          <Breadcrumb items={[{ label: "Blog", href: "/blog" }]} className="mb-6" />
           <div className="max-w-3xl">
             <p className="text-eyebrow mb-3">EV SCOOPS</p>
             <h1 className="text-display-xl">

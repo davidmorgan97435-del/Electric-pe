@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { JsonLd, breadcrumbSchema } from "@/lib/seo/jsonld";
+import { JsonLd, breadcrumbSchema, autoDealerSchema } from "@/lib/seo/jsonld";
 import { absoluteUrl } from "@/lib/utils/site";
 import { stores, getStore } from "@/content/stores";
 import { getCity } from "@/content/cities";
@@ -29,10 +29,19 @@ export async function generateMetadata({
   const s = getStore(store);
   if (!s || s.cityId !== city) return {};
   const c = getCity(city);
+  const title = `${s.name} — Address, Hours, Test Ride`;
+  const description = `Visit ${s.name} at ${s.address}, ${c?.name}. Book a test ride, service your scooter, and meet your store executive.`;
   return {
-    title: `${s.name} — Address, Hours, Test Ride`,
-    description: `Visit ${s.name} at ${s.address}, ${c?.name}. Book a test ride, service your scooter, and meet your store executive.`,
+    title,
+    description,
     alternates: { canonical: `/stores/${city}/${store}` },
+    openGraph: {
+      title,
+      description,
+      url: absoluteUrl(`/stores/${city}/${store}`),
+      images: [{ url: absoluteUrl(s.photos[0] ?? "/img/home_hero_section_2.webp") }],
+      type: "website",
+    },
   };
 }
 
@@ -64,36 +73,28 @@ export default async function StoreDetailPage({
     `store ${s.slug}`,
   );
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "AutomotiveBusiness",
+  const openingHours = DAYS.flatMap((d) => {
+    const h = s.hours[d];
+    return h === "closed"
+      ? []
+      : [{ dayOfWeek: [DAY_LABEL[d]], opens: h.open, closes: h.close }];
+  });
+  const schema = autoDealerSchema({
     name: s.name,
-    image: absoluteUrl(s.photos[0] ?? "/img/home_hero_section_2.webp"),
-    "@id": absoluteUrl(`/stores/${city}/${s.slug}`),
-    url: absoluteUrl(`/stores/${city}/${s.slug}`),
+    url: `/stores/${city}/${s.slug}`,
     telephone: s.phone,
+    image: s.photos[0] ?? "/img/home_hero_section_2.webp",
     address: {
-      "@type": "PostalAddress",
       streetAddress: s.address,
       addressLocality: c.name,
       addressRegion: s.state,
       postalCode: s.pincode,
       addressCountry: "IN",
     },
-    geo: { "@type": "GeoCoordinates", latitude: s.lat, longitude: s.lng },
-    openingHoursSpecification: DAYS.map((d) => {
-      const h = s.hours[d];
-      return h === "closed"
-        ? null
-        : {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: DAY_LABEL[d],
-            opens: h.open,
-            closes: h.close,
-          };
-    }).filter(Boolean),
+    geo: { latitude: s.lat, longitude: s.lng },
+    openingHoursSpecification: openingHours,
     areaServed: c.name,
-  };
+  });
 
   return (
     <>

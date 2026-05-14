@@ -17,7 +17,7 @@ import { FinalCta } from "@/components/marketing/final-cta";
  */
 
 export const metadata: Metadata = {
-  title: "ElectricPe — Affordable Electric Scooters for Everyday India",
+  title: { absolute: "ElectricPe — Affordable Electric Scooters | India" },
   description:
     "Reliable, easy-to-ride EV scooters with trusted service and stores near you. No licence required, low running cost. Book a free test ride today.",
   alternates: { canonical: "/" },

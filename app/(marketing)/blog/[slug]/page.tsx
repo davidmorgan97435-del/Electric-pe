@@ -9,8 +9,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { JsonLd, breadcrumbSchema } from "@/lib/seo/jsonld";
-import { absoluteUrl, SITE } from "@/lib/utils/site";
+import { JsonLd, breadcrumbSchema, articleSchema } from "@/lib/seo/jsonld";
+import { absoluteUrl } from "@/lib/utils/site";
 import { blogPosts, getBlogPost, getRelatedPosts } from "@/content/blog/posts";
 
 type Params = { slug: string };
@@ -35,10 +35,11 @@ export async function generateMetadata({
       title: p.title,
       description: p.dek,
       type: "article",
+      url: absoluteUrl(`/blog/${slug}`),
       publishedTime: p.publishedAt,
       modifiedTime: p.updatedAt,
       authors: [p.author.name],
-      images: [{ url: p.coverImage }],
+      images: [{ url: absoluteUrl(p.coverImage) }],
     },
   };
 }
@@ -62,28 +63,21 @@ export default async function BlogPostPage({
 
   const related = getRelatedPosts(slug);
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
+  const article = articleSchema({
     headline: p.title,
     description: p.dek,
-    image: absoluteUrl(p.coverImage),
+    image: p.coverImage,
     datePublished: p.publishedAt,
-    dateModified: p.updatedAt ?? p.publishedAt,
-    author: { "@type": "Person", name: p.author.name },
-    publisher: {
-      "@type": "Organization",
-      name: SITE.name,
-      logo: { "@type": "ImageObject", url: absoluteUrl("/img/eplogo-horiz.webp") },
-    },
-    mainEntityOfPage: absoluteUrl(`/blog/${slug}`),
-  };
+    dateModified: p.updatedAt,
+    authorName: p.author.name,
+    url: `/blog/${slug}`,
+  });
 
   return (
     <>
       <JsonLd
         data={[
-          articleSchema,
+          article,
           breadcrumbSchema([
             { name: "Home", href: "/" },
             { name: "Blog", href: "/blog" },

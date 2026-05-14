@@ -11,10 +11,28 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { GridPattern } from "@/components/ui/grid-pattern";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Reveal } from "@/components/ui/reveal";
-import { cities } from "@/content/cities";
+import { cities, getCity } from "@/content/cities";
 import { stores, getStoresByCity } from "@/content/stores";
 import { globals } from "@/content/globals";
 import { buildWhatsAppLink, WHATSAPP_DEFAULTS } from "@/lib/utils/whatsapp";
+
+// TODO: replace these with real per-store photos when shoot is delivered.
+// Deterministic rotation across existing brand assets so adjacent cards
+// don't repeat the same image and crawlers see varied visual content.
+const STORE_IMAGE_ROTATION = [
+  "/img/xypro_brand_banner.webp",
+  "/img/ep_brand_banner.webp",
+  "/img/4all_brand_banner.webp",
+  "/img/jett_brand_banner.webp",
+  "/img/scenes/greener-tomorrow.webp",
+] as const;
+
+const PLACEHOLDER_PHOTO = "/img/home_hero_section_2.webp";
+
+function getStoreImage(photo: string | undefined, index: number): string {
+  if (photo && photo !== PLACEHOLDER_PHOTO) return photo;
+  return STORE_IMAGE_ROTATION[index % STORE_IMAGE_ROTATION.length]!;
+}
 
 /**
  * HP-05 — Mobility Centers.
@@ -103,7 +121,9 @@ export function StorePresence() {
               </li>
             ) : (
               cityStores.map((store, i) => {
-                const photo = store.photos[0] ?? "/img/home_hero_section_2.webp";
+                const photo = getStoreImage(store.photos[0], i);
+                const cityName = getCity(store.cityId)?.name ?? activeCity.name;
+                const imageAlt = `ElectricPe Mobility Center — ${store.name.replace(/^ElectricPe\s+/, "")}, ${cityName}`;
                 const directions = `https://www.google.com/maps/dir/?api=1&destination=${store.lat},${store.lng}`;
                 return (
                   <Reveal as="li" key={store.slug} delay={i * 60}>
@@ -112,7 +132,7 @@ export function StorePresence() {
                         <div className="relative h-16 w-16 md:h-20 md:w-20 shrink-0 rounded-xl overflow-hidden bg-[var(--color-surface-muted)]">
                           <Image
                             src={photo}
-                            alt=""
+                            alt={imageAlt}
                             fill
                             sizes="80px"
                             className="object-cover"

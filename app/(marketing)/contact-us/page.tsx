@@ -9,7 +9,7 @@ import { globals } from "@/content/globals";
 import { buildWhatsAppLink, WHATSAPP_DEFAULTS } from "@/lib/utils/whatsapp";
 
 export const metadata: Metadata = {
-  title: "Contact ElectricPe — Phone, WhatsApp, Email, Visit",
+  title: { absolute: "Contact ElectricPe — Phone, WhatsApp, Email, Visit" },
   description:
     "Reach ElectricPe by phone, WhatsApp, email, or walk into any of our 30+ Mobility Centers. HQ in Bengaluru. We answer — really.",
   alternates: { canonical: "/contact-us" },

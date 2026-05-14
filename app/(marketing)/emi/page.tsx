@@ -5,6 +5,7 @@ import { Section, SectionHeader } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 import {
   Accordion,
   AccordionContent,
@@ -86,6 +87,10 @@ export default function EmiPage() {
     <>
       <section className="pt-16 md:pt-24 pb-10 md:pb-14 bg-[var(--color-surface-muted)]">
         <Container>
+          <Breadcrumb
+            items={[{ label: "EMI Calculator", href: "/emi" }]}
+            className="mb-6"
+          />
           <div className="max-w-3xl">
             <p className="text-eyebrow mb-3">EMI + Finance</p>
             <h1 className="text-display-xl">

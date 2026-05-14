@@ -10,7 +10,7 @@ import { pressItems } from "@/content/press";
 import { globals } from "@/content/globals";
 
 export const metadata: Metadata = {
-  title: "Press & Media — ElectricPe in the news",
+  title: { absolute: "Press & Media — ElectricPe in the News" },
   description:
     "ElectricPe in the news — coverage, press releases, and brand assets for journalists and partners. Press contact: press@electricpe.com.",
   alternates: { canonical: "/press" },

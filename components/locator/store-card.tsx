@@ -5,7 +5,30 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { buildWhatsAppLink } from "@/lib/utils/whatsapp";
+import { getCity } from "@/content/cities";
 import type { Store } from "@/content/types";
+
+// TODO: replace with real per-store photos once shoot is delivered.
+// Deterministic rotation so adjacent store cards never share the same image.
+const STORE_IMAGE_ROTATION = [
+  "/img/xypro_brand_banner.webp",
+  "/img/ep_brand_banner.webp",
+  "/img/4all_brand_banner.webp",
+  "/img/jett_brand_banner.webp",
+  "/img/scenes/greener-tomorrow.webp",
+] as const;
+const PLACEHOLDER_PHOTO = "/img/home_hero_section_2.webp";
+
+function hashSlug(slug: string): number {
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
+function pickStoreImage(photo: string | undefined, slug: string): string {
+  if (photo && photo !== PLACEHOLDER_PHOTO) return photo;
+  return STORE_IMAGE_ROTATION[hashSlug(slug) % STORE_IMAGE_ROTATION.length]!;
+}
 
 const SERVICE_LABEL: Record<string, string> = {
   sales: "Sales",
@@ -20,13 +43,16 @@ export function StoreCard({ store }: { store: Store }) {
     `Hi! I want to visit the ${store.name}.`,
     `store ${store.slug}`,
   );
+  const photo = pickStoreImage(store.photos[0], store.slug);
+  const cityName = getCity(store.cityId)?.name ?? store.cityId;
+  const imageAlt = `ElectricPe Mobility Center — ${store.name.replace(/^ElectricPe\s+/, "")}, ${cityName}`;
 
   return (
     <Card className="overflow-hidden flex flex-col h-full">
       <div className="relative aspect-[16/9] bg-[var(--color-surface-muted)]">
         <Image
-          src={store.photos[0] ?? "/img/home_hero_section_2.webp"}
-          alt={`${store.name} exterior`}
+          src={photo}
+          alt={imageAlt}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover"

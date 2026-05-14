@@ -40,6 +40,11 @@ const CITY_MAP: Record<string, string> = {
   chandigarh: "chandigarh",
 };
 
+const CANONICAL_HOSTS = new Set([
+  "electricpe.com",
+  "www.electricpe.com",
+]);
+
 function resolveCity(raw: string | undefined): string | null {
   if (!raw) return null;
   const slug = CITY_MAP[raw.toLowerCase()];
@@ -49,6 +54,11 @@ function resolveCity(raw: string | undefined): string | null {
 
 export function middleware(request: NextRequest) {
   const response = NextResponse.next();
+
+  const host = (request.headers.get("host") ?? "").toLowerCase().split(":")[0];
+  if (host && !CANONICAL_HOSTS.has(host)) {
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  }
 
   if (!request.cookies.get("ep_city")) {
     // Vercel attaches geo at request.geo at runtime. In non-Vercel environments

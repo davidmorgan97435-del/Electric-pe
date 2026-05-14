@@ -30,7 +30,7 @@ export async function generateMetadata({
   const c = getCharger(slug);
   if (!c) return {};
   return {
-    title: c.seo.title,
+    title: { absolute: c.seo.title },
     description: c.seo.description,
     alternates: { canonical: `/charger/${slug}` },
   };

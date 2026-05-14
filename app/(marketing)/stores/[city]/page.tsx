@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { StoreCard } from "@/components/locator/store-card";
 import { ProductCard } from "@/components/marketing/product-card";
-import { JsonLd, breadcrumbSchema } from "@/lib/seo/jsonld";
+import { JsonLd, breadcrumbSchema, itemListSchema } from "@/lib/seo/jsonld";
 import { absoluteUrl } from "@/lib/utils/site";
 import { cities, getCity, allCitySlugs } from "@/content/cities";
 import { getStoresByCity } from "@/content/stores";
@@ -29,10 +29,18 @@ export async function generateMetadata({
   const { city } = await params;
   const c = getCity(city);
   if (!c) return {};
+  const title = `Electric Scooter Showroom in ${c.name} — ElectricPe`;
+  const description = `Visit your ElectricPe Mobility Center in ${c.name}, ${c.state}. Test-ride any scooter, no licence required, EMI from ₹1,499/month. ${getStoresByCity(city).length} store${getStoresByCity(city).length === 1 ? "" : "s"}.`;
   return {
-    title: `Electric Scooter Showroom in ${c.name} — ElectricPe`,
-    description: `Visit your ElectricPe Mobility Center in ${c.name}, ${c.state}. Test-ride any scooter, no licence required, EMI from ₹1,499/month. ${getStoresByCity(city).length} store${getStoresByCity(city).length === 1 ? "" : "s"}.`,
+    title: { absolute: title },
+    description,
     alternates: { canonical: `/stores/${city}` },
+    openGraph: {
+      title,
+      description,
+      url: absoluteUrl(`/stores/${city}`),
+      type: "website",
+    },
   };
 }
 
@@ -54,11 +62,19 @@ export default async function CityPage({
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", href: "/" },
-          { name: "Stores", href: "/stores" },
-          { name: c.name, href: `/stores/${city}` },
-        ])}
+        data={[
+          breadcrumbSchema([
+            { name: "Home", href: "/" },
+            { name: "Stores", href: "/stores" },
+            { name: c.name, href: `/stores/${city}` },
+          ]),
+          itemListSchema(
+            cityStores.map((s) => ({
+              name: s.name,
+              url: `/stores/${city}/${s.slug}`,
+            })),
+          ),
+        ]}
       />
 
       <div className="pt-6 pb-2 bg-[var(--color-surface-muted)]">

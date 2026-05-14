@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
 import { PartnershipHero } from "@/components/marketing/partnership-hero";
 
 export const metadata: Metadata = {
-  title: "EV OEM Partnership — Distribute via ElectricPe",
+  title: { absolute: "EV OEM Partnership — Distribute via ElectricPe" },
   description:
     "Scale distribution for your electric scooter brand through ElectricPe's 30+ Mobility Centers. Retail, financing, service — all bundled.",
   alternates: { canonical: "/partnerships/ev-oem" },

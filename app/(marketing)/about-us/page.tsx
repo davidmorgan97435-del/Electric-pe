@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
 import { globals } from "@/content/globals";
 
 export const metadata: Metadata = {
-  title: "About ElectricPe — India's Trusted EV Retail Network",
+  title: { absolute: "About ElectricPe — India's Trusted EV Retail Network" },
   description:
     "We're building the EV retail network India deserves: 30+ real stores, 24-hour service, component-level warranty, and a promise to stay with you after the sale.",
   alternates: { canonical: "/about-us" },

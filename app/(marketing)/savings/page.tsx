@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { SavingsFullCalculator } from "@/components/marketing/savings-full-calculator";
 
 export const metadata: Metadata = {
@@ -15,6 +16,10 @@ export default function SavingsPage() {
     <>
       <section className="pt-16 md:pt-24 pb-10 md:pb-14 bg-[var(--color-surface-muted)]">
         <Container>
+          <Breadcrumb
+            items={[{ label: "Savings Calculator", href: "/savings" }]}
+            className="mb-6"
+          />
           <div className="max-w-3xl">
             <p className="text-eyebrow mb-3">Savings calculator</p>
             <h1 className="text-display-xl">

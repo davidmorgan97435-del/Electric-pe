@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description:
     "Reserve a free test ride at your nearest ElectricPe Mobility Center or request a home drop-off. We'll confirm on WhatsApp within the hour.",
   robots: { index: true, follow: true },
+  alternates: { canonical: "/book-test-ride" },
 };
 
 type SearchParams = { model?: string; city?: string; store?: string };

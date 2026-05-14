@@ -5,44 +5,54 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { StoreCard } from "@/components/locator/store-card";
-import { JsonLd } from "@/lib/seo/jsonld";
-import { absoluteUrl } from "@/lib/utils/site";
+import { JsonLd, itemListSchema, autoDealerSchema } from "@/lib/seo/jsonld";
 import { cities } from "@/content/cities";
 import { stores } from "@/content/stores";
 import { globals } from "@/content/globals";
 
 export const metadata: Metadata = {
-  title: "ElectricPe Mobility Centers — 30+ EV Stores Across India",
+  title: { absolute: "ElectricPe Mobility Centers — 30+ EV Stores Across India" },
   description:
     "Find your nearest ElectricPe Mobility Center. 30+ branded EV stores with test rides, service, and genuine parts — walk in and meet your store executive.",
   alternates: { canonical: "/stores" },
 };
 
 export default function StoresPage() {
-  const storesSchema = stores.map((s) => ({
-    "@context": "https://schema.org",
-    "@type": "AutomotiveBusiness",
-    name: s.name,
-    image: absoluteUrl(s.photos[0] ?? "/img/home_hero_section_2.webp"),
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: s.address,
-      postalCode: s.pincode,
-      addressRegion: s.state,
-      addressCountry: "IN",
-    },
-    geo: { "@type": "GeoCoordinates", latitude: s.lat, longitude: s.lng },
-    telephone: s.phone,
-    url: absoluteUrl(`/stores/${s.cityId}/${s.slug}`),
-  }));
+  const storeSchemas = stores.map((s) =>
+    autoDealerSchema({
+      name: s.name,
+      url: `/stores/${s.cityId}/${s.slug}`,
+      telephone: s.phone,
+      image: s.photos[0] ?? "/img/home_hero_section_2.webp",
+      address: {
+        streetAddress: s.address,
+        addressLocality: s.cityId,
+        addressRegion: s.state,
+        postalCode: s.pincode,
+        addressCountry: "IN",
+      },
+      geo: { latitude: s.lat, longitude: s.lng },
+    }),
+  );
+  const storesList = itemListSchema(
+    stores.map((s) => ({
+      name: s.name,
+      url: `/stores/${s.cityId}/${s.slug}`,
+    })),
+  );
 
   return (
     <>
-      <JsonLd data={storesSchema} />
+      <JsonLd data={[storesList, ...storeSchemas]} />
 
       <section className="relative pt-16 md:pt-24 pb-10 md:pb-14 bg-[var(--color-surface-muted)] overflow-hidden">
         <Container>
+          <Breadcrumb
+            items={[{ label: "Stores", href: "/stores" }]}
+            className="mb-6"
+          />
           <div className="max-w-3xl">
             <p className="text-eyebrow mb-3">Mobility Centers</p>
             <h1 className="text-display-xl">

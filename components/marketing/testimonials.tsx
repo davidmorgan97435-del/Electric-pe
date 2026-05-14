@@ -47,6 +47,41 @@ const BRAND_IMAGE: Record<string, string> = {
   "4all": "/img/4all_brand_banner.webp",
 };
 
+// The known site-wide placeholder file. Any testimonial pointing at it
+// has no real portrait yet — we render an initials avatar instead so
+// we never show the wrong face attached to the wrong name.
+const PLACEHOLDER_PHOTO = "/img/home_hero_section_2.webp";
+
+function getInitials(name: string): string {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w) => w[0] ?? "")
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
+
+function InitialsAvatar({
+  name,
+  className,
+}: {
+  name: string;
+  className?: string;
+}) {
+  return (
+    <div
+      aria-hidden
+      className={cn(
+        "grid h-9 w-9 place-items-center rounded-full bg-white/15 text-white text-[11px] font-semibold ring-1 ring-white/25 backdrop-blur-sm",
+        className,
+      )}
+    >
+      {getInitials(name)}
+    </div>
+  );
+}
+
 function StarRow({ rating }: { rating: number }) {
   const full = Math.floor(rating);
   return (
@@ -99,7 +134,10 @@ export function Testimonials() {
         {featured.map((t, i) => {
           const m = meta(t);
           const image = BRAND_IMAGE[t.brand] ?? t.photo;
+          const hasOwnPortrait = !!t.photo && t.photo !== PLACEHOLDER_PHOTO;
           const fearLabel = FEAR_LABELS[t.fearAddressed];
+          const cityForAlt = m.cityName || "India";
+          const bgAlt = `${t.customerName} — ${m.modelName} owner in ${cityForAlt}, ElectricPe`;
           const isFocused = focusIdx === i;
           const isDimmed = focusIdx !== null && focusIdx !== i;
 
@@ -124,7 +162,7 @@ export function Testimonials() {
                 {/* Background image */}
                 <Image
                   src={image}
-                  alt=""
+                  alt={bgAlt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                   className={cn(
@@ -164,14 +202,27 @@ export function Testimonials() {
                   <blockquote className="text-[13px] md:text-sm leading-snug line-clamp-6">
                     &ldquo;{t.quote}&rdquo;
                   </blockquote>
-                  <p className="mt-3 text-[11px] md:text-xs text-white/80 leading-tight">
-                    <span className="font-semibold text-white">
-                      {t.customerName}
-                    </span>
-                    {m.cityName ? ` · ${m.cityName}` : ""}
-                    <br />
-                    <span className="text-white/65">{m.modelName}</span>
-                  </p>
+                  <div className="mt-3 flex items-center gap-2.5">
+                    {hasOwnPortrait ? (
+                      <Image
+                        src={t.photo}
+                        alt={`${t.customerName}, ElectricPe owner${m.cityName ? ` in ${m.cityName}` : ""}`}
+                        width={36}
+                        height={36}
+                        className="h-9 w-9 rounded-full object-cover ring-1 ring-white/25"
+                      />
+                    ) : (
+                      <InitialsAvatar name={t.customerName} />
+                    )}
+                    <p className="text-[11px] md:text-xs text-white/80 leading-tight">
+                      <span className="font-semibold text-white">
+                        {t.customerName}
+                      </span>
+                      {m.cityName ? ` · ${m.cityName}` : ""}
+                      <br />
+                      <span className="text-white/65">{m.modelName}</span>
+                    </p>
+                  </div>
                 </div>
 
                 {/* Bottom category strip — the Ryze hallmark */}

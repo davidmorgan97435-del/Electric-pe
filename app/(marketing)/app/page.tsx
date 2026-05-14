@@ -24,7 +24,7 @@ import { globals } from "@/content/globals";
 import { getFaqsByCategory } from "@/content/faqs";
 
 export const metadata: Metadata = {
-  title: "ElectricPe App — 25,000+ Charging Stations, One App",
+  title: { absolute: "ElectricPe App — 25,000+ Charging Stations, One App" },
   description:
     "Find, navigate, and pay at 25,000+ EV charging stations across 60+ networks in India. Download the ElectricPe app free. Rated 4.4★ with 200K+ downloads.",
   alternates: { canonical: "/app" },

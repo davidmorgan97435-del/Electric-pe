@@ -36,7 +36,6 @@ const FOOTER_LINKS = {
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact-us" },
     { label: "Partnerships", href: "/partnerships" },
-    { label: "CMS (B2B)", href: "/cms" },
   ],
 };
 

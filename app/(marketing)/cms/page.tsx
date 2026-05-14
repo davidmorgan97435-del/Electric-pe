@@ -18,10 +18,11 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "ElectricPe CMS — OCPP Charger Management Software",
+  title: { absolute: "ElectricPe CMS — OCPP Charger Management Software" },
   description:
     "Manage your EV charging network with ElectricPe CMS. OCPP 1.6J + 2.0.1, pricing, billing, analytics, white-label app. Used by Statiq and more.",
   alternates: { canonical: "/cms" },
+  robots: { index: false, follow: true },
 };
 
 const CAPABILITIES = [

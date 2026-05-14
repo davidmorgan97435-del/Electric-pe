@@ -16,7 +16,7 @@ import { absoluteUrl } from "@/lib/utils/site";
 import type { BrandSlug, Scooter, UseCase } from "@/content/types";
 
 export const metadata: Metadata = {
-  title: "Electric Scooters in India — Xypro, Jett, 4ALL | ElectricPe",
+  title: { absolute: "Electric Scooters in India — Xypro, Jett, 4ALL | ElectricPe" },
   description:
     "Affordable low-speed electric scooters from Xypro, Jett and 4ALL. No licence required, low running cost, component-level warranty, 30+ service centres across India.",
   alternates: { canonical: "/ev" },
