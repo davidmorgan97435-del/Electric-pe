@@ -58,7 +58,7 @@ export function EmiFullCalculator() {
                   key={`${s.brand}-${s.variantSlug}`}
                   value={`${s.brand}-${s.variantSlug}`}
                 >
-                  {s.name} — {formatInr(s.priceOnRoad)}
+                  {s.name} - {formatInr(s.priceOnRoad)}
                 </option>
               ))}
             </select>
@@ -126,7 +126,7 @@ export function EmiFullCalculator() {
             >
               {financePartners.map((p) => (
                 <option key={p.id} value={p.id}>
-                  {p.name} — from {p.minInterestAnnualPct}% p.a.
+                  {p.name}, from {p.minInterestAnnualPct}% p.a.
                 </option>
               ))}
             </select>

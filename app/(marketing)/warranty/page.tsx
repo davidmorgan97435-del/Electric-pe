@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Warranty",
-  description: "ElectricPe's component-level warranty — motor 1 year, controller 1 year, lithium-ion battery 3 years or 10,000 km, charger 1 year. Coverage varies by component.",
+  description: "ElectricPe's component-level warranty: motor 1 year, controller 1 year, lithium-ion battery 3 years or 10,000 km, charger 1 year. Coverage varies by component.",
   alternates: { canonical: "/warranty" },
 };
 
@@ -38,14 +38,14 @@ export default function WarrantyPage() {
             <ul className="list-disc pl-5 space-y-1.5">
               <li><strong>Motor:</strong> 1 year.</li>
               <li><strong>Controller:</strong> 1 year.</li>
-              <li><strong>Lithium-ion battery:</strong> 3 years or 10,000 km — whichever is earlier.</li>
+              <li><strong>Lithium-ion battery:</strong> 3 years or 10,000 km, whichever is earlier.</li>
               <li><strong>Lead-acid battery:</strong> 12 months, pro-rated replacement after 6 months.</li>
               <li><strong>Charger:</strong> 1 year.</li>
             </ul>
 
             <h2 className="text-h2 mt-8">What's not covered</h2>
             <ul className="list-disc pl-5 space-y-1.5">
-              <li>Wear-and-tear items — tyres, brake pads, clutch cables, lights.</li>
+              <li>Wear-and-tear items such as tyres, brake pads, clutch cables, lights.</li>
               <li>Damage from accidents, misuse, or overloading beyond specifications.</li>
               <li>Water ingress from submersion or pressure-washing.</li>
               <li>Unauthorised modifications, including battery swaps from unapproved sources.</li>
@@ -55,7 +55,7 @@ export default function WarrantyPage() {
             <h2 className="text-h2 mt-8">How to claim</h2>
             <ol className="list-decimal pl-5 space-y-1.5">
               <li>WhatsApp your nearest Mobility Center, or walk in.</li>
-              <li>Our technician diagnoses the issue — usually free.</li>
+              <li>Our technician diagnoses the issue, usually free.</li>
               <li>If covered, we replace or repair the part at no cost.</li>
               <li>Turnaround is within 24 hours for in-stock parts; we update you on WhatsApp if longer.</li>
             </ol>

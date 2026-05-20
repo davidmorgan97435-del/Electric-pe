@@ -183,7 +183,7 @@ export default async function ComparePage({
       </div>
 
       <p className="mt-6 text-sm text-[var(--color-text-muted)]">
-        The green dot marks the strongest spec on that row. Spec is a snapshot — the
+        The green dot marks the strongest spec on that row. Spec is a snapshot; the
         right choice depends on how you ride.
       </p>
     </Section>

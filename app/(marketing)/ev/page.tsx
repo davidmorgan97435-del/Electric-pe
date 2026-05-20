@@ -16,7 +16,7 @@ import { absoluteUrl } from "@/lib/utils/site";
 import type { BrandSlug, Scooter, UseCase } from "@/content/types";
 
 export const metadata: Metadata = {
-  title: { absolute: "Electric Scooters in India — Xypro, Jett, 4ALL | ElectricPe" },
+  title: { absolute: "Electric Scooters in India | Xypro, Jett, 4ALL | ElectricPe" },
   description:
     "Affordable low-speed electric scooters from Xypro, Jett and 4ALL. No licence required, low running cost, component-level warranty, 30+ service centres across India.",
   alternates: { canonical: "/ev" },
@@ -31,7 +31,7 @@ function filterScooters(
   sort: string,
 ): Scooter[] {
   let out = list.slice();
-  const validBrands: BrandSlug[] = ["xypro", "jett", "ep", "4all"];
+  const validBrands: BrandSlug[] = ["xypro", "jett", "4all"];
   if (brand && (validBrands as string[]).includes(brand)) {
     out = out.filter((s) => s.brand === brand);
   }
@@ -93,7 +93,7 @@ export default async function EvListingPage({
             Electric scooters for every Indian ride
           </h1>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[var(--color-text-muted)]">
-            Xypro, Jett and 4ALL — affordable, low-speed, no-licence EVs tuned
+            Xypro, Jett and 4ALL: affordable, low-speed, no-licence EVs tuned
             to how Indians actually commute. Backed by a real store network and
             component-level warranty in writing.
           </p>
@@ -104,7 +104,7 @@ export default async function EvListingPage({
             role="note"
           >
             <CheckCircle2 className="h-4 w-4" aria-hidden />
-            Licence not required — every scooter here is speed-limited to 25 km/h
+            Licence not required, every scooter here is speed-limited to 25 km/h
           </div>
         </Container>
       </section>
@@ -169,7 +169,7 @@ export default async function EvListingPage({
               <p className="text-eyebrow mb-3">Need a hand?</p>
               <h2 className="text-h1">Not sure which one fits?</h2>
               <p className="mt-3 text-[var(--color-text-muted)] max-w-xl leading-relaxed">
-                Tell us your daily distance and budget — our product team will
+                Tell us your daily distance and budget, and our product team will
                 recommend the right model and arrange a free test ride.
               </p>
             </div>

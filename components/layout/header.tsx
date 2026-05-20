@@ -27,7 +27,6 @@ const BRANDS = [
     tagline: "Long-range lithium commuter",
   },
   { slug: "jett", name: "Jett", tagline: "Family-first, comfort-first" },
-  { slug: "ep", name: "EP", tagline: "Most affordable daily rider" },
   { slug: "4all", name: "4ALL", tagline: "No-licence, no-hassle EV" },
 ];
 

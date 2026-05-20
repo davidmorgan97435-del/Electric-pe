@@ -15,7 +15,7 @@ export function FeatureHighlights({ scooter }: { scooter: Scooter }) {
       <SectionHeader
         eyebrow="Built for Indian streets"
         title={`Why riders pick the ${scooter.name}`}
-        description="The four things that matter day-to-day — priced, specced, and serviced honestly."
+        description="The four things that matter day-to-day, priced, specced, and serviced honestly."
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {bullets.map((b, i) => {

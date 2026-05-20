@@ -133,42 +133,6 @@ export const BRAND_THEMES: Record<BrandSlug, BrandTheme> = {
     trustChips: ["ARAI-approved", "Made in India", "Low running cost", "No licence required"],
   },
 
-  ep: {
-    slug: "ep",
-    displayName: "EP City+",
-    tagline: "Everyday mobility, made affordable.",
-    cutout: "/img/cutouts/ep_brand_banner-cutout.png",
-    tint: "bg-gradient-to-b from-stone-700 via-stone-800 to-stone-900",
-    onTint: "text-white",
-    positioning:
-      "The most affordable ElectricPe, designed for delivery partners, first-time riders, and anyone who just needs to get there.",
-    storyTitle: "Electric mobility, made simple",
-    storyBody:
-      "EP City+ is our entry point. One variant, one price (₹43,000 on-road), one job: move you across the city at 25 km/h without a licence, without registration, without drama. Lightweight enough to park in narrow lanes, serviceable at every ElectricPe Mobility Centre, and backed by component-level warranty. That's it. That's the pitch.",
-    pillars: [
-      {
-        iconName: "Wallet",
-        title: "₹43,000 on-road",
-        proof:
-          "Lowest sticker price in the ElectricPe catalogue, taxes and road-side delivery included. What you see is what you pay.",
-      },
-      {
-        iconName: "MapPin",
-        title: "Built for Indian cities",
-        proof:
-          "Lightweight (78 kg), narrow footprint, 10-inch wheels. Fits through the lanes and parking squeezes most scooters can't.",
-      },
-      {
-        iconName: "Wrench",
-        title: "Service at any ElectricPe centre",
-        proof:
-          "Part of the same service network as every other ElectricPe scooter: 30+ Mobility Centres, 24-hour SLA, genuine parts on the shelf.",
-      },
-    ],
-    bestFor: ["Delivery partners", "First-time riders", "Tight budgets"],
-    trustChips: ["ARAI-approved", "Made in India", "Low running cost", "No licence required"],
-  },
-
   "4all": {
     slug: "4all",
     displayName: "4ALL",
@@ -206,12 +170,6 @@ export const BRAND_THEMES: Record<BrandSlug, BrandTheme> = {
   },
 };
 
-/**
- * Brand order: drives /ev tiles, navigation, and static-param generation.
- * Per the client feedback (#7) EP City+ is removed from the surfaced catalogue;
- * it stays in `BRAND_THEMES` to keep deep links from 404ing on cached pages but
- * doesn't appear in any new listings or product tiles.
- */
 export const BRAND_ORDER: BrandSlug[] = ["xypro", "jett", "4all"];
 
 export function getBrandTheme(slug: string): BrandTheme | undefined {

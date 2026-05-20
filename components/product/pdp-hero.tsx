@@ -47,7 +47,7 @@ export function PdpHero({ scooter }: { scooter: Scooter }) {
             )}
             <Image
               src={heroImg}
-              alt={`${scooter.name} — ${scooter.tagline}`}
+              alt={`${scooter.name}: ${scooter.tagline}`}
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 55vw"
@@ -139,7 +139,7 @@ export function PdpHero({ scooter }: { scooter: Scooter }) {
               <span className="font-semibold text-[var(--color-text)]">
                 {cityCount}
               </span>{" "}
-              {cityCount === 1 ? "city" : "cities"} — find your nearest
+              {cityCount === 1 ? "city" : "cities"}. Find your nearest
               Mobility Center
             </div>
           </div>

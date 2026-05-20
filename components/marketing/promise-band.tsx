@@ -7,10 +7,10 @@ import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { Reveal } from "@/components/ui/reveal";
 
 /**
- * PromiseBand — on-brief "numbers instead of claims" section.
+ * PromiseBand - on-brief "numbers instead of claims" section.
  *
  * Design brief (fixed from the prior overflow bug):
- *   • Light bg — matches the rest of the homepage's light theme.
+ *   • Light bg - matches the rest of the homepage's light theme.
  *   • Number sizes are *fixed* per breakpoint, NOT fluid beyond a hard
  *     ceiling. 10,000+ fit into a 25% column comfortably at every width.
  *   • Column dividers instead of card chrome.
@@ -45,7 +45,7 @@ const STATS: Stat[] = [
   {
     value: "Varies",
     label: "Warranty",
-    sublabel: "by component — details on inquiry",
+    sublabel: "by component, details on inquiry",
   },
 ];
 
@@ -89,7 +89,7 @@ export function PromiseBand() {
                 className="px-4 md:px-6 py-7 md:py-8 text-center"
               >
                 <dt className="sr-only">
-                  {stat.label} — {stat.value}
+                  {stat.label}: {stat.value}
                 </dt>
                 <dd>
                   <AnimatedCounter

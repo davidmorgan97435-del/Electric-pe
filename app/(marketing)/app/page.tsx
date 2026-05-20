@@ -24,7 +24,7 @@ import { globals } from "@/content/globals";
 import { getFaqsByCategory } from "@/content/faqs";
 
 export const metadata: Metadata = {
-  title: { absolute: "ElectricPe App — 25,000+ Charging Stations, One App" },
+  title: { absolute: "ElectricPe App | 25,000+ Charging Stations, One App" },
   description:
     "Find, navigate, and pay at 25,000+ EV charging stations across 60+ networks in India. Download the ElectricPe app free. Rated 4.4★ with 200K+ downloads.",
   alternates: { canonical: "/app" },
@@ -44,7 +44,7 @@ const FEATURES = [
   {
     icon: Navigation2,
     title: "Turn-by-turn navigation",
-    text: "Open the station in your map of choice — Google, Apple, or in-app.",
+    text: "Open the station in your map of choice: Google, Apple, or in-app.",
   },
   {
     icon: CreditCard,
@@ -54,12 +54,12 @@ const FEATURES = [
   {
     icon: History,
     title: "Charging history",
-    text: "Every kWh, every rupee — automatic log for tax and business use.",
+    text: "Every kWh, every rupee, an automatic log for tax and business use.",
   },
   {
     icon: Users,
     title: "Owner community",
-    text: "80,000+ members by city and model — help, tips, meetups.",
+    text: "80,000+ members by city and model for help, tips, meetups.",
   },
 ];
 
@@ -72,7 +72,7 @@ const HOW = [
 const QUOTES = [
   {
     text: "Finally an app that actually shows live availability. Saved me a 40-minute detour.",
-    name: "Nikhil D., Pune",
+    name: "Nikhil D., Bengaluru",
   },
   {
     text: "One wallet for Tata, Shell, Adani stations. No more topping up five apps.",
@@ -98,7 +98,7 @@ export default function AppPage() {
                 {globals.stats.stationsCount} charging stations in your pocket.
               </h1>
               <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">
-                Find, navigate, and pay at every major EV charging network in India —
+                Find, navigate, and pay at every major EV charging network in India,
                 in one app. Rated {globals.stats.rating} on Play Store and App Store.
               </p>
               <div className="mt-7 flex flex-col sm:flex-row gap-3">

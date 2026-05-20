@@ -14,7 +14,7 @@ export default function NotFound() {
             This page took a wrong turn.
           </h1>
           <p className="mt-4 text-lg text-[var(--color-text-muted)]">
-            The link you followed might be broken — or the page may have moved.
+            The link you followed might be broken, or the page may have moved.
             Here's how to get back on track.
           </p>
 

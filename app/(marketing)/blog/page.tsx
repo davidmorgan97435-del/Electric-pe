@@ -11,14 +11,14 @@ import { absoluteUrl } from "@/lib/utils/site";
 import { blogPosts } from "@/content/blog/posts";
 
 const BLOG_DESCRIPTION =
-  "Explore ElectricPe blog — EV buying guides, low-speed scooter reviews, charging tips, EMI explainers and ownership stories for Indian riders.";
+  "Explore ElectricPe blog: EV buying guides, low-speed scooter reviews, charging tips, EMI explainers and ownership stories for Indian riders.";
 
 export const metadata: Metadata = {
-  title: { absolute: "EV Scoops — EV Guides & Ownership Stories | ElectricPe" },
+  title: { absolute: "EV Scoops | EV Guides & Ownership Stories | ElectricPe" },
   description: BLOG_DESCRIPTION,
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "EV Scoops — EV Guides & Ownership Stories",
+    title: "EV Scoops | EV Guides & Ownership Stories",
     description: BLOG_DESCRIPTION,
     url: absoluteUrl("/blog"),
     type: "website",
@@ -54,7 +54,7 @@ export default function BlogIndex() {
               Guides, ownership stories, and city diaries.
             </h1>
             <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">
-              Written by the ElectricPe team — riders, technicians, founders. No
+              Written by the ElectricPe team: riders, technicians, founders. No
               SEO-bait. Just useful.
             </p>
           </div>

@@ -17,7 +17,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils/cn";
 
 /**
- * HP-02 — Why ElectricPe / Service Promise.
+ * HP-02 - Why ElectricPe / Service Promise.
  *
  * Editorial sticky spread. Desktop (≥lg) runs a 12-col Swiss grid: a
  * sticky left column (5/12) crossfades between the four pillars while a
@@ -41,7 +41,7 @@ const PILLARS: Pillar[] = [
     icon: Store,
     title: "Real Stores, Real People",
     proof:
-      "Walk into any of our 30+ Mobility Centers. No chatbots, no call queues — a trained executive knows your vehicle by name.",
+      "Walk into any of our 30+ Mobility Centers. No chatbots, no call queues. A trained executive knows your vehicle by name.",
     metricEyebrow: "Stores today",
     metric: "30+ Mobility Centers across India.",
     image: "/img/promise/01-stores.png",
@@ -52,7 +52,7 @@ const PILLARS: Pillar[] = [
     icon: Clock,
     title: "Service in 24 Hours",
     proof:
-      "Bring your scooter in — leave with it the same day or next. A commitment we publish, not a promise we bury.",
+      "Bring your scooter in. Leave with it the same day or next. A commitment we publish, not a promise we bury.",
     metricEyebrow: "Published monthly",
     metric: "94% of service requests closed within 24 hours this month.",
     image: "/img/promise/02-service.png",
@@ -63,7 +63,7 @@ const PILLARS: Pillar[] = [
     icon: ShieldCheck,
     title: "Warranty on Battery, Motor & Controller",
     proof:
-      "Each core component has its own warranty window. Walk into any store or call us — we'll share the exact coverage for your scooter in writing.",
+      "Each core component has its own warranty window. Walk into any store or call us. We'll share the exact coverage for your scooter in writing.",
     metricEyebrow: "Coverage scope",
     metric: "Battery · Motor · Controller. Details on inquiry.",
     image: "/img/promise/03-warranty.png",
@@ -87,7 +87,7 @@ const PILLARS: Pillar[] = [
  * Tracks which image is currently in the reader's focal band.
  * rootMargin -45%/-45% collapses the trigger zone to the middle 10% of
  * the viewport, so the sticky text swaps only when an image is actually
- * being read — not on first tickle of entry.
+ * being read - not on first tickle of entry.
  */
 function useActivePillar(count: number) {
   const refs = React.useRef<(HTMLElement | null)[]>([]);
@@ -128,14 +128,14 @@ export function ServicePromise() {
       <Reveal>
         <SectionHeader
           eyebrow="Why ElectricPe"
-          title="Electric scooter service you can walk into — across India."
-          description="Most EV brands sell you a scooter and wish you luck. ElectricPe backs yours with 30+ Mobility Centres, a 24-hour service SLA, and component-level warranty on battery, motor and controller — coverage varies by component, shared in writing."
+          title="Electric scooter service you can walk into, across India."
+          description="Most EV brands sell you a scooter and wish you luck. ElectricPe backs yours with 30+ Mobility Centres, a 24-hour service SLA, and component-level warranty on battery, motor and controller. Coverage varies by component, shared in writing."
         />
       </Reveal>
 
       {/* ───────── Desktop: sticky editorial spread ───────── */}
       <div className="hidden lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
-        {/* Sticky text column — layers stacked via CSS grid so the
+        {/* Sticky text column - layers stacked via CSS grid so the
             container auto-sizes to the tallest pillar. */}
         <aside className="lg:col-span-5">
           <div className="sticky top-28">
@@ -191,7 +191,7 @@ export function ServicePromise() {
               })}
             </ol>
 
-            {/* Progress indicator — editorial, not a slider. */}
+            {/* Progress indicator - editorial, not a slider. */}
             <div
               className="mt-10 flex items-center gap-2"
               aria-hidden
@@ -227,7 +227,7 @@ export function ServicePromise() {
                     sizes="(max-width: 1024px) 100vw, 55vw"
                     className="object-cover"
                   />
-                  {/* Corner marker — a rule, not a card */}
+                  {/* Corner marker - a rule, not a card */}
                   <figcaption className="absolute left-5 top-5 inline-flex items-center gap-2.5 rounded-full bg-black/55 backdrop-blur-sm px-3.5 py-1.5 text-[11px] uppercase tracking-[0.22em] text-white">
                     <span className="tabular-nums font-semibold">
                       {String(i + 1).padStart(2, "0")}
@@ -315,7 +315,7 @@ export function ServicePromise() {
         })}
       </ol>
 
-      {/* ───────── Footer row — CTA + certification ───────── */}
+      {/* ───────── Footer row - CTA + certification ───────── */}
       <Reveal delay={80}>
         <div className="mt-20 md:mt-24 pt-10 border-t border-[var(--color-border)]">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">

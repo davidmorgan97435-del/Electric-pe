@@ -1,8 +1,8 @@
-# ElectricPe — 90-Day Execution Plan
+# ElectricPe: 90-Day Execution Plan
 
 > **Weekly cadence · Daily tasks · Owner mapped**
 
-**Quarter window:** Mon 18 May 2026 — Fri 7 Aug 2026 · 12 working weeks · 60 working days · 6 workstreams
+**Quarter window:** Mon 18 May 2026 to Fri 7 Aug 2026 · 12 working weeks · 60 working days · 6 workstreams
 
 *Document version 1.0 · Prepared from the client's 1-page strategy brief*
 
@@ -13,15 +13,15 @@
 This document operationalises the client's 1-page 90-day strategy into a week-by-week and day-by-day execution plan. It is meant to be read by anyone joining the project mid-flight; every section names the owner, the deliverable, and the inputs required to start.
 
 ### The mission, restated
-Win Google AI Overviews, dominate long-tail commercial search across India's EV charging landscape, and convert the resulting traffic — backed by founder-led trust signals and a programmatic content moat.
+Win Google AI Overviews, dominate long-tail commercial search across India's EV charging landscape, and convert the resulting traffic, backed by founder-led trust signals and a programmatic content moat.
 
 ### The shape of the quarter
-- **Month 1 — Foundation & Audit.** Baselines, dashboards, the grid, the briefs.
-- **Month 2 — Build & Activate.** Programmatic Wave 1, pillar content, GEO hubs, social relaunch, first A/B test.
-- **Month 3 — Scale & Optimise.** Push to 80 pages, internal-link refinement, AIO + llms.txt, two more A/B tests, off-platform credibility (Reddit), end-of-quarter review.
+- **Month 1: Foundation & Audit.** Baselines, dashboards, the grid, the briefs.
+- **Month 2: Build & Activate.** Programmatic Wave 1, pillar content, GEO hubs, social relaunch, first A/B test.
+- **Month 3: Scale & Optimise.** Push to 80 pages, internal-link refinement, AIO + llms.txt, two more A/B tests, off-platform credibility (Reddit), end-of-quarter review.
 
 ### Assumptions (open items for Week 1 kickoff)
-- Working days are Mon–Fri. 12 weeks × 5 = 60 working days. Public holidays not yet stripped — to be confirmed Week 1.
+- Working days are Mon–Fri. 12 weeks × 5 = 60 working days. Public holidays not yet stripped, to be confirmed Week 1.
 - Roles named in the daily tables are functional, not headcount. One person may carry two functions; in that case, the daily load needs re-scoping at kickoff.
 - The "six workstreams" referenced in the client brief have been inferred (the brief lists only the four pillars). Section 4 names the six and the inference logic.
 - Public-holiday list, exact start date, and team headcount are open items for the Week 1 kickoff agenda.
@@ -52,7 +52,7 @@ The pillars define HOW we work, not WHAT we deliver. They sit underneath every w
 
 ## 4. The Six Workstreams
 
-The client brief mentions "six workstreams" without naming them. Below is the inferred breakdown — each workstream maps cleanly to one or more weekly milestones, and the daily tables in Section 6 tag every task to one of these six. If the manager wants a different split, this is the place to redline before Week 1.
+The client brief mentions "six workstreams" without naming them. Below is the inferred breakdown: each workstream maps cleanly to one or more weekly milestones, and the daily tables in Section 6 tag every task to one of these six. If the manager wants a different split, this is the place to redline before Week 1.
 
 | ID | Workstream | Scope | Primary owner |
 |---|---|---|---|
@@ -229,7 +229,7 @@ Each of the 12 weeks below has a theme line, a daily-task table (Mon–Fri), end
 #### Inputs required to start the week
 - Approved Wave 1 priority list (from W2)
 - Content writer onboarded + briefed
-- Original photography (5 hero shots — see W6/W7 risk note)
+- Original photography (5 hero shots, see W6/W7 risk note)
 
 ---
 
@@ -244,10 +244,10 @@ Each of the 12 weeks below has a theme line, a daily-task table (Mon–Fri), end
 | Day | Owner | Task | Deliverable |
 |---|---|---|---|
 | **Mon** Jun 22 | Content / SEO | Content briefs for pages 6–20. Writer queue staged. | 15 content briefs |
-| **Tue** Jun 23 | Content | Writer drafts pages 6–12. Pillar Article #1 outline approved ('Best No-Licence Electric Scooters Under ₹50,000 in India 2026' — comparison + buyers guide). | 7 drafts + Pillar #1 outline |
+| **Tue** Jun 23 | Content | Writer drafts pages 6–12. Pillar Article #1 outline approved ('Best No-Licence Electric Scooters Under ₹50,000 in India 2026', comparison + buyers guide). | 7 drafts + Pillar #1 outline |
 | **Wed** Jun 24 | Dev / SEO | Pages 6–12 published. Pillar Article #1 drafted by content; editor review begins. | 7 pages live + Pillar #1 draft |
 | **Thu** Jun 25 | Content / Designer | Pages 13–20 drafted + published. Original photography session #1: founder + scooter, store interior, charging session, real-owner portraits. | 8 pages live + photo set 1 |
-| **Fri** Jun 26 | PM / Lead | Pillar Article #1 published with hero photo + original quotes. Pillar Article #2 outline. Friday review — milestone: 20 programmatic pages live. | Pillar #1 live + Milestone hit |
+| **Fri** Jun 26 | PM / Lead | Pillar Article #1 published with hero photo + original quotes. Pillar Article #2 outline. Friday review. Milestone: 20 programmatic pages live. | Pillar #1 live + Milestone hit |
 
 #### End-of-week deliverables
 - 20 programmatic pages live
@@ -272,8 +272,8 @@ Each of the 12 weeks below has a theme line, a daily-task table (Mon–Fri), end
 | Day | Owner | Task | Deliverable |
 |---|---|---|---|
 | **Mon** Jun 29 | Content | Pillar Article #2 published ('How Long Does an Electric Scooter Take to Charge? Real-world tests across 4 chargers'). Pillar #3 outline. | Pillar #2 live + Pillar #3 outline |
-| **Tue** Jun 30 | Dev / Content | GEO City Hub #1 — Bengaluru. Pillar landing page + spoke pages linking 8–12 local charger-station entries. Schema: Place + LocalBusiness. | Bengaluru hub live |
-| **Wed** Jul 01 | Dev / Content / Founder | GEO City Hub #2 — Hyderabad (same pattern). Founder LinkedIn relaunch begins: post #1 + #2 (one industry POV + one founder-story format). | Hyderabad hub + 2 LinkedIn posts |
+| **Tue** Jun 30 | Dev / Content | GEO City Hub #1: Bengaluru. Pillar landing page + spoke pages linking 8–12 local charger-station entries. Schema: Place + LocalBusiness. | Bengaluru hub live |
+| **Wed** Jul 01 | Dev / Content / Founder | GEO City Hub #2: Hyderabad (same pattern). Founder LinkedIn relaunch begins: post #1 + #2 (one industry POV + one founder-story format). | Hyderabad hub + 2 LinkedIn posts |
 | **Thu** Jul 02 | Content / Designer | Brand social relaunch across IG, X (Twitter), YouTube Shorts, LinkedIn company. 2 posts per channel this week (cross-posted variants from photo set #1). | 8 brand-social posts live |
 | **Fri** Jul 03 | PM / Lead | Pillar Article #3 outline finalised. Friday review. Fortnightly Report #2. | Fortnightly Report #2 |
 
@@ -300,9 +300,9 @@ Each of the 12 weeks below has a theme line, a daily-task table (Mon–Fri), end
 
 | Day | Owner | Task | Deliverable |
 |---|---|---|---|
-| **Mon** Jul 06 | Content / Dev | Pillar Article #3 published. CRO Experiment 1 hypothesis approved (top-of-funnel — likely hero CTA copy or trust-strip variant on /). | Pillar #3 live + Experiment 1 brief |
+| **Mon** Jul 06 | Content / Dev | Pillar Article #3 published. CRO Experiment 1 hypothesis approved (top-of-funnel, likely hero CTA copy or trust-strip variant on /). | Pillar #3 live + Experiment 1 brief |
 | **Tue** Jul 07 | Dev | CRO Experiment 1 implementation: A/B framework (GrowthBook or Vercel Edge config). Two variants, 50/50 traffic split, primary metric = test-ride booking start. | Experiment 1 in staging |
-| **Wed** Jul 08 | Content / Dev | Pillar Article #4 published ('Electric Scooter Service in India — what 3-year warranties actually cover'). GEO Hub #3 — Chennai live. | Pillar #4 + Chennai hub live |
+| **Wed** Jul 08 | Content / Dev | Pillar Article #4 published ('Electric Scooter Service in India: what 3-year warranties actually cover'). GEO Hub #3: Chennai live. | Pillar #4 + Chennai hub live |
 | **Thu** Jul 09 | Dev / Analytics | CRO Experiment 1 live in production. Daily monitoring. Ensure GA4 event capture + stats dashboard reads correctly. | Experiment 1 live |
 | **Fri** Jul 10 | PM / Lead | MONTH 2 END-OF-MONTH REVIEW. Pillar #5 + #6 outlines drafted for Month 3. Founder + brand social retro (which posts performed). Approve Wave 2 page priorities. | Month 2 review deck |
 
@@ -334,7 +334,7 @@ Each of the 12 weeks below has a theme line, a daily-task table (Mon–Fri), end
 | **Mon** Jul 13 | Content / SEO | Content briefs for pages 21–40 (Wave 2 priority cells). | 20 briefs |
 | **Tue** Jul 14 | Dev / SEO | Publish /llms.txt at site root. Audit top 20 pages for 'answer-first' opening pattern; rewrite the first paragraph to lead with a 1–2 sentence answer where missing. | llms.txt live + 20 lede rewrites |
 | **Wed** Jul 15 | Content | Pages 21–30 drafted + published. Editor pass on lede rewrites continuing. | 10 pages live |
-| **Thu** Jul 16 | Content / SEO | Pillar Article #5 published ('How much does it really cost to own an electric scooter in India over 3 years?' — original cost calculator + tables). | Pillar #5 live |
+| **Thu** Jul 16 | Content / SEO | Pillar Article #5 published ('How much does it really cost to own an electric scooter in India over 3 years?', original cost calculator + tables). | Pillar #5 live |
 | **Fri** Jul 17 | PM / Lead | Pages 31–40 drafted + published. Friday review. Indexed long-tail count from GSC. | 40 pages cumulative |
 
 #### End-of-week deliverables
@@ -361,7 +361,7 @@ Each of the 12 weeks below has a theme line, a daily-task table (Mon–Fri), end
 |---|---|---|---|
 | **Mon** Jul 20 | SEO / Dev | Internal-link audit (Screaming Frog rerun). Map every pillar to its supporting programmatic spokes. Identify orphan pages + pillars under-linked to. | Link-graph audit + orphan list |
 | **Tue** Jul 21 | Content / SEO | Add 50+ contextual internal links: pillar → programmatic, programmatic → product, blog → pillar. Topic-cluster tagging across all pillar + hub pages. | 50+ new internal links live |
-| **Wed** Jul 22 | Dev / Analytics | CRO Experiment 2 implementation (mid-funnel — likely PDP variant: price-saving messaging vs feature messaging on /ev/[brand]). | Experiment 2 in staging |
+| **Wed** Jul 22 | Dev / Analytics | CRO Experiment 2 implementation (mid-funnel, likely PDP variant: price-saving messaging vs feature messaging on /ev/[brand]). | Experiment 2 in staging |
 | **Thu** Jul 23 | Content / Dev | Pillar Article #6 published ('Buying an electric scooter in India: every question first-time buyers ask, answered'). Pages 41–50 published. | Pillar #6 + 10 pages live |
 | **Fri** Jul 24 | Dev / PM | CRO Experiment 2 live in production. Friday review. Fortnightly Report #4. | Experiment 2 live + Fortnightly Report #4 |
 
@@ -389,8 +389,8 @@ Each of the 12 weeks below has a theme line, a daily-task table (Mon–Fri), end
 | Day | Owner | Task | Deliverable |
 |---|---|---|---|
 | **Mon** Jul 27 | Content / Founder | Reddit strategy: identify target subs (r/india, r/IndiaSpeaks, r/CarsIndia, r/Electric_Vehicles, r/india_tourism, r/IndianMotorcycles). Subscribe, observe norms, plan founder AMA approach. | Reddit playbook + AMA pitch |
-| **Tue** Jul 28 | Content | Pages 51–60 published. First 2 Reddit foundation posts (helpful comments + 1 long-form post in r/Electric_Vehicles — value-first, not promotional). | 60 cumulative + Reddit seeded |
-| **Wed** Jul 29 | Dev | CRO Experiment 3 implementation (bottom-funnel — likely test-ride booking form: field reduction vs urgency cue). | Experiment 3 in staging |
+| **Tue** Jul 28 | Content | Pages 51–60 published. First 2 Reddit foundation posts (helpful comments + 1 long-form post in r/Electric_Vehicles, value-first, not promotional). | 60 cumulative + Reddit seeded |
+| **Wed** Jul 29 | Dev | CRO Experiment 3 implementation (bottom-funnel, likely test-ride booking form: field reduction vs urgency cue). | Experiment 3 in staging |
 | **Thu** Jul 30 | Content / Founder | Pages 61–70 published. Reddit AMA confirmed + scheduled (next week). Founder primes LinkedIn audience. | 70 cumulative + AMA scheduled |
 | **Fri** Jul 31 | Dev / PM | CRO Experiment 3 live. Friday review. | Experiment 3 live |
 
@@ -448,7 +448,7 @@ Each of the 12 weeks below has a theme line, a daily-task table (Mon–Fri), end
 
 ### Monthly
 - End-of-month review with client. Decks: progress vs targets, deliverables shipped, next-month focus.
-- Held Friday of Week 4 (Jun 12), Week 8 (Jul 10), Week 12 (Aug 7 — end-of-quarter).
+- Held Friday of Week 4 (Jun 12), Week 8 (Jul 10), Week 12 (Aug 7, end-of-quarter).
 
 ### End-of-quarter (Week 12)
 - Full scorecard against 90-day targets.
@@ -462,14 +462,14 @@ These are the non-negotiable dependencies the plan needs from the client / manag
 
 | Input | Source | Needed by | Owner |
 |---|---|---|---|
-| Semrush — Domain Overview for electricpe.com (traffic, top KWs, top pages, backlinks) | Semrush | Week 1, Day 4 | Client / PM |
-| Semrush — Position Tracking export for top 200 target keywords | Semrush | Week 1, Day 4 | Client / PM |
-| Semrush — Keyword Magic Tool exports (5 seed clusters) | Semrush | Week 2, Day 3 | SEO Lead |
-| Semrush — Domain vs Domain (electricpe vs Ola vs Ather) | Semrush | Week 2, Day 4 | SEO Lead |
-| Semrush — Backlink Analytics (electricpe + 2 competitors) | Semrush | Week 9 (only if off-site add-on is greenlit) | SEO Lead |
-| Google Search Console — 90-day Performance + Coverage export | GSC | Week 1, Day 4 | Client (verified access) |
-| GA4 — last 90 days Acquisition + Conversion + Funnel data | GA4 | Week 1, Day 4 | Client (reader access) |
-| Microsoft Clarity — install permission + workspace | Clarity | Week 3, Day 2 | Client (1-line script) |
+| Semrush: Domain Overview for electricpe.com (traffic, top KWs, top pages, backlinks) | Semrush | Week 1, Day 4 | Client / PM |
+| Semrush: Position Tracking export for top 200 target keywords | Semrush | Week 1, Day 4 | Client / PM |
+| Semrush: Keyword Magic Tool exports (5 seed clusters) | Semrush | Week 2, Day 3 | SEO Lead |
+| Semrush: Domain vs Domain (electricpe vs Ola vs Ather) | Semrush | Week 2, Day 4 | SEO Lead |
+| Semrush: Backlink Analytics (electricpe + 2 competitors) | Semrush | Week 9 (only if off-site add-on is greenlit) | SEO Lead |
+| Google Search Console: 90-day Performance + Coverage export | GSC | Week 1, Day 4 | Client (verified access) |
+| GA4: last 90 days Acquisition + Conversion + Funnel data | GA4 | Week 1, Day 4 | Client (reader access) |
+| Microsoft Clarity: install permission + workspace | Clarity | Week 3, Day 2 | Client (1-line script) |
 | Existing sitemap.xml + robots.txt of electricpe.com | Site | Week 1, Day 2 | Dev |
 | Public-holiday calendar for India (2026 H2) | HR / Manager | Week 1, Day 1 | Manager |
 | Confirmed list of 30 priority cities for GEO grid | Manager / Founder | Week 2, Day 2 | PM |
@@ -497,20 +497,20 @@ Eight risks ranked by likelihood × impact. Each has a pre-agreed mitigation; th
 
 Short definitions for the terms used throughout this document. Aimed at someone outside the SEO/CRO world.
 
-- **AIO** — AI Overview. The synthesised answer Google shows at the top of certain SERPs, citing 3–5 source URLs.
-- **AEO** — Answer Engine Optimisation. Optimising content so AI answer engines (AIO, Perplexity, ChatGPT, Gemini) cite it.
-- **GEO** — Generative Engine Optimisation. Same intent as AEO, often used interchangeably; can also mean geographic SEO depending on context.
-- **CRO** — Conversion Rate Optimisation. Disciplined experimentation on the funnel to lift conversion.
-- **llms.txt** — A plain-text file at site root that gives LLM crawlers a curated map of the highest-value content.
-- **Programmatic content** — Templated pages generated from a data grid (e.g. City × Charger × Use-case) — high volume, long-tail SEO.
-- **Pillar article** — A long-form authoritative article that anchors a topic cluster and earns links + AIO citations.
-- **GEO city hub** — A landing page for one city + spoke pages for local sub-topics, used to dominate '[topic] in [city]' queries.
-- **Topic cluster** — A pillar page + supporting pages tightly internal-linked around one core entity.
-- **Hub-and-spoke** — Internal-link architecture where the pillar is the hub and supporting pages are spokes.
-- **Schema (JSON-LD)** — Structured-data markup that tells search engines what an entity on the page is (Product, FAQ, Article, etc.).
-- **Core Web Vitals** — Google's user-experience metrics (LCP, CLS, INP). Pass for rank protection.
-- **GSC** — Google Search Console. Free, authoritative search-performance data.
-- **GA4** — Google Analytics 4. Traffic + conversion measurement.
-- **Heatmap** — Visualisation of where users click, move, or rage-click on a page (Microsoft Clarity or Hotjar).
-- **A/B test** — Controlled experiment with two variants; statistical winner determines what ships.
-- **RACI** — Responsible / Accountable / Consulted / Informed — role-mapping framework for tasks.
+- **AIO**: AI Overview. The synthesised answer Google shows at the top of certain SERPs, citing 3–5 source URLs.
+- **AEO**: Answer Engine Optimisation. Optimising content so AI answer engines (AIO, Perplexity, ChatGPT, Gemini) cite it.
+- **GEO**: Generative Engine Optimisation. Same intent as AEO, often used interchangeably; can also mean geographic SEO depending on context.
+- **CRO**: Conversion Rate Optimisation. Disciplined experimentation on the funnel to lift conversion.
+- **llms.txt**: A plain-text file at site root that gives LLM crawlers a curated map of the highest-value content.
+- **Programmatic content**: Templated pages generated from a data grid (e.g. City × Charger × Use-case): high volume, long-tail SEO.
+- **Pillar article**: A long-form authoritative article that anchors a topic cluster and earns links + AIO citations.
+- **GEO city hub**: A landing page for one city + spoke pages for local sub-topics, used to dominate '[topic] in [city]' queries.
+- **Topic cluster**: A pillar page + supporting pages tightly internal-linked around one core entity.
+- **Hub-and-spoke**: Internal-link architecture where the pillar is the hub and supporting pages are spokes.
+- **Schema (JSON-LD)**: Structured-data markup that tells search engines what an entity on the page is (Product, FAQ, Article, etc.).
+- **Core Web Vitals**: Google's user-experience metrics (LCP, CLS, INP). Pass for rank protection.
+- **GSC**: Google Search Console. Free, authoritative search-performance data.
+- **GA4**: Google Analytics 4. Traffic + conversion measurement.
+- **Heatmap**: Visualisation of where users click, move, or rage-click on a page (Microsoft Clarity or Hotjar).
+- **A/B test**: Controlled experiment with two variants; statistical winner determines what ships.
+- **RACI**: Responsible / Accountable / Consulted / Informed: role-mapping framework for tasks.

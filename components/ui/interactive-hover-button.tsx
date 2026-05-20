@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * InteractiveHoverButton — website-factory component.
+ * InteractiveHoverButton - website-factory component.
  * Brand-dot expands to fill the button on hover while the label
  * slides out and is replaced by a mirrored label + arrow. Delightful
  * but subtle, not flashy.

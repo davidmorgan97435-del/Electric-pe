@@ -14,7 +14,7 @@ import {
  * AnimatedCounter
  *
  * Renders the supplied `value` string verbatim into the server-rendered
- * HTML so crawlers (and users with JS disabled) see the real number —
+ * HTML so crawlers (and users with JS disabled) see the real number -
  * never "0". After hydration, if the user scrolls the element into view
  * and motion is allowed, a brief count-up animation overlays the final
  * value as a visual flourish; the count-up never overwrites SSR text on
@@ -96,7 +96,7 @@ export function AnimatedCounter({ value, className, duration = 1.4 }: Props) {
   }
 
   // SSR / pre-hydration: render the real, final value verbatim so the
-  // HTML payload contains "10,000+", "30+", "200,000+" — never "0+".
+  // HTML payload contains "10,000+", "30+", "200,000+" - never "0+".
   if (!hydrated) {
     return (
       <span ref={ref} className={className}>

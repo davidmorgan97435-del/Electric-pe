@@ -9,7 +9,7 @@ import { Testimonials } from "@/components/marketing/testimonials";
 import { FinalCta } from "@/components/marketing/final-cta";
 
 /**
- * Homepage — final composition after client feedback round 2.
+ * Homepage - final composition after client feedback round 2.
  *
  * Removed: GreenerTomorrow sustainability band (#8), FinanceStrip EMI strip
  * (#11). Reordered: VsPetrol now sits immediately under SavingsCalculator
@@ -17,7 +17,7 @@ import { FinalCta } from "@/components/marketing/final-cta";
  */
 
 export const metadata: Metadata = {
-  title: { absolute: "ElectricPe — Affordable Electric Scooters | India" },
+  title: { absolute: "ElectricPe | Affordable Electric Scooters | India" },
   description:
     "Reliable, easy-to-ride EV scooters with trusted service and stores near you. No licence required, low running cost. Book a free test ride today.",
   alternates: { canonical: "/" },
@@ -32,13 +32,13 @@ export default function HomePage() {
       {/* HP-02 Service Promise */}
       <ServicePromise />
 
-      {/* HP-03 Product Showcase — 2 featured brands (Xypro, Jett) */}
+      {/* HP-03 Product Showcase - 2 featured brands (Xypro, Jett) */}
       <ProductShowcase />
 
       {/* HP-04 Savings Calculator */}
       <SavingsCalculatorHome />
 
-      {/* HP-05 vs Petrol — sits right under the savings calc per feedback #9 */}
+      {/* HP-05 vs Petrol - sits right under the savings calc per feedback #9 */}
       <VsPetrol />
 
       {/* HP-06 Store Presence */}

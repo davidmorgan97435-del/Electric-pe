@@ -18,10 +18,10 @@ import { buildWhatsAppLink, WHATSAPP_DEFAULTS } from "@/lib/utils/whatsapp";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 /**
- * HP-09 — Final CTA strip.
+ * HP-09 - Final CTA strip.
  *
  * Spec says: headline + three action buttons. No extra text. Earlier
- * build wrapped each action in its own nested glass card — repeating
+ * build wrapped each action in its own nested glass card - repeating
  * the card treatment already used heavily above the fold.
  *
  * This rewrite ships the three actions as inline rows separated by
@@ -39,7 +39,7 @@ export function FinalCta() {
       aria-labelledby="final-cta-heading"
       className="relative bg-gradient-brand text-white overflow-hidden"
     >
-      {/* Floating ambient orbs — slow drift, decorative only. */}
+      {/* Floating ambient orbs - slow drift, decorative only. */}
       {!reduced && (
         <>
           <motion.div
@@ -152,7 +152,7 @@ function ActionRow({
   href: string;
   external?: boolean;
   /** When true, the row's contents drift toward the cursor while hovered.
-      Used on the primary CTA only — overusing this on every row would be
+      Used on the primary CTA only - overusing this on every row would be
       noisy. */
   magnetic?: boolean;
 }) {

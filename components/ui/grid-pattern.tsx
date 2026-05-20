@@ -1,5 +1,5 @@
 /**
- * GridPattern — website-factory component.
+ * GridPattern - website-factory component.
  * SVG grid pattern with a soft radial mask. Drop behind hero or
  * section content for subtle depth.
  */

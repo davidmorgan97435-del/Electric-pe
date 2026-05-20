@@ -14,7 +14,7 @@ import { scooters } from "@/content/scooters";
 import type { Testimonial, FearTag } from "@/content/types";
 
 /**
- * HP-06 — Testimonials.
+ * HP-06 - Testimonials.
  *
  * Ryze-style vertical portrait gallery:
  *   • 5 tall portrait cards in a row (1 on mobile, 2 on tablet, 5 on desktop).
@@ -22,7 +22,7 @@ import type { Testimonial, FearTag } from "@/content/types";
  *     gradient for legibility, and a dark UPPERCASE "category strip" at the
  *     absolute bottom naming the fear the rider resolved.
  *   • Focus-cards interaction: hovering one card keeps it sharp while the
- *     others blur and dim slightly — draws attention to the active quote.
+ *     others blur and dim slightly - draws attention to the active quote.
  *
  * Keeps the client brief intact: "real names, real cities, real fears
  * addressed." Every category matches the PDF's list of buyer fears.
@@ -37,18 +37,16 @@ const FEAR_LABELS: Record<FearTag, string> = {
   emi: "EMI experience",
 };
 
-// Map each rider to a visual — use the brand banner so each card gets its
-// own distinct colourway (pink-sky Xypro, crimson Jett, light-bg 4ALL, etc.)
-// rather than reusing the same placeholder photo.
+// Map each rider to a visual - use the brand banner so each card gets its
+// own distinct colourway rather than reusing the same placeholder photo.
 const BRAND_IMAGE: Record<string, string> = {
   xypro: "/img/xypro_brand_banner.webp",
   jett: "/img/jett_brand_banner.webp",
-  ep: "/img/ep_brand_banner.webp",
   "4all": "/img/4all_brand_banner.webp",
 };
 
 // The known site-wide placeholder file. Any testimonial pointing at it
-// has no real portrait yet — we render an initials avatar instead so
+// has no real portrait yet - we render an initials avatar instead so
 // we never show the wrong face attached to the wrong name.
 const PLACEHOLDER_PHOTO = "/img/home_hero_section_2.webp";
 
@@ -123,7 +121,7 @@ export function Testimonials() {
         <SectionHeader
           eyebrow="Real riders"
           title="See what real riders say about your biggest worries."
-          description="Each card below addresses a different fear — battery, service, speed, repair, brand trust, EMI. Real names. Real cities. Real decisions."
+          description="Each card below addresses a different fear: battery, service, speed, repair, brand trust, EMI. Real names. Real cities. Real decisions."
         />
       </Reveal>
 
@@ -137,7 +135,7 @@ export function Testimonials() {
           const hasOwnPortrait = !!t.photo && t.photo !== PLACEHOLDER_PHOTO;
           const fearLabel = FEAR_LABELS[t.fearAddressed];
           const cityForAlt = m.cityName || "India";
-          const bgAlt = `${t.customerName} — ${m.modelName} owner in ${cityForAlt}, ElectricPe`;
+          const bgAlt = `${t.customerName}, ${m.modelName} owner in ${cityForAlt}, ElectricPe`;
           const isFocused = focusIdx === i;
           const isDimmed = focusIdx !== null && focusIdx !== i;
 
@@ -197,7 +195,7 @@ export function Testimonials() {
                   )}
                 </div>
 
-                {/* Quote + name block — sits above the category strip */}
+                {/* Quote + name block - sits above the category strip */}
                 <div className="absolute inset-x-0 bottom-12 md:bottom-14 px-4 md:px-5 z-10 text-white">
                   <blockquote className="text-[13px] md:text-sm leading-snug line-clamp-6">
                     &ldquo;{t.quote}&rdquo;
@@ -225,7 +223,7 @@ export function Testimonials() {
                   </div>
                 </div>
 
-                {/* Bottom category strip — the Ryze hallmark */}
+                {/* Bottom category strip - the Ryze hallmark */}
                 <div className="absolute inset-x-0 bottom-0 bg-black/85 backdrop-blur-sm py-2.5 md:py-3 px-3 text-center z-20 border-t border-white/8">
                   <p className="text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 leading-none">
                     {fearLabel}

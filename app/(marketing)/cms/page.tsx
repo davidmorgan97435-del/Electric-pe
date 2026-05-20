@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: { absolute: "ElectricPe CMS — OCPP Charger Management Software" },
+  title: { absolute: "ElectricPe CMS | OCPP Charger Management Software" },
   description:
     "Manage your EV charging network with ElectricPe CMS. OCPP 1.6J + 2.0.1, pricing, billing, analytics, white-label app. Used by Statiq and more.",
   alternates: { canonical: "/cms" },
@@ -31,7 +31,7 @@ const CAPABILITIES = [
   { icon: Users, title: "RFID & user mgmt", text: "Cards, tokens, mobile numbers. Fleet accounts with limits." },
   { icon: Radio, title: "OCPP 1.6J + 2.0.1", text: "Standard compliant. Works with every major hardware vendor." },
   { icon: Receipt, title: "Billing & settlement", text: "Automated invoices, tax filings, payout to operators." },
-  { icon: BarChart3, title: "Analytics", text: "Utilization, revenue, peak hours — daily, weekly, monthly." },
+  { icon: BarChart3, title: "Analytics", text: "Utilization, revenue, peak hours, daily, weekly, monthly." },
   { icon: Globe, title: "Roaming", text: "Cross-network access via OCPI. One user, many CPOs." },
   { icon: Smartphone, title: "White-label app", text: "Your brand, our infrastructure. Android + iOS ready." },
 ];
@@ -183,7 +183,7 @@ export default function CmsPage() {
           />
           <h2 className="text-h2 mb-2">Security & compliance</h2>
           <ul className="space-y-2 text-sm text-[var(--color-text-muted)]">
-            <li>ISO 27001 in progress — targeted Q3 2026</li>
+            <li>ISO 27001 in progress, targeted Q3 2026</li>
             <li>Data residency in India (AWS Mumbai primary, DR in Hyderabad)</li>
             <li>OCPI 2.2.1 for roaming interoperability</li>
             <li>Signed webhook payloads and mTLS for station backhaul</li>
@@ -195,7 +195,7 @@ export default function CmsPage() {
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-display-lg text-white">Request a live demo.</h2>
           <p className="mt-3 text-white/90">
-            We'll walk you through a real network dashboard — yours if you choose to
+            We'll walk you through a real network dashboard, yours if you choose to
             go with us.
           </p>
           <Button

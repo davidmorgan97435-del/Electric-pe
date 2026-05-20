@@ -8,9 +8,9 @@ import { Card } from "@/components/ui/card";
 import { PartnershipHero } from "@/components/marketing/partnership-hero";
 
 export const metadata: Metadata = {
-  title: "Partnerships — Grow with India's EV Retail Network",
+  title: "Partnerships | Grow with India's EV Retail Network",
   description:
-    "Partner with ElectricPe — EV OEMs, charger manufacturers, CPOs, and CMS adopters. Tap into 30+ Mobility Centers and 25,000+ charging stations.",
+    "Partner with ElectricPe: EV OEMs, charger manufacturers, CPOs, and CMS adopters. Tap into 30+ Mobility Centers and 25,000+ charging stations.",
   alternates: { canonical: "/partnerships" },
 };
 
@@ -36,7 +36,7 @@ const TRACKS = [
   {
     icon: Cog,
     title: "CMS",
-    text: "Our OCPP 1.6J + 2.0.1 charger-management software — white-labelable.",
+    text: "Our OCPP 1.6J + 2.0.1 charger-management software, white-labelable.",
     href: "/cms",
   },
 ];
@@ -54,7 +54,7 @@ export default function PartnershipsPage() {
       <PartnershipHero
         eyebrow="Partnerships"
         title="Grow with India's EV retail network."
-        description="Whether you're an OEM, charger maker, CPO, or fleet operator — ElectricPe's service-first retail network is built for long-term partnerships."
+        description="Whether you're an OEM, charger maker, CPO, or fleet operator, ElectricPe's service-first retail network is built for long-term partnerships."
       />
 
       <Section>

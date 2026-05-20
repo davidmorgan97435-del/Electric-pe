@@ -182,7 +182,7 @@ export function SavingsFullCalculator() {
           <Stat label="5-year" value={formatInr(result.fiveYearSavingsInr)} />
           <Stat
             label="Payback"
-            value={result.paybackMonths ? `${result.paybackMonths} mo` : "—"}
+            value={result.paybackMonths ? `${result.paybackMonths} mo` : "-"}
           />
           <Stat
             label="CO₂ saved/yr"

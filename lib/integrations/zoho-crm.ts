@@ -1,7 +1,7 @@
 /**
  * Zoho CRM lead webhook.
  *
- * Fire-and-forget by design — the user's form submission completes
+ * Fire-and-forget by design - the user's form submission completes
  * even if Zoho is slow or down. We include an HMAC signature if
  * ZOHO_CRM_WEBHOOK_SECRET is configured so Zoho's Flow can validate
  * the payload server-to-server.
@@ -32,7 +32,7 @@ export async function postLeadToZoho(
 
   if (!url) {
     if (process.env.NODE_ENV !== "production") {
-      console.info("[zoho] Skipping webhook — ZOHO_CRM_WEBHOOK_URL unset (dev).");
+      console.info("[zoho] Skipping webhook - ZOHO_CRM_WEBHOOK_URL unset (dev).");
     }
     return { ok: true };
   }

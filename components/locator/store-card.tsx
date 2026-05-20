@@ -45,7 +45,7 @@ export function StoreCard({ store }: { store: Store }) {
   );
   const photo = pickStoreImage(store.photos[0], store.slug);
   const cityName = getCity(store.cityId)?.name ?? store.cityId;
-  const imageAlt = `ElectricPe Mobility Center — ${store.name.replace(/^ElectricPe\s+/, "")}, ${cityName}`;
+  const imageAlt = `ElectricPe Mobility Center, ${store.name.replace(/^ElectricPe\s+/, "")}, ${cityName}`;
 
   return (
     <Card className="overflow-hidden flex flex-col h-full">

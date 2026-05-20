@@ -26,13 +26,13 @@ export const jobPostings: JobPosting[] = [
     publishedAt: "2026-03-01",
   },
   {
-    slug: "senior-technician-chennai",
-    title: "Senior Technician, Chennai",
+    slug: "senior-technician-mysuru",
+    title: "Senior Technician, Mysuru",
     department: "service",
-    city: "Chennai",
+    city: "Mysuru",
     type: "FT",
     descriptionMdx:
-      "You'll run the service bay at our Anna Nagar Mobility Center. You'll own the 24-hour service SLA for every scooter that comes in, from diagnostics to parts to handover.",
+      "You'll run the service bay at our K G Koppal Mobility Center. You'll own the 24-hour service SLA for every scooter that comes in, from diagnostics to parts to handover.",
     responsibilities: [
       "Diagnose and resolve mechanical + electrical issues on the full ElectricPe lineup",
       "Maintain service records and SLA metrics daily",
@@ -43,7 +43,7 @@ export const jobPostings: JobPosting[] = [
     requirements: [
       "5+ years in two-wheeler service (EV or petrol)",
       "ITI or Diploma in Automobile/Electrical/Mechanical",
-      "Fluent in Tamil and English",
+      "Fluent in Kannada and English",
       "Hands-on experience with CAN bus diagnostics a strong plus",
     ],
     publishedAt: "2026-03-08",
@@ -101,7 +101,7 @@ export const jobPostings: JobPosting[] = [
     city: "Delhi",
     type: "FT",
     descriptionMdx:
-      "You'll keep the retail network humming across Delhi, Gurugram, Jaipur, and Chandigarh. Inventory, delivery logistics, store launches: you'll own the coordination.",
+      "You'll keep the retail network humming across Delhi, Gurugram, Ghaziabad, Meerut, Jaipur, Rohtak and Sonipat. Inventory, delivery logistics, store launches: you'll own the coordination.",
     responsibilities: [
       "Coordinate vehicle + parts supply to North India stores",
       "Own store-level KPIs (footfall, conversion, SLA)",

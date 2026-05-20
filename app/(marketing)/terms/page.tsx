@@ -80,7 +80,7 @@ export default function TermsPage() {
 
             <h2 className="text-h2 mt-8">Intellectual property</h2>
             <p>
-              All content on this website — text, images, logos, design system — is the
+              All content on this website (text, images, logos, design system) is the
               property of {globals.legalEntity.name} or its licensors. You may download
               press assets from our <a href="/press" className="text-[var(--color-brand)] underline">Press page</a> for
               editorial use; all other use requires written permission.

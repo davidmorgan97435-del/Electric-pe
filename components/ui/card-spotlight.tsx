@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * CardSpotlight — website-factory component.
+ * CardSpotlight - website-factory component.
  * Radial spotlight that follows the cursor inside the card.
  * Subtle, premium hover effect without being flashy.
  */

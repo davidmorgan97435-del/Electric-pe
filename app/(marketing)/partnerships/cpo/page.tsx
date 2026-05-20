@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 import { PartnershipHero } from "@/components/marketing/partnership-hero";
 
 export const metadata: Metadata = {
-  title: "CPO Partnership — Get on India's EV Aggregator",
+  title: "CPO Partnership | Get on India's EV Aggregator",
   description:
     "Charge Point Operators: list your stations on the ElectricPe app, manage them with our CMS, and access 200K+ EV riders across India.",
   alternates: { canonical: "/partnerships/cpo" },
@@ -17,7 +17,7 @@ const PILLARS = [
   {
     icon: Radio,
     title: "OCPP-native",
-    text: "Standard OCPP 1.6J and 2.0.1 — if your stations speak it, you're live in days.",
+    text: "Standard OCPP 1.6J and 2.0.1. If your stations speak it, you're live in days.",
   },
   {
     icon: Users,
@@ -27,7 +27,7 @@ const PILLARS = [
   {
     icon: BarChart3,
     title: "Shared analytics",
-    text: "Utilization, revenue, peak hours — we report, you decide.",
+    text: "Utilization, revenue, peak hours. We report, you decide.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function CpoPartnershipPage() {
           <h2 className="text-h2 mb-3">Use our CMS. Run your network.</h2>
           <p className="text-[var(--color-text-muted)] mb-5">
             If you already operate chargers, our Charger Management System (CMS) can
-            replace or augment your stack — OCPP 1.6J and 2.0.1, pricing, billing,
+            replace or augment your stack: OCPP 1.6J and 2.0.1, pricing, billing,
             user management, and analytics, all in one console.
           </p>
           <Button

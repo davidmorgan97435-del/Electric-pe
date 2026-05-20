@@ -23,7 +23,7 @@ export default async function BookTestRidePage({
       <div className="text-center max-w-2xl mx-auto mb-10">
         <p className="text-eyebrow mb-3">Book a test ride</p>
         <h1 className="text-display-lg">
-          Free test ride — doorstep or at our store.
+          Free test ride, doorstep or at our store.
         </h1>
         <p className="mt-4 text-[var(--color-text-muted)]">
           Four short steps. We confirm on WhatsApp within the hour. No commitment,

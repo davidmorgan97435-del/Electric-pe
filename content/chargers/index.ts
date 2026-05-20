@@ -12,7 +12,7 @@ export const chargers: Charger[] = [
     connectorType: "Bharat AC-001",
     ocppCompatible: false,
     smart: false,
-    recommendedForBrands: ["xypro", "jett", "ep", "4all"],
+    recommendedForBrands: ["xypro", "jett", "4all"],
     priceInr: 4999,
     installationIncluded: true,
     specs: {

@@ -69,14 +69,14 @@ export default function PrivacyPage() {
               <li>To confirm test rides and send appointment reminders over WhatsApp.</li>
               <li>To improve our product, retail network, and charging aggregator.</li>
               <li>To comply with legal and regulatory obligations in India.</li>
-              <li>To send you marketing communications — but only if you opt in.</li>
+              <li>To send you marketing communications, but only if you opt in.</li>
             </ul>
 
             <h2 className="text-h2 mt-8">Third parties we share data with</h2>
             <ul className="list-disc pl-5 space-y-1.5">
               <li>
                 <strong>Finance partners:</strong> HDFC, Bajaj Finserv, IDFC First,
-                Shriram, Kotak, LazyPay — only when you apply for EMI.
+                Shriram, Kotak, LazyPay, only when you apply for EMI.
               </li>
               <li>
                 <strong>Payment processors:</strong> Razorpay for deposits + one-time
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
               We retain identity and transaction data for the lifetime of your
               relationship with ElectricPe plus 7 years thereafter, as required for
               warranty, tax, and regulatory audit. Analytics data is retained for 14
-              months. Marketing opt-ins you can revoke at any time — and we'll delete
+              months. Marketing opt-ins you can revoke at any time, and we'll delete
               them within 30 days.
             </p>
 
@@ -132,7 +132,7 @@ export default function PrivacyPage() {
             <p>
               We use strictly-necessary cookies (session, city preference) and
               analytics cookies (GA4, Clarity). No ad-targeting cookies without your
-              explicit consent. You can disable analytics cookies in your browser — the
+              explicit consent. You can disable analytics cookies in your browser, and the
               site will work normally.
             </p>
 

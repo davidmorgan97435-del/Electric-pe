@@ -47,7 +47,7 @@ export default function ReturnsPage() {
               Because a scooter is a registered motor vehicle, we do not offer "change
               of mind" returns once delivery is complete. If your scooter has a
               manufacturing defect, we will replace affected parts under warranty at no
-              cost — see <a href="/warranty" className="text-[var(--color-brand)] underline">warranty policy</a>.
+              cost. See <a href="/warranty" className="text-[var(--color-brand)] underline">warranty policy</a>.
               In the rare case of a catastrophic defect within 7 days of delivery, we
               will replace the entire vehicle at our sole discretion.
             </p>

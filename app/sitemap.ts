@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.url}/warranty`, changeFrequency: "yearly", priority: 0.1, lastModified: now },
   ];
 
-  const brands = ["xypro", "jett", "ep", "4all"] as const;
+  const brands = ["xypro", "jett", "4all"] as const;
   const brandRoutes: MetadataRoute.Sitemap = brands.map((b) => ({
     url: `${SITE.url}/ev/${b}`,
     changeFrequency: "weekly",

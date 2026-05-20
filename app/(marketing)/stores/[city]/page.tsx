@@ -29,7 +29,7 @@ export async function generateMetadata({
   const { city } = await params;
   const c = getCity(city);
   if (!c) return {};
-  const title = `Electric Scooter Showroom in ${c.name} — ElectricPe`;
+  const title = `Electric Scooter Showroom in ${c.name} | ElectricPe`;
   const description = `Visit your ElectricPe Mobility Center in ${c.name}, ${c.state}. Test-ride any scooter, no licence required, EMI from ₹1,499/month. ${getStoresByCity(city).length} store${getStoresByCity(city).length === 1 ? "" : "s"}.`;
   return {
     title: { absolute: title },
@@ -92,7 +92,7 @@ export default async function CityPage({
         <Container>
           <p className="text-eyebrow mb-3">{c.state}</p>
           <h1 className="text-display-xl max-w-3xl">
-            Electric scooters in {c.name} — visit our Mobility Centers.
+            Electric scooters in {c.name}. Visit our Mobility Centers.
           </h1>
           <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed max-w-2xl">
             {c.introCopy}

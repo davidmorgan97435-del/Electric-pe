@@ -11,7 +11,6 @@ const FOOTER_LINKS = {
     { label: "All Scooters", href: "/ev" },
     { label: "Xypro", href: "/ev/xypro" },
     { label: "Jett", href: "/ev/jett" },
-    { label: "EP", href: "/ev/ep" },
     { label: "4ALL", href: "/ev/4all" },
     { label: "Chargers", href: "/charger" },
     { label: "EMI Calculator", href: "/emi" },
@@ -66,7 +65,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-[var(--color-text-muted)] leading-relaxed mb-5">
-              India's largest trusted EV retail network — 30+ Mobility Centers,
+              India's largest trusted EV retail network: 30+ Mobility Centers,
               24-hour service, and component-level warranty on every scooter.
             </p>
             <div className="flex items-center gap-2">
@@ -108,7 +107,7 @@ export function Footer() {
           )}
         </div>
 
-        {/* Service centres on every page — per PDF requirement */}
+        {/* Service centres on every page - per PDF requirement */}
         <div className="mt-12 pt-8 border-t border-[var(--color-border)]">
           <div className="flex items-start gap-3 flex-wrap">
             <MapPin className="h-5 w-5 text-[var(--color-brand)] shrink-0 mt-0.5" aria-hidden />

@@ -147,7 +147,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
         )}
         aria-label={`${brand.displayName} overview`}
       >
-        {/* Ambient radial glow behind scooter — subtle depth, no motion. */}
+        {/* Ambient radial glow behind scooter - subtle depth, no motion. */}
         <div
           aria-hidden
           className="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 h-[680px] w-[680px] rounded-full opacity-50"
@@ -158,7 +158,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
         />
         <Container>
           <div className="relative grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center py-14 md:py-20 lg:py-24">
-            {/* Left — copy */}
+            {/* Left - copy */}
             <Reveal>
               <p className="text-xs md:text-sm font-bold uppercase tracking-[0.28em] opacity-80">
                 ElectricPe · {brand.displayName}
@@ -170,7 +170,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
                 {brand.positioning}
               </p>
 
-              {/* Stat row — numbers, not claims */}
+              {/* Stat row - numbers, not claims */}
               <dl className="mt-7 flex flex-wrap gap-x-8 gap-y-4">
                 <HeroStat label="Starting from" value={formatInr(startingPrice)} />
                 <HeroStat label="Max range" value={`${maxRange} km`} />
@@ -216,7 +216,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
               </ul>
             </Reveal>
 
-            {/* Right — cutout */}
+            {/* Right - cutout */}
             <Reveal delay={120}>
               <figure className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] w-full max-w-[560px] mx-auto">
                 <Image
@@ -233,7 +233,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
         </Container>
       </section>
 
-      {/* ─── Variant selection — tabs + dynamic spec panel (feedback #12) ─── */}
+      {/* ─── Variant selection - tabs + dynamic spec panel (feedback #12) ─── */}
       <Section>
         <Reveal>
           <SectionHeader
@@ -245,7 +245,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
             }
             description={
               variants.length === 1
-                ? "A single, well-specced variant — no bewildering trim-level matrix."
+                ? "A single, well-specced variant, no bewildering trim-level matrix."
                 : "Switch between chemistries to see the exact range, charge time and price for each."
             }
           />
@@ -388,7 +388,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
           <SectionHeader
             eyebrow="Ownership economics"
             title="Three years on, you save ₹1,05,000 vs a petrol scooter."
-            description="Real numbers, honest assumptions — see the full working below. Switch calculations in our savings tool to match your own commute."
+            description="Real numbers, honest assumptions. See the full working below. Switch calculations in our savings tool to match your own commute."
             align="left"
           />
         </Reveal>
@@ -425,7 +425,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
             <p className="text-sm text-[var(--color-text-muted)] leading-relaxed max-w-3xl">
               <span className="font-semibold text-[var(--color-text)]">Assumptions:</span>{" "}
               30 km/day commute · petrol ₹105/L · Honda Activa at 45 km/L · grid
-              electricity ₹6/kWh · 3-year horizon. Your mileage will differ —
+              electricity ₹6/kWh · 3-year horizon. Your mileage will differ;
               change the inputs in our savings calculator.
             </p>
             <Button asChild variant="outline" trailingIcon={<ArrowRight className="h-4 w-4" aria-hidden />}>
@@ -477,7 +477,7 @@ export function BrandLanding({ brand }: { brand: BrandTheme }) {
           <Reveal>
             <SectionHeader
               eyebrow="FAQs"
-              title={`${brand.displayName} — honest answers`}
+              title={`${brand.displayName}: honest answers`}
               align="left"
             />
           </Reveal>
@@ -561,17 +561,17 @@ const INCLUDED_ITEMS: {
   {
     icon: FileCheck,
     title: "ARAI compliance certificate",
-    detail: "Physical certificate of homologation with every scooter — the only paperwork you'll ever need.",
+    detail: "Physical certificate of homologation with every scooter, the only paperwork you'll ever need.",
   },
   {
     icon: ShieldCheck,
     title: "Warranty card",
-    detail: "Motor, controller and battery covered — coverage period varies by component. Full terms shared at handover.",
+    detail: "Motor, controller and battery covered; coverage period varies by component. Full terms shared at handover.",
   },
   {
     icon: Wrench,
     title: "Tool kit + spare fuse",
-    detail: "Basic roadside tool kit, spare fuse and a tyre-pressure gauge — inside the under-seat compartment.",
+    detail: "Basic roadside tool kit, spare fuse and a tyre-pressure gauge, inside the under-seat compartment.",
   },
   {
     icon: BookOpen,
@@ -595,7 +595,7 @@ const OWNERSHIP_STATS: {
     icon: Fuel,
     value: "₹86,400",
     label: "Fuel cost saved",
-    detail: "Petrol at ₹105/L vs grid electricity at ₹6/kWh — over 30 km/day for 3 years.",
+    detail: "Petrol at ₹105/L vs grid electricity at ₹6/kWh, over 30 km/day for 3 years.",
   },
   {
     icon: Wrench,

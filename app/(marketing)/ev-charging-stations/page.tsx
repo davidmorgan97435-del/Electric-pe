@@ -16,7 +16,7 @@ import { globals } from "@/content/globals";
 import { getFaqsByCategory } from "@/content/faqs";
 
 export const metadata: Metadata = {
-  title: "EV Charging Stations — 25,000+ Across India",
+  title: "EV Charging Stations | 25,000+ Across India",
   description:
     "Find EV charging stations across India. ElectricPe aggregates 25,000+ live stations from 60+ partner networks. Filter, navigate, and pay from one app.",
   alternates: { canonical: "/ev-charging-stations" },
@@ -72,7 +72,7 @@ export default function ChargingStationsPage() {
               </h1>
               <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">
                 The ElectricPe app aggregates every major EV charging network in
-                India — with live availability, turn-by-turn navigation, and a
+                India, with live availability, turn-by-turn navigation, and a
                 unified wallet. Free to download, free to use.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">

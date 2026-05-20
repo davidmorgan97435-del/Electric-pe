@@ -2,14 +2,14 @@ import type { Testimonial } from "../types";
 
 export const testimonials: Testimonial[] = [
   {
-    id: "t-priya-chennai",
+    id: "t-priya-bengaluru",
     customerName: "Priya S.",
-    cityId: "chennai",
+    cityId: "bengaluru",
     scooterVariantSlug: "xypro-lithium-ion",
     brand: "xypro",
     rating: 5,
     quote:
-      "I was worried about service. Three months in, I had a minor issue. The Anna Nagar store resolved it the same day. I didn't even need to leave my vehicle overnight.",
+      "I was worried about service. Three months in, I had a minor issue. The Kalyan Nagar store resolved it the same day. I didn't even need to leave my vehicle overnight.",
     photo: "/img/home_hero_section_2.webp",
     date: "2026-02-14",
     verified: true,
@@ -24,7 +24,7 @@ export const testimonials: Testimonial[] = [
     brand: "xypro",
     rating: 5,
     quote:
-      "I commute 22 km a day from Yelahanka. The Xypro Lithium does it comfortably with 30% charge to spare. ElectricPe set up a home charging socket for me. Zero hassle.",
+      "I commute 22 km a day across Bengaluru. The Xypro Lithium does it comfortably with 30% charge to spare. ElectricPe set up a home charging socket for me. Zero hassle.",
     photo: "/img/home_hero_section_2.webp",
     date: "2026-01-20",
     verified: true,
@@ -32,9 +32,9 @@ export const testimonials: Testimonial[] = [
     source: "whatsapp",
   },
   {
-    id: "t-shalini-coimbatore",
+    id: "t-shalini-delhi",
     customerName: "Shalini R.",
-    cityId: "chennai",
+    cityId: "delhi",
     scooterVariantSlug: "jett-lithium-ion",
     brand: "jett",
     rating: 5,
@@ -47,14 +47,14 @@ export const testimonials: Testimonial[] = [
     source: "interview",
   },
   {
-    id: "t-kiran-chennai",
+    id: "t-kiran-delhi",
     customerName: "Kiran P.",
-    cityId: "chennai",
-    scooterVariantSlug: "ep-city-plus",
-    brand: "ep",
+    cityId: "delhi",
+    scooterVariantSlug: "4all-lead-acid",
+    brand: "4all",
     rating: 5,
     quote:
-      "I do 50+ deliveries a day on Swiggy. The EP City Plus cut my fuel cost from ₹300/day to ₹35. Paid back the upgrade in 4 months. Service centre is always open when I need parts.",
+      "I do 50+ deliveries a day on Swiggy. The 4ALL cut my fuel cost from ₹300/day to ₹35. Paid back the upgrade in 4 months. The service centre is always open when I need parts.",
     photo: "/img/home_hero_section_2.webp",
     date: "2025-12-11",
     verified: true,
@@ -99,7 +99,7 @@ export const testimonials: Testimonial[] = [
     brand: "4all",
     rating: 5,
     quote:
-      "My wife damaged the front fairing in a parking incident. ElectricPe had the part in stock at the Nehru Place store and fixed it in 40 minutes. That's the reason I'll stay.",
+      "My wife damaged the front fairing in a parking incident. ElectricPe had the part in stock at the Krishna Nagar store and fixed it in 40 minutes. That's the reason I'll stay.",
     photo: "/img/home_hero_section_2.webp",
     date: "2026-02-26",
     verified: true,
@@ -107,9 +107,9 @@ export const testimonials: Testimonial[] = [
     source: "interview",
   },
   {
-    id: "t-nikhil-pune",
+    id: "t-nikhil-bengaluru",
     customerName: "Nikhil D.",
-    cityId: "pune",
+    cityId: "bengaluru",
     scooterVariantSlug: "xypro-lithium-ion",
     brand: "xypro",
     rating: 4.5,

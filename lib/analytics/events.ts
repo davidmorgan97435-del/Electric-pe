@@ -3,7 +3,7 @@
  * Every user-meaningful action routes through this file so
  * naming stays consistent and easy to audit in GA4.
  *
- * Events stay out of the critical render path — analytics
+ * Events stay out of the critical render path - analytics
  * libraries are lazy-loaded in components/layout/analytics.tsx.
  */
 
@@ -45,6 +45,6 @@ export function track(event: EventName, payload: EventPayload = {}): void {
     window.gtag?.("event", event, payload);
     window.clarity?.("event", event);
   } catch {
-    // Analytics failures must never break UX — swallow.
+    // Analytics failures must never break UX - swallow.
   }
 }

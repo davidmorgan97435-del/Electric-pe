@@ -21,7 +21,6 @@ import { buildWhatsAppLink, WHATSAPP_DEFAULTS } from "@/lib/utils/whatsapp";
 // don't repeat the same image and crawlers see varied visual content.
 const STORE_IMAGE_ROTATION = [
   "/img/xypro_brand_banner.webp",
-  "/img/ep_brand_banner.webp",
   "/img/4all_brand_banner.webp",
   "/img/jett_brand_banner.webp",
   "/img/scenes/greener-tomorrow.webp",
@@ -35,14 +34,14 @@ function getStoreImage(photo: string | undefined, index: number): string {
 }
 
 /**
- * HP-05 — Mobility Centers.
+ * HP-05 - Mobility Centers.
  *
  * Rebuilt end-to-end on the website-factory component kit:
- *   • GridPattern background — subtle SVG grid with radial mask.
- *   • VerticalCutReveal — word-by-word slide-up on the headline.
- *   • PillNav — animated pill that slides behind the active city.
- *   • CardSpotlight — radial spotlight follows cursor on each store card.
- *   • InteractiveHoverButton — brand dot expands to fill the CTA on hover.
+ *   • GridPattern background - subtle SVG grid with radial mask.
+ *   • VerticalCutReveal - word-by-word slide-up on the headline.
+ *   • PillNav - animated pill that slides behind the active city.
+ *   • CardSpotlight - radial spotlight follows cursor on each store card.
+ *   • InteractiveHoverButton - brand dot expands to fill the CTA on hover.
  *
  * Layout: two-column grid (desktop) with store cards on the left taking
  * two thirds and a large summary panel on the right. Stats at the bottom
@@ -93,7 +92,7 @@ export function StorePresence() {
 
           <Reveal delay={80}>
             <p className="mt-5 max-w-xl text-base md:text-lg text-[var(--color-text-muted)] leading-relaxed">
-              {globals.stats.storesOpen} ElectricPe stores across India — walk
+              {globals.stats.storesOpen} ElectricPe stores across India. Walk
               in, test ride, ask anything. No appointment needed.
             </p>
           </Reveal>
@@ -117,13 +116,13 @@ export function StorePresence() {
           <ul className="grid sm:grid-cols-2 gap-4 md:gap-5">
             {cityStores.length === 0 ? (
               <li className="col-span-full rounded-2xl border border-dashed border-[var(--color-border)] p-8 text-center text-[var(--color-text-muted)]">
-                We haven&apos;t opened here yet — but it&apos;s coming soon.
+                We haven&apos;t opened here yet, but it&apos;s coming soon.
               </li>
             ) : (
               cityStores.map((store, i) => {
                 const photo = getStoreImage(store.photos[0], i);
                 const cityName = getCity(store.cityId)?.name ?? activeCity.name;
-                const imageAlt = `ElectricPe Mobility Center — ${store.name.replace(/^ElectricPe\s+/, "")}, ${cityName}`;
+                const imageAlt = `ElectricPe Mobility Center: ${store.name.replace(/^ElectricPe\s+/, "")}, ${cityName}`;
                 const directions = `https://www.google.com/maps/dir/?api=1&destination=${store.lat},${store.lng}`;
                 return (
                   <Reveal as="li" key={store.slug} delay={i * 60}>
@@ -235,7 +234,7 @@ export function StorePresence() {
           </Reveal>
         </div>
 
-        {/* Footer row — live stats */}
+        {/* Footer row - live stats */}
         <Reveal delay={260}>
           <div className="mt-12 md:mt-14 flex flex-col md:flex-row md:items-center md:justify-between gap-3 pt-8 border-t border-[var(--color-border)] text-sm">
             <p className="text-[var(--color-text-muted)]">

@@ -13,9 +13,9 @@ import { stores } from "@/content/stores";
 import { globals } from "@/content/globals";
 
 export const metadata: Metadata = {
-  title: { absolute: "ElectricPe Mobility Centers — 30+ EV Stores Across India" },
+  title: { absolute: "ElectricPe Mobility Centers | 30+ EV Stores Across India" },
   description:
-    "Find your nearest ElectricPe Mobility Center. 30+ branded EV stores with test rides, service, and genuine parts — walk in and meet your store executive.",
+    "Find your nearest ElectricPe Mobility Center. 30+ branded EV stores with test rides, service, and genuine parts. Walk in and meet your store executive.",
   alternates: { canonical: "/stores" },
 };
 
@@ -61,7 +61,7 @@ export default function StoresPage() {
             </h1>
             <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">
               Walk in, ride a scooter, ask any question. Each store is staffed with
-              a trained executive and an in-house technician — not a franchise agent
+              a trained executive and an in-house technician, not a franchise agent
               who pushes paperwork.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
@@ -117,7 +117,7 @@ export default function StoresPage() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-display-lg">Partner with us to open a store.</h2>
           <p className="mt-4 text-[var(--color-text-muted)]">
-            Seasoned automotive entrepreneurs, fleet operators, and multi-brand retailers —
+            Seasoned automotive entrepreneurs, fleet operators, and multi-brand retailers:
             ElectricPe's service-first model is built for long-term partners.
           </p>
           <Button

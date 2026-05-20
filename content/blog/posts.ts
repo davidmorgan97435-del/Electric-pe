@@ -45,17 +45,6 @@ export const blogPosts: BlogPostMeta[] = [
     readMinutes: 4,
   },
   {
-    slug: "ep-city-plus-swiggy-delivery-90-day-audit",
-    title: "EP City Plus for Swiggy delivery: a 90-day cost audit",
-    dek: "We followed three delivery partners in Chennai. Here's the rupee-by-rupee math.",
-    coverImage: COVER,
-    author: authors.priyanka,
-    categories: ["Ownership Tips", "Finance"],
-    tags: ["delivery", "cost", "tco"],
-    publishedAt: "2026-03-14",
-    readMinutes: 8,
-  },
-  {
     slug: "xypro-vs-jett-which-fits-your-commute",
     title: "Xypro vs Jett: which ElectricPe fits your commute?",
     dek: "Range, comfort, cargo capacity, and the single question that usually decides it.",

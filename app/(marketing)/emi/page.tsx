@@ -98,7 +98,7 @@ export default function EmiPage() {
             </h1>
             <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">
               Six finance partners. Zero down payment at select stores. One honest
-              calculator. No hidden fees — what you see is what you pay.
+              calculator. No hidden fees: what you see is what you pay.
             </p>
           </div>
         </Container>
@@ -228,7 +228,7 @@ export default function EmiPage() {
           <FileText className="h-10 w-10 text-[var(--color-brand)] mx-auto mb-3" aria-hidden />
           <h2 className="text-display-lg">Apply in 15 minutes.</h2>
           <p className="mt-4 text-[var(--color-text-muted)]">
-            Walk in to any Mobility Center with Aadhaar + PAN — we'll handle the rest.
+            Walk in to any Mobility Center with Aadhaar + PAN, and we'll handle the rest.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <Button

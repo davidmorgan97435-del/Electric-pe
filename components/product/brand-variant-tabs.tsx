@@ -22,13 +22,13 @@ import { Button } from "@/components/ui/button";
 import type { Scooter } from "@/content/types";
 
 /**
- * BrandVariantTabs — the entry point on every brand landing page.
+ * BrandVariantTabs - the entry point on every brand landing page.
  *
  * Per the client feedback (#12), clicking a brand should NOT dump the
  * customer onto the all-products page. The brand page should show the
  * available variants (e.g. Lead / Lithium) as tabs and the dynamic
- * spec panel for the selected variant — range, top speed, charging
- * time, etc. — inline, before sending the customer to the dedicated
+ * spec panel for the selected variant - range, top speed, charging
+ * time, etc. - inline, before sending the customer to the dedicated
  * variant PDP.
  *
  * Inspired by Komaki's category-navigation flow as referenced in the
@@ -155,7 +155,7 @@ export function BrandVariantTabs({ variants }: { variants: Scooter[] }) {
               </div>
             </div>
 
-            {/* Dynamic spec grid — items stagger in each time the active
+            {/* Dynamic spec grid - items stagger in each time the active
                 variant changes, so a tab switch feels alive rather than
                 a static crossfade. */}
             <motion.ul

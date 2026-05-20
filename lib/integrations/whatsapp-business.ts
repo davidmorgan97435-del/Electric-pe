@@ -4,7 +4,7 @@
  * Sends pre-approved template messages. Template names must be
  * registered and approved in Meta Business Manager before use.
  *
- * Fails gracefully if env vars are absent — the UI flow still
+ * Fails gracefully if env vars are absent - the UI flow still
  * completes (Zoho webhook + email fire independently).
  */
 
@@ -26,7 +26,7 @@ export async function sendWhatsAppTemplate(
   if (!phoneId || !token) {
     if (process.env.NODE_ENV !== "production") {
       console.info(
-        `[whatsapp] Skipping template ${input.templateName} — env vars missing (dev mode).`,
+        `[whatsapp] Skipping template ${input.templateName} - env vars missing (dev mode).`,
       );
     }
     return { ok: true };

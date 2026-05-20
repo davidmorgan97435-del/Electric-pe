@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * PillNav — website-factory component.
+ * PillNav - website-factory component.
  * An animated pill slides behind the active nav item using Framer
  * Motion's shared-layout animation. Use for tab-like navigation.
  *

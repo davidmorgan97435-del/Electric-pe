@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { SavingsFullCalculator } from "@/components/marketing/savings-full-calculator";
 
 export const metadata: Metadata = {
-  title: "EV Savings Calculator — How Much You'll Save",
+  title: "EV Savings Calculator | How Much You'll Save",
   description:
     "Find out exactly how much you'll save switching to an ElectricPe electric scooter. Monthly, annual, 5-year, and payback numbers based on your real usage.",
   alternates: { canonical: "/savings" },
@@ -26,7 +26,7 @@ export default function SavingsPage() {
               Find out exactly how much you'll save.
             </h1>
             <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">
-              Tell us how you ride today. We'll do the math in real rupees — not
+              Tell us how you ride today. We'll do the math in real rupees, not
               vague percentages or "up-to" claims.
             </p>
           </div>

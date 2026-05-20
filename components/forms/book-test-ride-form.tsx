@@ -241,7 +241,7 @@ export function BookTestRideForm({
         <div>
           <h2 className="text-h2 mb-2">Which scooter are you interested in?</h2>
           <p className="text-[var(--color-text-muted)] mb-6">
-            Pick a model — or let our expert help you choose at the store.
+            Pick a model, or let our expert help you choose at the store.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <button
@@ -400,7 +400,7 @@ export function BookTestRideForm({
           }}
           className="space-y-5"
         >
-          <h2 className="text-h2 mb-2">Almost done — your details</h2>
+          <h2 className="text-h2 mb-2">Almost done. Your details</h2>
           <p className="text-[var(--color-text-muted)] mb-6">
             We'll send a WhatsApp confirmation within the hour.
           </p>

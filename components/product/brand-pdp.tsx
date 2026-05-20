@@ -29,7 +29,6 @@ import type { Scooter } from "@/content/types";
 const BRAND_NAMES: Record<string, string> = {
   xypro: "Xypro",
   jett: "Jett",
-  ep: "EP",
   "4all": "4ALL",
 };
 
@@ -142,7 +141,7 @@ export function BrandPdp({ scooter }: { scooter: Scooter }) {
           <SectionHeader
             eyebrow="EMI"
             title={`Own it from ${new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(scooter.emiFrom)}/month`}
-            description="Slide the down-payment, pick a tenure — we'll show the monthly EMI in plain rupees."
+            description="Slide the down-payment, pick a tenure, and we'll show the monthly EMI in plain rupees."
           />
         </Reveal>
         <Reveal delay={80}>
@@ -210,7 +209,7 @@ export function BrandPdp({ scooter }: { scooter: Scooter }) {
           <Reveal>
             <SectionHeader
               eyebrow="FAQs"
-              title={`${brandName} — honest answers`}
+              title={`${brandName}: honest answers`}
               align="left"
             />
           </Reveal>

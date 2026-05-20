@@ -15,19 +15,13 @@ import { cn } from "@/lib/utils/cn";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 /**
- * HP — Product showcase.
+ * HP - Product showcase.
  *
- * Per the client feedback (#4 + #7): only 1–2 hero products on the homepage,
- * with larger cards. We feature Xypro and Jett — the two flagship lineups
- * with the broadest variant coverage. Each card renders the brand's flagship
- * variant with key specs at-a-glance and routes to the brand landing page on
- * click, where the customer picks their variant.
- *
- * EP City+ is intentionally NOT surfaced (removed per #7); 4ALL stays
- * available through the "Explore all models" CTA below.
+ * Three featured brands on the homepage, one card each. The card routes to
+ * the brand landing page where the customer picks their variant.
  */
 
-const FEATURED_BRANDS = ["xypro", "jett"] as const;
+const FEATURED_BRANDS = ["xypro", "jett", "4all"] as const;
 
 function formatPrice(inr: number) {
   return new Intl.NumberFormat("en-IN", {
@@ -47,14 +41,14 @@ export function ProductShowcase() {
       <Reveal>
         <SectionHeader
           eyebrow="Featured rides"
-          title="Two scooters, every Indian need."
+          title="The scooters, every Indian needs."
           description="Pick the silhouette that fits your day. Every model is ARAI-approved, licence-free, and serviced by our 30+ Mobility Centres."
         />
       </Reveal>
 
       <motion.ol
         ref={gridRef}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         variants={{
           hidden: {},
           visible: {
@@ -99,7 +93,7 @@ export function ProductShowcase() {
             >
               <Link
                 href={`/ev/${slug}`}
-                aria-label={`Explore ${brand.displayName} — starting from ${formatPrice(startingPrice)}`}
+                aria-label={`Explore ${brand.displayName}, starting from ${formatPrice(startingPrice)}`}
                 className="group block h-full rounded-3xl overflow-hidden bg-white border border-[var(--color-border)] transition-[border-color,box-shadow] duration-[var(--duration-base)] hover:border-[var(--color-brand)] hover:shadow-[0_30px_80px_-30px_rgba(15,23,42,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand)] focus-visible:ring-offset-2"
               >
                 {/* Large image area */}
@@ -123,7 +117,7 @@ export function ProductShowcase() {
                     src={brand.cutout}
                     alt={`${brand.displayName} electric scooter`}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-contain object-bottom px-6 pb-3 pt-16 md:px-8 md:pb-4 md:pt-20 transition-transform duration-[600ms] ease-out group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
                   />
                 </figure>

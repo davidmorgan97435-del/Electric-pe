@@ -10,7 +10,6 @@ type SortKey = "price-asc" | "price-desc" | "range-desc";
 const BRAND_OPTIONS: { slug: BrandSlug; label: string }[] = [
   { slug: "xypro", label: "Xypro" },
   { slug: "jett", label: "Jett" },
-  { slug: "ep", label: "EP" },
   { slug: "4all", label: "4ALL" },
 ];
 

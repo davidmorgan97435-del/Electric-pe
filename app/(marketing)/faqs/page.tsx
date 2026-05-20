@@ -17,9 +17,9 @@ import { buildWhatsAppLink, WHATSAPP_DEFAULTS } from "@/lib/utils/whatsapp";
 import { globals } from "@/content/globals";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions — Buying, Financing, Service",
+  title: "Frequently Asked Questions | Buying, Financing, Service",
   description:
-    "Everything you need to know about buying an ElectricPe scooter — licence, battery, financing, service, warranty, and more. Searchable FAQ library.",
+    "Everything you need to know about buying an ElectricPe scooter: licence, battery, financing, service, warranty, and more. Searchable FAQ library.",
   alternates: { canonical: "/faqs" },
 };
 

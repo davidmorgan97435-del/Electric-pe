@@ -1,9 +1,17 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { motion, useInView, useReducedMotion } from "framer-motion";
-import { Check, Minus } from "lucide-react";
+import {
+  Fuel,
+  Wrench,
+  KeyRound,
+  Volume2,
+  Leaf,
+  TrendingDown,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
@@ -13,148 +21,204 @@ import { globals } from "@/content/globals";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 type Row = {
+  icon: LucideIcon;
   label: string;
-  ev: { mark: "check" | "dash"; text: string };
-  petrol: { text: string };
+  ev: string;
+  petrol: string;
+  highlight?: boolean;
 };
 
 const ROWS: Row[] = [
   {
+    icon: Fuel,
     label: "Fuel / energy cost per month",
-    ev: { mark: "check", text: "₹300–500 electricity" },
-    petrol: { text: "₹2,800–4,000 petrol" },
+    ev: "₹300–500 electricity",
+    petrol: "₹2,800–4,000 petrol",
   },
   {
+    icon: Wrench,
     label: "Maintenance cost per year",
-    ev: { mark: "check", text: "₹1,200 (single visit)" },
-    petrol: { text: "₹4,000–6,000 multiple services" },
+    ev: "₹1,200 (single visit)",
+    petrol: "₹4,000–6,000 multiple services",
   },
   {
+    icon: KeyRound,
     label: "Driving licence",
-    ev: { mark: "check", text: "Not required" },
-    petrol: { text: "Required" },
+    ev: "Not required",
+    petrol: "Required",
   },
   {
+    icon: Volume2,
     label: "Road noise",
-    ev: { mark: "check", text: "Silent" },
-    petrol: { text: "Engine + exhaust" },
+    ev: "Silent ride",
+    petrol: "Engine + exhaust",
   },
   {
+    icon: Leaf,
     label: "Tailpipe CO₂ emissions",
-    ev: { mark: "check", text: "Zero" },
-    petrol: { text: "~1,200 kg/year" },
+    ev: "Zero",
+    petrol: "~1,200 kg / year",
   },
   {
+    icon: TrendingDown,
     label: "5-year running-cost savings",
-    ev: { mark: "check", text: "Up to ₹1,80,000" },
-    petrol: { text: "—" },
+    ev: "Up to ₹1,80,000",
+    petrol: "—",
+    highlight: true,
   },
 ];
 
 export function VsPetrol() {
   const reduced = useReducedMotion();
-  const tableRef = React.useRef<HTMLDivElement>(null);
-  const tableInView = useInView(tableRef, { once: true, margin: "-60px" });
+  const ref = React.useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <Section>
+    <Section className="bg-[var(--color-surface-muted)]">
       <Reveal>
         <SectionHeader
           eyebrow="The honest comparison"
-          title="ElectricPe vs petrol. You decide."
+          title={
+            <>
+              <span className="text-[var(--color-brand)]">EV</span>{" "}
+              <span className="text-[var(--color-text-subtle)] font-normal">
+                vs
+              </span>{" "}
+              Petrol.
+            </>
+          }
           description="We don't use red crosses. We use honest numbers. Judge for yourself."
         />
       </Reveal>
 
-      <Reveal className="max-w-4xl mx-auto">
+      <Reveal className="max-w-5xl mx-auto" delay={80}>
+        {/* Hero savings strip — sets the punchline up front. */}
         <motion.div
-          ref={tableRef}
-          className="grid grid-cols-[1fr_auto_auto] md:grid-cols-[1.5fr_1fr_1fr] rounded-2xl border border-[var(--color-border)] bg-white overflow-hidden shadow-[var(--shadow-sm)]"
+          ref={ref}
+          initial={reduced ? false : { opacity: 0, y: 16 }}
+          animate={
+            !reduced && inView ? { opacity: 1, y: 0 } : reduced ? undefined : undefined
+          }
+          transition={{ duration: 0.6, ease: EASE }}
+          className="mb-8 md:mb-10 rounded-3xl border border-[var(--color-brand-border)] bg-gradient-to-br from-[var(--color-brand-soft)] via-white to-white p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 shadow-[var(--shadow-sm)]"
+        >
+          <div className="flex items-start md:items-center gap-4">
+            <div className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-2xl bg-[var(--color-brand)] text-white shrink-0">
+              <Zap className="h-6 w-6 md:h-7 md:w-7" aria-hidden />
+            </div>
+            <div>
+              <p className="text-[11px] md:text-xs uppercase tracking-[0.2em] text-[var(--color-brand-pressed)] font-semibold mb-1">
+                Average rider, 5 years
+              </p>
+              <p className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-[var(--color-text)] tabular-nums leading-tight">
+                Save up to{" "}
+                <span className="text-[var(--color-brand)]">₹1,80,000</span>
+              </p>
+            </div>
+          </div>
+          <p className="text-sm md:text-base text-[var(--color-text-muted)] md:max-w-xs">
+            Fuel + maintenance + service combined. The same daily commute,
+            half the running cost.
+          </p>
+        </motion.div>
+
+        {/* Comparison grid — header + rows, animated in. */}
+        <motion.div
+          className="rounded-3xl border border-[var(--color-border)] bg-white overflow-hidden shadow-[var(--shadow-sm)]"
           variants={{
             hidden: {},
             visible: {
-              transition: { staggerChildren: 0.07, delayChildren: 0.1 },
+              transition: { staggerChildren: 0.07, delayChildren: 0.2 },
             },
           }}
           initial={reduced ? false : "hidden"}
           animate={
-            !reduced && tableInView ? "visible" : reduced ? undefined : "hidden"
+            !reduced && inView ? "visible" : reduced ? undefined : "hidden"
           }
         >
-          <motion.div
-            className="contents"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { duration: 0.4 } },
-            }}
-          >
-            <div className="p-4 md:p-5 bg-[var(--color-surface-sunken)] border-b border-[var(--color-border)]" />
-            <div className="p-4 md:p-5 bg-[var(--color-brand-soft)] border-b border-[var(--color-border)] text-center">
-              <span className="font-display font-bold text-[var(--color-brand-pressed)]">
-                ElectricPe
+          {/* Column headers */}
+          <div className="grid grid-cols-[1fr_1fr_1fr] md:grid-cols-[1.4fr_1fr_1fr] border-b border-[var(--color-border)] bg-[var(--color-surface-sunken)]">
+            <div className="px-4 md:px-6 py-4 text-xs md:text-sm font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+              Cost / impact
+            </div>
+            <div className="px-4 md:px-6 py-4 text-center bg-[var(--color-brand-soft)] border-l border-[var(--color-brand-border)]">
+              <span className="font-display font-bold text-base md:text-lg text-[var(--color-brand-pressed)]">
+                EV
               </span>
             </div>
-            <div className="p-4 md:p-5 bg-[var(--color-surface-sunken)] border-b border-[var(--color-border)] text-center">
-              <span className="font-display font-bold text-[var(--color-text-muted)]">
+            <div className="px-4 md:px-6 py-4 text-center border-l border-[var(--color-border)]">
+              <span className="font-display font-bold text-base md:text-lg text-[var(--color-text-muted)]">
                 Petrol
               </span>
             </div>
-          </motion.div>
+          </div>
 
-          {ROWS.map((row, i) => (
-            <motion.div
-              key={row.label}
-              className="contents"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: { duration: 0.5, ease: EASE },
-                },
-              }}
-            >
-              <div
+          {/* Rows */}
+          {ROWS.map((row, i) => {
+            const Icon = row.icon;
+            return (
+              <motion.div
+                key={row.label}
+                variants={{
+                  hidden: { opacity: 0, y: 12 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.5, ease: EASE },
+                  },
+                }}
                 className={
-                  i % 2 === 0
-                    ? "p-4 md:p-5 text-sm md:text-base text-[var(--color-text)] font-medium"
-                    : "p-4 md:p-5 text-sm md:text-base text-[var(--color-text)] font-medium bg-[var(--color-surface-muted)]"
+                  "grid grid-cols-[1fr_1fr_1fr] md:grid-cols-[1.4fr_1fr_1fr] " +
+                  (i < ROWS.length - 1
+                    ? "border-b border-[var(--color-border)]"
+                    : "")
                 }
               >
-                {row.label}
-              </div>
-              <div
-                className={
-                  i % 2 === 0
-                    ? "p-4 md:p-5 text-sm md:text-base text-[var(--color-brand-pressed)] flex items-center gap-2"
-                    : "p-4 md:p-5 text-sm md:text-base text-[var(--color-brand-pressed)] flex items-center gap-2 bg-[var(--color-surface-muted)]"
-                }
-              >
-                {row.ev.mark === "check" ? (
-                  <Check className="h-4 w-4 shrink-0 text-[var(--color-brand)]" aria-hidden />
-                ) : (
-                  <Minus className="h-4 w-4 shrink-0 text-[var(--color-text-subtle)]" aria-hidden />
-                )}
-                <span>{row.ev.text}</span>
-              </div>
-              <div
-                className={
-                  i % 2 === 0
-                    ? "p-4 md:p-5 text-sm md:text-base text-[var(--color-text-muted)]"
-                    : "p-4 md:p-5 text-sm md:text-base text-[var(--color-text-muted)] bg-[var(--color-surface-muted)]"
-                }
-              >
-                {row.petrol.text}
-              </div>
-            </motion.div>
-          ))}
+                <div className="px-4 md:px-6 py-4 md:py-5 flex items-center gap-3">
+                  <span className="inline-flex h-8 w-8 md:h-9 md:w-9 items-center justify-center rounded-lg bg-[var(--color-surface-muted)] text-[var(--color-text-muted)] shrink-0">
+                    <Icon className="h-4 w-4 md:h-[18px] md:w-[18px]" aria-hidden />
+                  </span>
+                  <span className="text-sm md:text-base text-[var(--color-text)] font-medium leading-snug">
+                    {row.label}
+                  </span>
+                </div>
+                <div
+                  className={
+                    "px-4 md:px-6 py-4 md:py-5 text-center bg-[var(--color-brand-soft)] border-l border-[var(--color-brand-border)] " +
+                    (row.highlight
+                      ? "text-base md:text-lg font-display font-bold text-[var(--color-brand-pressed)] tabular-nums"
+                      : "text-sm md:text-base text-[var(--color-brand-pressed)] font-semibold")
+                  }
+                >
+                  {row.ev}
+                </div>
+                <div
+                  className={
+                    "px-4 md:px-6 py-4 md:py-5 text-center border-l border-[var(--color-border)] " +
+                    (row.highlight
+                      ? "text-base md:text-lg text-[var(--color-text-subtle)] tabular-nums"
+                      : "text-sm md:text-base text-[var(--color-text-muted)]")
+                  }
+                >
+                  {row.petrol}
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
 
-        <div className="mt-8 text-center">
-          <p className="text-[var(--color-text-muted)] mb-4">Still not sure? Talk to us.</p>
+        {/* Footer CTA */}
+        <div className="mt-10 text-center">
+          <p className="text-[var(--color-text-muted)] mb-4">
+            Still not sure? Talk to us.
+          </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg" variant="whatsapp">
               <a
-                href={buildWhatsAppLink(WHATSAPP_DEFAULTS.general, "vs-petrol section")}
+                href={buildWhatsAppLink(
+                  WHATSAPP_DEFAULTS.general,
+                  "vs-petrol section",
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -162,7 +226,9 @@ export function VsPetrol() {
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href={`tel:${globals.supportPhone}`}>Call {globals.supportPhone}</a>
+              <a href={`tel:${globals.supportPhone}`}>
+                Call {globals.supportPhone}
+              </a>
             </Button>
           </div>
         </div>

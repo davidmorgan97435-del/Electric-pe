@@ -15,11 +15,11 @@ import { Container } from "@/components/ui/container";
 import { TrustBar } from "./trust-bar";
 
 /**
- * HP-01 Hero — centered content over a full-width scooter-lineup strip.
+ * HP-01 Hero - centered content over a full-width scooter-lineup strip.
  *
  * Single static image: the ElectricPe lineup (Xypro, Jett, EP, 4ALL and
  * the flagship centrepiece). Showing all five at once communicates the
- * "one brand, every use-case" message in a single glance — more effective
+ * "one brand, every use-case" message in a single glance - more effective
  * than rotating through product shots one at a time.
  *
  * Layout:
@@ -39,7 +39,7 @@ export function Hero() {
   const sectionRef = React.useRef<HTMLElement>(null);
   // Track scroll progress as the hero section moves through the viewport.
   // Used to apply a gentle parallax to the scooter lineup (and a soft
-  // counter-shift to the dot grid / glow) — adds depth without bouncing
+  // counter-shift to the dot grid / glow) - adds depth without bouncing
   // the section around. Reduced-motion users get static transforms.
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -59,7 +59,7 @@ export function Hero() {
           "radial-gradient(120% 80% at 50% 0%, #eefaf3 0%, #f5fbf8 35%, #fbfdfc 65%, #ffffff 100%)",
       }}
     >
-      {/* Subtle dot-grid — drifts up gently on scroll for depth. */}
+      {/* Subtle dot-grid - drifts up gently on scroll for depth. */}
       <motion.div
         aria-hidden
         style={
@@ -79,7 +79,7 @@ export function Hero() {
         className="absolute inset-0 opacity-[0.045] pointer-events-none"
       />
 
-      {/* Soft brand glow behind the headline — slow downward drift. */}
+      {/* Soft brand glow behind the headline - slow downward drift. */}
       <motion.div
         aria-hidden
         style={
@@ -106,7 +106,7 @@ export function Hero() {
       />
 
       <Container size="2xl" className="relative z-10">
-        {/* Top content — centered */}
+        {/* Top content - centered */}
         <div className="pt-14 md:pt-16 lg:pt-20 pb-4 md:pb-6 text-center max-w-4xl mx-auto">
           <motion.span
             initial={reduced ? false : { opacity: 0, y: 8 }}
@@ -118,7 +118,7 @@ export function Hero() {
               className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-brand)]"
               aria-hidden
             />
-            For everyday India
+            For India
           </motion.span>
 
           <motion.h1
@@ -130,7 +130,7 @@ export function Hero() {
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.75rem)" }}
           >
             <span className="text-[var(--color-brand)]">Affordable</span> Electric
-            Scooters for Everyday India.
+            Scooters for India.
           </motion.h1>
 
           <motion.p
@@ -188,7 +188,7 @@ export function Hero() {
           </motion.ul>
         </div>
 
-        {/* Scooter lineup — full-width strip at the bottom.
+        {/* Scooter lineup - full-width strip at the bottom.
             Outer wrapper handles the entrance reveal; inner motion.div
             applies the scroll-bound parallax (-20px → 20px) so the
             lineup floats slightly relative to the headline. */}
@@ -204,7 +204,7 @@ export function Hero() {
           >
           <Image
             src="/img/cutouts/home_hero_section_2-cutout.png"
-            alt="The ElectricPe scooter lineup — Xypro, Jett and 4ALL, in every colour."
+            alt="The ElectricPe scooter lineup: Xypro, Jett and 4ALL, in every colour."
             fill
             priority
             quality={95}

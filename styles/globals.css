@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 /* =========================================================
-   Design tokens — Tailwind v4 @theme (CSS variables)
+   Design tokens - Tailwind v4 @theme (CSS variables)
    Single source of truth for colors, typography, spacing,
    radius, shadows, motion. All components reference these
-   via semantic names (bg-surface, text-brand) — never hex.
+   via semantic names (bg-surface, text-brand) - never hex.
    ========================================================= */
 @theme {
-  /* Brand green scale — WCAG AA verified at primary-600 on white (4.62:1) */
+  /* Brand green scale - WCAG AA verified at primary-600 on white (4.62:1) */
   --color-primary-50: #ecfdf4;
   --color-primary-100: #d1fadf;
   --color-primary-200: #a6f4c5;
@@ -19,7 +19,7 @@
   --color-primary-800: #05603a;
   --color-primary-900: #054f31;
 
-  /* Warm neutral — friendlier than pure gray, pairs with green */
+  /* Warm neutral - friendlier than pure gray, pairs with green */
   --color-neutral-0: #ffffff;
   --color-neutral-50: #f9fafb;
   --color-neutral-100: #f2f4f7;
@@ -75,7 +75,7 @@
   --color-border-brand: var(--color-primary-200);
   --color-ring: var(--color-primary-500);
 
-  /* Typography — fonts wired via next/font in layout */
+  /* Typography - fonts wired via next/font in layout */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -90,7 +90,7 @@
   --radius-3xl: 2rem;
   --radius-full: 9999px;
 
-  /* Shadows — soft, realistic, never heavy */
+  /* Shadows - soft, realistic, never heavy */
   --shadow-xs: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
   --shadow-sm: 0 1px 3px 0 rgba(16, 24, 40, 0.08), 0 1px 2px 0 rgba(16, 24, 40, 0.04);
   --shadow-md: 0 4px 8px -2px rgba(16, 24, 40, 0.08), 0 2px 4px -2px rgba(16, 24, 40, 0.04);
@@ -124,7 +124,7 @@
   --container-2xl: 1440px;
 }
 
-/* Dark mode — opt-in via data-theme="dark" on <html>. Not default. */
+/* Dark mode - opt-in via data-theme="dark" on <html>. Not default. */
 [data-theme="dark"] {
   --color-surface: var(--color-neutral-950);
   --color-surface-muted: #111614;
@@ -168,7 +168,7 @@ body {
   min-height: 100vh;
 }
 
-/* Element-level defaults — wrapped in @layer base so Tailwind utility
+/* Element-level defaults - wrapped in @layer base so Tailwind utility
    classes (text-white, bg-brand, etc.) always beat these. Without the
    layer wrapper, raw element selectors end up in the cascade AFTER the
    utilities layer and crush utilities like `text-white` on CTAs. */
@@ -218,7 +218,7 @@ body {
 }
 
 /* =========================================================
-   Focus styles — visible, branded, respects keyboard-only
+   Focus styles - visible, branded, respects keyboard-only
    ========================================================= */
 :focus {
   outline: none;
@@ -239,7 +239,7 @@ body {
 }
 
 /* =========================================================
-   Reduced motion — respect user preference
+   Reduced motion - respect user preference
    ========================================================= */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -253,7 +253,7 @@ body {
 }
 
 /* =========================================================
-   Skip link — hidden until focused, accessibility requirement
+   Skip link - hidden until focused, accessibility requirement
    ========================================================= */
 .skip-link {
   position: absolute;
@@ -384,7 +384,7 @@ body {
 }
 
 /* =========================================================
-   Gradients (used sparingly — hero accent, CTA strip)
+   Gradients (used sparingly - hero accent, CTA strip)
    ========================================================= */
 .bg-gradient-brand {
   background-image: linear-gradient(135deg, #039855 0%, #12b76a 100%);
@@ -395,7 +395,7 @@ body {
 }
 
 /* =========================================================
-   Scroll-reveal — used with IntersectionObserver (Framer Motion)
+   Scroll-reveal - used with IntersectionObserver (Framer Motion)
    but a CSS fallback for no-JS still works.
    ========================================================= */
 .reveal {
@@ -432,7 +432,7 @@ body {
 }
 
 /* =========================================================
-   Range slider — native + branded
+   Range slider - native + branded
    ========================================================= */
 input[type="range"] {
   -webkit-appearance: none;

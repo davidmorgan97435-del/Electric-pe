@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 
 /**
- * GreenerTomorrow — sustainability impact band.
+ * GreenerTomorrow - sustainability impact band.
  *
  * Full-bleed aerial-forest photograph with a cinematic headline and
  * three environmental-impact stats overlaid. Same composition pattern
@@ -112,7 +112,7 @@ export function GreenerTomorrow() {
       aria-labelledby="greener-heading"
       className="relative isolate w-full overflow-hidden min-h-[680px] md:min-h-[760px] lg:min-h-[820px]"
     >
-      {/* Background image — full-bleed aerial forest road */}
+      {/* Background image - full-bleed aerial forest road */}
       <Image
         src="/img/scenes/greener-tomorrow.webp"
         alt=""

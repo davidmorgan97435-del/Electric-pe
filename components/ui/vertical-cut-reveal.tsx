@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * VerticalCutReveal — website-factory component.
+ * VerticalCutReveal - website-factory component.
  * Splits a phrase into words and reveals each by sliding from below a
  * clipped line. Great for hero/section headlines.
  *

@@ -22,7 +22,7 @@ import { cities } from "@/content/cities";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 /**
- * AnimatedRupee — count-up rupee display.
+ * AnimatedRupee - count-up rupee display.
  *
  * Animates from the previously-shown value to the new value with
  * easeOut, formatted via Intl. Used for the headline "₹ saved per
@@ -75,16 +75,16 @@ function AnimatedRupee({
 }
 
 /**
- * HP-04 Savings Calculator — per client PDF.
+ * HP-04 Savings Calculator - per client PDF.
  *
  * Three inputs, exactly as the spec asks:
  *   1. km/day slider
- *   2. Current vehicle — petrol 2-wheeler or petrol 3-wheeler
- *   3. City petrol price — auto-populates from the selected city,
+ *   2. Current vehicle - petrol 2-wheeler or petrol 3-wheeler
+ *   3. City petrol price - auto-populates from the selected city,
  *      user can adjust.
  *
  * Outputs: monthly savings (large, bold), annual savings, payback
- * in months. "Do the maths for them" — ₹2,400/month is more
+ * in months. "Do the maths for them" - ₹2,400/month is more
  * motivating than "saves up to 80%".
  */
 
@@ -154,7 +154,7 @@ export function SavingsCalculatorHome() {
         <SectionHeader
           eyebrow="Savings calculator"
           title="How much will YOU save every month?"
-          description="Switching to electric is not just good for the planet — it puts real money back in your pocket every month. Move the slider below."
+          description="Switching to electric is not just good for the planet. It puts real money back in your pocket every month. Move the slider below."
         />
       </Reveal>
 
@@ -314,7 +314,7 @@ export function SavingsCalculatorHome() {
             />
           </p>
           <p className="mt-2 text-lg text-[var(--color-text-muted)]">
-            every month — with {activeCity?.name ?? "your city"}&apos;s
+            every month, with {activeCity?.name ?? "your city"}&apos;s
             current petrol price of ₹{fuelPrice}/L
           </p>
 
@@ -343,7 +343,7 @@ export function SavingsCalculatorHome() {
               <Link
                 href={`/book-test-ride?city=${city}&km=${kmPerDay}`}
               >
-                Start Saving Today — Book a Test Ride
+                Start Saving Today. Book a Test Ride
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">

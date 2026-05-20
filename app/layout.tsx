@@ -22,7 +22,7 @@ const sora = Sora({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — Electric Scooters, Chargers & 30+ Stores Across India`,
+    default: `${SITE.name} | Electric Scooters, Chargers & 30+ Stores Across India`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: SITE.locale,
     siteName: SITE.name,
-    title: `${SITE.name} — Electric Scooters, Chargers & 30+ Stores Across India`,
+    title: `${SITE.name} | Electric Scooters, Chargers & 30+ Stores Across India`,
     description: SITE.description,
     url: SITE.url,
     images: [

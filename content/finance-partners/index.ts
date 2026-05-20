@@ -1,5 +1,38 @@
 import type { FinancePartner } from "../types";
 
+const PAN_INDIA_CITY_IDS = [
+  "agra",
+  "aligarh",
+  "alwar",
+  "belagavi",
+  "bengaluru",
+  "davanagere",
+  "delhi",
+  "dharwad",
+  "ghaziabad",
+  "gurugram",
+  "hassan",
+  "hubballi",
+  "jaipur",
+  "mandya",
+  "mathura",
+  "meerut",
+  "mysuru",
+  "rohtak",
+  "sonipat",
+  "tumakuru",
+];
+
+const METRO_CITY_IDS = [
+  "bengaluru",
+  "delhi",
+  "gurugram",
+  "ghaziabad",
+  "jaipur",
+  "meerut",
+  "mysuru",
+];
+
 export const financePartners: FinancePartner[] = [
   {
     id: "bajaj-finserv",
@@ -11,17 +44,7 @@ export const financePartners: FinancePartner[] = [
     maxTenureMonths: 36,
     eligibility: ["Salaried with 12+ months of work history", "Minimum monthly income ₹15,000"],
     docs: ["Aadhaar", "PAN", "3 months bank statement"],
-    availableInCityIds: [
-      "bengaluru",
-      "delhi",
-      "gurugram",
-      "hyderabad",
-      "chennai",
-      "mumbai",
-      "pune",
-      "ahmedabad",
-      "jaipur",
-    ],
+    availableInCityIds: PAN_INDIA_CITY_IDS,
   },
   {
     id: "hdfc-bank",
@@ -33,15 +56,7 @@ export const financePartners: FinancePartner[] = [
     maxTenureMonths: 48,
     eligibility: ["Existing HDFC relationship preferred", "CIBIL score 700+"],
     docs: ["Aadhaar", "PAN", "Salary slips"],
-    availableInCityIds: [
-      "bengaluru",
-      "delhi",
-      "gurugram",
-      "hyderabad",
-      "chennai",
-      "mumbai",
-      "pune",
-    ],
+    availableInCityIds: METRO_CITY_IDS,
   },
   {
     id: "idfc-first",
@@ -53,7 +68,7 @@ export const financePartners: FinancePartner[] = [
     maxTenureMonths: 36,
     eligibility: ["Minimum monthly income ₹20,000", "CIBIL score 680+"],
     docs: ["Aadhaar", "PAN", "Salary slips / ITR"],
-    availableInCityIds: ["bengaluru", "delhi", "gurugram", "hyderabad", "mumbai"],
+    availableInCityIds: ["bengaluru", "delhi", "gurugram", "ghaziabad", "mysuru"],
   },
   {
     id: "shriram-finance",
@@ -65,18 +80,7 @@ export const financePartners: FinancePartner[] = [
     maxTenureMonths: 36,
     eligibility: ["1+ year of business proof", "Aadhaar & PAN mandatory"],
     docs: ["Aadhaar", "PAN", "Business proof or ITR"],
-    availableInCityIds: [
-      "bengaluru",
-      "delhi",
-      "gurugram",
-      "hyderabad",
-      "chennai",
-      "mumbai",
-      "pune",
-      "ahmedabad",
-      "jaipur",
-      "chandigarh",
-    ],
+    availableInCityIds: PAN_INDIA_CITY_IDS,
   },
   {
     id: "kotak-mahindra",
@@ -88,7 +92,7 @@ export const financePartners: FinancePartner[] = [
     maxTenureMonths: 48,
     eligibility: ["Salaried or self-employed", "CIBIL 720+"],
     docs: ["Aadhaar", "PAN", "Income proof"],
-    availableInCityIds: ["bengaluru", "delhi", "gurugram", "hyderabad", "mumbai", "pune"],
+    availableInCityIds: METRO_CITY_IDS,
   },
   {
     id: "lazypay",
@@ -100,17 +104,6 @@ export const financePartners: FinancePartner[] = [
     maxTenureMonths: 24,
     eligibility: ["Above 21 years old", "Valid Aadhaar + PAN"],
     docs: ["Aadhaar", "PAN"],
-    availableInCityIds: [
-      "bengaluru",
-      "delhi",
-      "gurugram",
-      "hyderabad",
-      "chennai",
-      "mumbai",
-      "pune",
-      "ahmedabad",
-      "jaipur",
-      "chandigarh",
-    ],
+    availableInCityIds: PAN_INDIA_CITY_IDS,
   },
 ];

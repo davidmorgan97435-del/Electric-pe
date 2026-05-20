@@ -1,6 +1,6 @@
 # ElectricPe Website
 
-Production-ready, static-first marketing website for ElectricPe — India's
+Production-ready, static-first marketing website for ElectricPe, India's
 largest multi-brand EV retail network. 27+ pages, Next.js 15 App Router,
 Tailwind v4, TypeScript strict.
 
@@ -24,7 +24,7 @@ The dev server runs at http://localhost:3000.
 | Forms | React Hook Form + Zod |
 | Animation | Framer Motion (lazy), Lottie for micro-anims |
 | Maps | Google Maps JS API via `@vis.gl/react-google-maps` |
-| Content | Typed TypeScript files + MDX — no external CMS |
+| Content | Typed TypeScript files + MDX, no external CMS |
 | Analytics | GA4 + Microsoft Clarity |
 | Payments | Razorpay (lazy-loaded on booking only) |
 | Deployment | Vercel |
@@ -33,7 +33,7 @@ The dev server runs at http://localhost:3000.
 
 - **Static-first.** Every page is pre-rendered at build time via SSG.
 - **No CMS.** Content lives in `/content/` as typed `.ts` files and `.mdx`.
-  Updates are developer PRs — typed, git-versioned, zero vendor lock-in.
+  Updates are developer PRs: typed, git-versioned, zero vendor lock-in.
 - **API routes** only for write operations (forms). Pages themselves have
   no runtime Node dependency and can be exported to a pure CDN if desired.
 
@@ -77,7 +77,7 @@ tests/unit/           # Vitest unit tests for calculators + validation
 
 All colors, typography, spacing, radii, shadows, and motion live as CSS
 custom properties in `styles/globals.css` under a single `@theme` block.
-Components reference them semantically (`var(--color-brand)`) — never
+Components reference them semantically (`var(--color-brand)`), never
 hex. Dark mode is opt-in via `[data-theme="dark"]` on `<html>`.
 
 Primary CTA color `#039855` is WCAG AA verified at 4.62:1 on white.
@@ -104,7 +104,7 @@ All forms POST to typed API routes under `/app/api/`. Each route:
 ## Environment variables
 
 Copy `.env.example` to `.env.local` and fill in as needed. Nothing is
-required in dev — the app falls back to console info for missing keys.
+required in dev. The app falls back to console info for missing keys.
 For production, wire at minimum: Google Maps, WhatsApp, Razorpay,
 Resend, Zoho webhook, Sentry, GA4, Clarity.
 

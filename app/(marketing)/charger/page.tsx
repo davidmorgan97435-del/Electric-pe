@@ -9,7 +9,7 @@ import { ChargerCard } from "@/components/product/charger-card";
 import { chargers } from "@/content/chargers";
 
 export const metadata: Metadata = {
-  title: "EV Chargers for Home & Business — Oakter, RIOD, Teltonika",
+  title: "EV Chargers for Home & Business | Oakter, RIOD, Teltonika",
   description:
     "Buy EV chargers for home or fleet use. Oakter 3.3 kW starter, RIOD Powerpod 7.4/22 kW, Teltonika TeltoCharge with OCPP. Certified installation in 30+ cities.",
   alternates: { canonical: "/charger" },
@@ -43,7 +43,7 @@ export default function ChargersPage() {
             <h1 className="text-display-xl">Chargers for home and business.</h1>
             <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">
               From a ₹4,999 home charger that runs on any 5A socket to 22 kW
-              commercial units with OCPP 2.0.1 — pick the charger that fits your
+              commercial units with OCPP 2.0.1, pick the charger that fits your
               space, scooter, and scale.
             </p>
           </div>

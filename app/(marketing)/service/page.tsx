@@ -17,9 +17,9 @@ import { getFaqsByCategory } from "@/content/faqs";
 import { buildWhatsAppLink, WHATSAPP_DEFAULTS } from "@/lib/utils/whatsapp";
 
 export const metadata: Metadata = {
-  title: "Service Promise — 24-Hour SLA, Component-Level Warranty, Genuine Parts",
+  title: "Service Promise | 24-Hour SLA, Component-Level Warranty, Genuine Parts",
   description:
-    "Service within 24 hours at any ElectricPe Mobility Center. In-house technicians, genuine parts always in stock. Warranty coverage varies by component — full terms shared on inquiry.",
+    "Service within 24 hours at any ElectricPe Mobility Center. In-house technicians, genuine parts always in stock. Warranty coverage varies by component, full terms shared on inquiry.",
   alternates: { canonical: "/service" },
 };
 
@@ -29,14 +29,14 @@ const PILLARS = [
     title: "24 hours, not 24 days",
     stat: `${globals.slaThisMonthPct}%`,
     statLabel: "SLA hit this month",
-    text: "Bring your scooter to any Mobility Center — we commit to closing every service request within 24 hours. We publish our actual hit-rate monthly.",
+    text: "Bring your scooter to any Mobility Center. We commit to closing every service request within 24 hours and publish our actual hit-rate monthly.",
   },
   {
     icon: ShieldCheck,
     title: "Component-level warranty",
     stat: "Varies",
     statLabel: "By component",
-    text: "Motor and controller are covered for one year; the lithium-ion battery for three years or 10,000 km; the charger for one year. Coverage varies — exact terms shared on inquiry.",
+    text: "Motor and controller are covered for one year; the lithium-ion battery for three years or 10,000 km; the charger for one year. Coverage varies, exact terms shared on inquiry.",
   },
   {
     icon: Wrench,
@@ -50,7 +50,7 @@ const PILLARS = [
     title: "In-house technicians",
     stat: "6+",
     statLabel: "Trained per store",
-    text: "Every technician is trained by us — not outsourced. They know your scooter by model, by year, and by quirks.",
+    text: "Every technician is trained by us, not outsourced. They know your scooter by model, by year, and by quirks.",
   },
 ];
 
@@ -61,20 +61,12 @@ const HOW_IT_WORKS = [
   { n: 4, title: "Fix within 24h", text: "Same-day or next-day completion. Updates via WhatsApp." },
 ];
 
-const TECHNICIANS = [
-  { name: "Ramesh K.", store: "Bengaluru Yeswanthpur", years: 12 },
-  { name: "Priya N.", store: "Bengaluru Kalyan Nagar", years: 8 },
-  { name: "Kiran S.", store: "Chennai Anna Nagar", years: 10 },
-  { name: "Arun T.", store: "Hyderabad Madhapur", years: 6 },
-  { name: "Divya P.", store: "Delhi Nehru Place", years: 7 },
-  { name: "Murugan R.", store: "Chennai Anna Nagar", years: 14 },
-];
-
 const WARRANTY_COVERED = [
-  "Motor — 1 year",
-  "Controller — 1 year",
-  "Lithium-Ion battery — 3 years or 10,000 km (whichever is earlier)",
-  "Charger — 1 year",
+  "Motor: 1 year",
+  "Controller: 1 year",
+  "Lithium-Ion battery: 3 years or 10,000 km (whichever is earlier)",
+  "Lead-acid battery: 12 months, pro-rated replacement after 6 months",
+  "Charger: 1 year",
 ];
 
 const WARRANTY_NOT_COVERED = [
@@ -110,7 +102,7 @@ export default function ServicePage() {
             </h1>
             <p className="mt-5 text-lg text-[var(--color-text-muted)] leading-relaxed">
               Most EV brands sell you a scooter and wish you luck. We stay with you.
-              Real stores, named technicians, and a service SLA we publish every month.
+              Real stores, in-house technicians, and a service SLA we publish every month.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" leadingIcon={<MessageCircle className="h-4 w-4" aria-hidden />}>
@@ -161,7 +153,7 @@ export default function ServicePage() {
       <Section className="bg-[var(--color-surface-muted)]">
         <SectionHeader
           eyebrow="How it works"
-          title="From request to resolved — in four steps"
+          title="From request to resolved in four steps"
         />
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
           {HOW_IT_WORKS.map((step) => (
@@ -173,29 +165,6 @@ export default function ServicePage() {
                 {step.title}
               </h3>
               <p className="text-sm text-[var(--color-text-muted)]">{step.text}</p>
-            </Card>
-          ))}
-        </div>
-      </Section>
-
-      <Section>
-        <SectionHeader
-          eyebrow="Meet the technicians"
-          title="The people who'll actually service your scooter"
-        />
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {TECHNICIANS.map((t) => (
-            <Card key={t.name} className="p-4 text-center">
-              <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-[var(--color-brand)] text-white font-display font-bold mb-2">
-                {t.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .slice(0, 2)
-                  .join("")}
-              </div>
-              <p className="text-sm font-semibold text-[var(--color-text)]">{t.name}</p>
-              <p className="text-xs text-[var(--color-text-muted)]">{t.store}</p>
-              <p className="text-xs text-[var(--color-brand)] mt-1">{t.years}+ yrs</p>
             </Card>
           ))}
         </div>

@@ -9,7 +9,7 @@ interface JsonLdProps {
  * Inject a <script type="application/ld+json"> blob.
  * Use this component in any server component via <JsonLd data={...} />.
  *
- * We stringify with a minor escape for `</` inside strings — this is
+ * We stringify with a minor escape for `</` inside strings - this is
  * the documented safe pattern recommended by Google's JSON-LD guide
  * because browsers end <script> tags on any </ sequence.
  */

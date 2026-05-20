@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { jobPostings } from "@/content/careers";
 
 export const metadata: Metadata = {
-  title: "Careers — Build India's Most-Trusted EV Network",
+  title: "Careers | Build India's Most-Trusted EV Network",
   description:
     "Join ElectricPe. We're hiring store executives, technicians, engineers, and operations folks across India. Real roles, real impact.",
   alternates: { canonical: "/careers" },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 const WHY = [
   { icon: Target, title: "Impact", text: "Build a business Indian cities actually need." },
-  { icon: BookOpen, title: "Learning", text: "Retail, ops, tech, service — all under one roof." },
+  { icon: BookOpen, title: "Learning", text: "Retail, ops, tech, service, all under one roof." },
   { icon: Heart, title: "Ownership", text: "Your work reaches owners in 15+ cities every day." },
   { icon: Gift, title: "Benefits", text: "ESOPs, insurance, a service plan for your EV." },
 ];

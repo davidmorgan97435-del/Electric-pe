@@ -8,20 +8,30 @@ import type { NextRequest } from "next/server";
  * can render city-aware defaults (nearest stores, local fuel price)
  * without blocking on a client round-trip.
  *
- * Uses a small allowlist — if Vercel's geo says something we don't
+ * Uses a small allowlist - if Vercel's geo says something we don't
  * serve, we fall back to bengaluru.
  */
 const SERVED_CITY_SLUGS = new Set([
+  "agra",
+  "aligarh",
+  "alwar",
+  "belagavi",
   "bengaluru",
+  "davanagere",
   "delhi",
+  "dharwad",
+  "ghaziabad",
   "gurugram",
+  "hassan",
+  "hubballi",
   "jaipur",
-  "hyderabad",
-  "chennai",
-  "mumbai",
-  "pune",
-  "ahmedabad",
-  "chandigarh",
+  "mandya",
+  "mathura",
+  "meerut",
+  "mysuru",
+  "rohtak",
+  "sonipat",
+  "tumakuru",
 ]);
 
 const CITY_MAP: Record<string, string> = {
@@ -32,12 +42,28 @@ const CITY_MAP: Record<string, string> = {
   gurgaon: "gurugram",
   gurugram: "gurugram",
   jaipur: "jaipur",
-  hyderabad: "hyderabad",
-  chennai: "chennai",
-  mumbai: "mumbai",
-  pune: "pune",
-  ahmedabad: "ahmedabad",
-  chandigarh: "chandigarh",
+  agra: "agra",
+  aligarh: "aligarh",
+  alwar: "alwar",
+  belagavi: "belagavi",
+  belgaum: "belagavi",
+  davanagere: "davanagere",
+  davangere: "davanagere",
+  dharwad: "dharwad",
+  ghaziabad: "ghaziabad",
+  hassan: "hassan",
+  hubballi: "hubballi",
+  hubli: "hubballi",
+  mandya: "mandya",
+  mathura: "mathura",
+  meerut: "meerut",
+  mysuru: "mysuru",
+  mysore: "mysuru",
+  rohtak: "rohtak",
+  sonipat: "sonipat",
+  sonepat: "sonipat",
+  tumakuru: "tumakuru",
+  tumkur: "tumakuru",
 };
 
 const CANONICAL_HOSTS = new Set([
@@ -62,10 +88,10 @@ export function middleware(request: NextRequest) {
 
   if (!request.cookies.get("ep_city")) {
     // Vercel attaches geo at request.geo at runtime. In non-Vercel environments
-    // the request.geo prop won't exist — fall back to headers and finally to
+    // the request.geo prop won't exist - fall back to headers and finally to
     // our default served city so SSR never errors.
     const geoCity =
-      // @ts-expect-error — request.geo is injected by Vercel; typed loosely here
+      // @ts-expect-error - request.geo is injected by Vercel; typed loosely here
       request.geo?.city ??
       request.headers.get("x-vercel-ip-city") ??
       undefined;
@@ -88,12 +114,12 @@ export const config = {
   matcher: [
     /*
      * Run on every HTML route except:
-     * - /api/*      — API routes
-     * - /_next/*    — build assets
-     * - /favicon.*  — favicon
-     * - /img/*      — static images
-     * - /icons/*    — static icons
-     * - /lottie/*   — static animations
+     * - /api/*      - API routes
+     * - /_next/*    - build assets
+     * - /favicon.*  - favicon
+     * - /img/*      - static images
+     * - /icons/*    - static icons
+     * - /lottie/*   - static animations
      */
     "/((?!api|_next/static|_next/image|favicon|img|icons|lottie|robots\\.txt|sitemap\\.xml).*)",
   ],

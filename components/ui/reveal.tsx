@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils/cn";
  * Scroll-reveal primitive.
  *
  * Uses IntersectionObserver to fade-and-lift the children into place
- * when they enter the viewport. Only triggers once. Subtle by design —
+ * when they enter the viewport. Only triggers once. Subtle by design -
  * 16px rise, 500ms, standard ease. No startup hype.
  *
  * Respects prefers-reduced-motion: when enabled, the element renders
@@ -87,7 +87,7 @@ export function Reveal({
 }
 
 /**
- * Stagger — wraps a list of children and gives each one an incremental
+ * Stagger - wraps a list of children and gives each one an incremental
  * delay so they cascade into view naturally.
  */
 export function RevealStagger({

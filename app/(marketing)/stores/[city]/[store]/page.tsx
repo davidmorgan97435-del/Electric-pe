@@ -29,7 +29,7 @@ export async function generateMetadata({
   const s = getStore(store);
   if (!s || s.cityId !== city) return {};
   const c = getCity(city);
-  const title = `${s.name} — Address, Hours, Test Ride`;
+  const title = `${s.name} | Address, Hours, Test Ride`;
   const description = `Visit ${s.name} at ${s.address}, ${c?.name}. Book a test ride, service your scooter, and meet your store executive.`;
   return {
     title,

@@ -20,8 +20,8 @@ export const globals: GlobalSettings = {
     ctaHref: "/book-test-ride",
     dismissKey: "ann-2026-04",
   },
-  whatsappNumber: "919632888926",
-  supportPhone: "+919632888926",
+  whatsappNumber: "918951817700",
+  supportPhone: "+918951817700",
   supportEmail: "contact@electricpe.com",
   social: {
     instagram: "https://www.instagram.com/goelectricpe",

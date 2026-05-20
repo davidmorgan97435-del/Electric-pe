@@ -76,7 +76,7 @@ export function ContactForm() {
         <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-[var(--color-brand-soft)] text-[var(--color-brand)] mb-5">
           <Check className="h-8 w-8" aria-hidden />
         </div>
-        <h2 className="text-h2 mb-2">Got it — we'll be in touch.</h2>
+        <h2 className="text-h2 mb-2">Got it. We'll be in touch.</h2>
         <p className="text-[var(--color-text-muted)] mb-3">
           Your reference:{" "}
           <span className="font-mono font-semibold text-[var(--color-text)]">
@@ -145,7 +145,7 @@ export function ContactForm() {
           onChange={(e) => setMessage(e.target.value)}
           rows={5}
           className="w-full rounded-lg border border-[var(--color-border-strong)] bg-white px-3.5 py-2.5 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] focus-visible:ring-offset-2"
-          placeholder="Share any context so we can help faster — which model, which city, any specific question"
+          placeholder="Share any context so we can help faster: which model, which city, any specific question"
         />
       </FormField>
 

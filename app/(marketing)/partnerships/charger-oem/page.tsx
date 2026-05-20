@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 import { PartnershipHero } from "@/components/marketing/partnership-hero";
 
 export const metadata: Metadata = {
-  title: "Charger OEM Partnership — Distribute Nationally",
+  title: "Charger OEM Partnership | Distribute Nationally",
   description:
     "Your charger, our network. ElectricPe distributes and installs chargers across 30+ cities. Currently working with Oakter, RIOD, and Teltonika.",
   alternates: { canonical: "/partnerships/charger-oem" },
@@ -17,7 +17,7 @@ const PILLARS = [
   {
     icon: Plug,
     title: "Retail + installation",
-    text: "We sell AND install — licensed electricians across 30+ Indian cities.",
+    text: "We sell AND install with licensed electricians across 30+ Indian cities.",
   },
   {
     icon: Truck,

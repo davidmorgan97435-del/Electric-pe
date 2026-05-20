@@ -112,16 +112,6 @@ export const faqs: Faq[] = [
     order: 12,
   },
   {
-    id: "ep-delivery",
-    question: "Is the EP City Plus good for delivery work?",
-    answerMdx:
-      "Yes. It's the most affordable in our lineup and designed for single-rider use with heavy daily mileage. Delivery partners on Swiggy, Zomato, and Zepto report average fuel savings of ₹250/day compared to petrol scooters.",
-    category: "buying",
-    scope: "brand",
-    scopeId: "ep",
-    order: 13,
-  },
-  {
     id: "4all-licence",
     question: "Why doesn't the 4ALL need a licence?",
     answerMdx:

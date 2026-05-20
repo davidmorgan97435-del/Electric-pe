@@ -140,7 +140,7 @@ export default async function BlogPostPage({
             <div className="prose prose-neutral max-w-none text-[var(--color-text)] leading-relaxed text-lg">
               <p>
                 {p.dek} This post walks through the details, with a focus on how it
-                plays out in daily Indian ownership — not lab conditions.
+                plays out in daily Indian ownership, not lab conditions.
               </p>
               <h2 className="text-h2 mt-10 mb-3">The context</h2>
               <p>
@@ -152,13 +152,13 @@ export default async function BlogPostPage({
               <h2 className="text-h2 mt-10 mb-3">What the numbers say</h2>
               <p>
                 Every claim we make here is backed by usage data from the ElectricPe
-                fleet, on-ground service reports, or published industry benchmarks —
+                fleet, on-ground service reports, or published industry benchmarks,
                 cited where relevant. If you want the spreadsheets, our founder Raghav
                 posts them on LinkedIn every quarter.
               </p>
               <h3 className="text-h3 mt-8 mb-3">Daily range, honestly</h3>
               <p>
-                The manufacturer's claimed range is a lab number — riding on flat roads,
+                The manufacturer's claimed range is a lab number: riding on flat roads,
                 one-up, at a constant moderate speed. Real-world commuting shaves off
                 10–20%. Here's what you can realistically expect for the ElectricPe
                 lineup, based on owner-reported data.
@@ -166,14 +166,14 @@ export default async function BlogPostPage({
               <h3 className="text-h3 mt-8 mb-3">Service touchpoints</h3>
               <p>
                 The single biggest differentiator of ElectricPe ownership is the service
-                network. Our commitment is 24 hours — and we publish the monthly hit-rate
+                network. Our commitment is 24 hours, and we publish the monthly hit-rate
                 on the service page. For {formatDate(p.publishedAt)}, we were at 94%.
               </p>
               <h2 className="text-h2 mt-10 mb-3">The practical takeaway</h2>
               <p>
                 If you've read this far, here's the short version: book a test ride, bring
                 a friend, and ride for an hour in your usual commute. Our executives will
-                help you pair the right model to your actual route — not upsell you to the
+                help you pair the right model to your actual route, not upsell you to the
                 priciest variant. That's the whole job.
               </p>
             </div>

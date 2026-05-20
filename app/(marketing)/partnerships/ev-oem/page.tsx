@@ -8,9 +8,9 @@ import { Card } from "@/components/ui/card";
 import { PartnershipHero } from "@/components/marketing/partnership-hero";
 
 export const metadata: Metadata = {
-  title: { absolute: "EV OEM Partnership — Distribute via ElectricPe" },
+  title: { absolute: "EV OEM Partnership | Distribute via ElectricPe" },
   description:
-    "Scale distribution for your electric scooter brand through ElectricPe's 30+ Mobility Centers. Retail, financing, service — all bundled.",
+    "Scale distribution for your electric scooter brand through ElectricPe's 30+ Mobility Centers. Retail, financing, service, all bundled.",
   alternates: { canonical: "/partnerships/ev-oem" },
 };
 
@@ -79,7 +79,7 @@ export default function EvOemPage() {
           </p>
           <p className="mt-4 text-[var(--color-text)] leading-relaxed">
             The partnership lets Xypro focus on product and manufacturing while we
-            handle retail, service, and financing — the parts most OEMs try (and
+            handle retail, service, and financing, the parts most OEMs try (and
             struggle) to build in-house.
           </p>
           <div className="mt-6 grid grid-cols-3 gap-4 text-center">

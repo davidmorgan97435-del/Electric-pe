@@ -9,7 +9,7 @@ had baked-in text (brand wordmarks on product banners). This script:
   4. Keeps ONLY the single largest component (the scooter).
   5. Writes the result back.
 
-Every other blob — orphaned letter fragments, noise, text residue —
+Every other blob - orphaned letter fragments, noise, text residue -
 gets zeroed out in the alpha channel. Perfect cutout, every time.
 
 Run: python scripts/clean-cutouts.py
@@ -31,9 +31,9 @@ INPUTS = [
     "home_hero_section_2-cutout.png",
 ]
 
-# Alpha threshold — pixels above this count as "object"
+# Alpha threshold - pixels above this count as "object"
 ALPHA_THRESHOLD = 20
-# Minimum area ratio — a blob smaller than this fraction of the
+# Minimum area ratio - a blob smaller than this fraction of the
 # largest blob is considered a fragment and removed.
 MIN_AREA_RATIO = 0.15
 
@@ -60,7 +60,7 @@ for name in INPUTS:
     largest_idx = int(np.argmax(sizes)) + 1
     largest_size = float(sizes[largest_idx - 1])
 
-    # Keep any component >= MIN_AREA_RATIO of the largest (rare —
+    # Keep any component >= MIN_AREA_RATIO of the largest (rare -
     # e.g., if the scooter is split by the cutout algorithm into
     # wheel + body). Everything else is a fragment.
     keep_mask = np.zeros_like(mask, dtype=bool)

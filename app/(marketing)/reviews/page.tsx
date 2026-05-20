@@ -10,9 +10,9 @@ import { getCity } from "@/content/cities";
 import { scooters } from "@/content/scooters";
 
 export const metadata: Metadata = {
-  title: "Customer Reviews — 2,500+ Verified Owners",
+  title: "Customer Reviews | 2,500+ Verified Owners",
   description:
-    "Read real reviews from ElectricPe scooter owners across India. Every testimonial is verified — real name, real city, real model.",
+    "Read real reviews from ElectricPe scooter owners across India. Every testimonial is verified: real name, real city, real model.",
   alternates: { canonical: "/reviews" },
 };
 
@@ -38,7 +38,7 @@ export default function ReviewsPage() {
             <p className="text-eyebrow mb-3">Reviews</p>
             <h1 className="text-display-xl">Real riders. Real stories.</h1>
             <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">
-              Every quote below is verified — real name, real city, real model. We
+              Every quote below is verified: real name, real city, real model. We
               don't use stock photos and we don't invent customers.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-4 max-w-lg">
@@ -119,7 +119,7 @@ export default function ReviewsPage() {
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-display-lg">Share your story.</h2>
           <p className="mt-4 text-[var(--color-text-muted)]">
-            Own an ElectricPe? We'd love to feature you here — and on social.
+            Own an ElectricPe? We'd love to feature you here, and on social.
           </p>
           <Button asChild size="lg" className="mt-6">
             <Link href="/contact-us?topic=review">Tell us your story</Link>

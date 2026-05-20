@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { financePartners } from "@/content/finance-partners";
 
 /**
- * HP-08 — EMI & Finance.
+ * HP-08 - EMI & Finance.
  *
  * Replaces the earlier 3-card steps with a single horizontal numbered
  * timeline (Apply → Approve in 15 min → Ride home same day). The partner
@@ -33,7 +33,7 @@ export function FinanceStrip() {
       </Reveal>
 
       <div className="max-w-5xl mx-auto">
-        {/* Horizontal timeline — numbered steps connected by a rule */}
+        {/* Horizontal timeline - numbered steps connected by a rule */}
         <Reveal>
           <ol className="relative grid grid-cols-1 md:grid-cols-3 gap-y-8 md:gap-y-0 md:gap-x-6">
             {/* Connecting line (desktop only) */}
@@ -74,7 +74,7 @@ export function FinanceStrip() {
               {financePartners.map((p) => (
                 <span
                   key={p.id}
-                  title={`${p.name} — ${p.usp}`}
+                  title={`${p.name}: ${p.usp}`}
                   className="font-display font-bold text-base md:text-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
                 >
                   {p.name}

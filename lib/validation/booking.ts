@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 /**
- * Indian mobile number — 10 digits, optionally prefixed with +91 or 91.
+ * Indian mobile number - 10 digits, optionally prefixed with +91 or 91.
  * We normalise to the 10-digit form on successful parse.
  */
 const indianPhoneSchema = z

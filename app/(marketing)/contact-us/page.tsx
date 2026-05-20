@@ -9,9 +9,9 @@ import { globals } from "@/content/globals";
 import { buildWhatsAppLink, WHATSAPP_DEFAULTS } from "@/lib/utils/whatsapp";
 
 export const metadata: Metadata = {
-  title: { absolute: "Contact ElectricPe — Phone, WhatsApp, Email, Visit" },
+  title: { absolute: "Contact ElectricPe | Phone, WhatsApp, Email, Visit" },
   description:
-    "Reach ElectricPe by phone, WhatsApp, email, or walk into any of our 30+ Mobility Centers. HQ in Bengaluru. We answer — really.",
+    "Reach ElectricPe by phone, WhatsApp, email, or walk into any of our 30+ Mobility Centers. HQ in Bengaluru. We answer, really.",
   alternates: { canonical: "/contact-us" },
 };
 
@@ -84,7 +84,7 @@ export default function ContactPage() {
             <h1 className="text-display-xl">Talk to a real human.</h1>
             <p className="mt-4 text-lg text-[var(--color-text-muted)]">
               Pick the channel that suits you. Every route lands at someone trained on
-              our product — not a generic call centre.
+              our product, not a generic call centre.
             </p>
           </div>
 
@@ -126,7 +126,7 @@ export default function ContactPage() {
           <div>
             <SectionHeader
               eyebrow="Send us a message"
-              title="We answer every message — fast."
+              title="We answer every message, fast."
               align="left"
             />
             <ContactForm />

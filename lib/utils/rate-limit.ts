@@ -2,7 +2,7 @@
  * Simple in-memory sliding-window rate limiter.
  *
  * Good enough for the free-tier Vercel hobby/pro single-region deploy.
- * Swap for Upstash Ratelimit if we go multi-region — the API here
+ * Swap for Upstash Ratelimit if we go multi-region - the API here
  * intentionally mirrors `@upstash/ratelimit.limit()` so the swap is a one-line change.
  */
 

@@ -6,7 +6,7 @@
  *
  * CO₂ factor: 2.31 kg per litre of petrol (IPCC-consistent).
  * Electricity carbon intensity is ignored for monthly output
- * because Indian grid carbon is improving annually — we quote
+ * because Indian grid carbon is improving annually - we quote
  * tailpipe emissions avoided, which is the rider-facing number.
  */
 
@@ -25,11 +25,11 @@ export type SavingsInput = {
   scooterWhPerKm: number;
   /** electricity tariff (₹/kWh) */
   electricityRate: number;
-  /** purchase price of the new EV (₹) — used for payback calculation */
+  /** purchase price of the new EV (₹) - used for payback calculation */
   evOnRoadPrice: number;
   /** optional current vehicle resale / exchange value to subtract */
   currentVehicleResale?: number;
-  /** operating days per month — default 30 */
+  /** operating days per month - default 30 */
   daysPerMonth?: number;
 };
 
