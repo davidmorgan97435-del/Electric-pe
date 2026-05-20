@@ -41,7 +41,7 @@ const PILLARS = [
   {
     icon: Wrench,
     title: "Genuine parts, in stock",
-    stat: "30+",
+    stat: "50+",
     statLabel: "Parts depots",
     text: "We stock our own parts across every Mobility Center. No three-week waits for a component to arrive from a warehouse in another city.",
   },

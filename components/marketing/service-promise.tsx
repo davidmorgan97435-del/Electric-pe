@@ -41,9 +41,9 @@ const PILLARS: Pillar[] = [
     icon: Store,
     title: "Real Stores, Real People",
     proof:
-      "Walk into any of our 30+ Mobility Centers. No chatbots, no call queues. A trained executive knows your vehicle by name.",
+      "Walk into any of our 50+ Mobility Centers. No chatbots, no call queues. A trained executive knows your vehicle by name.",
     metricEyebrow: "Stores today",
-    metric: "30+ Mobility Centers across India.",
+    metric: "50+ Mobility Centers across India.",
     image: "/img/promise/01-stores.png",
     imageAlt:
       "An ElectricPe customer executive greeting a rider inside a Mobility Center.",
@@ -129,7 +129,7 @@ export function ServicePromise() {
         <SectionHeader
           eyebrow="Why ElectricPe"
           title="Electric scooter service you can walk into, across India."
-          description="Most EV brands sell you a scooter and wish you luck. ElectricPe backs yours with 30+ Mobility Centres, a 24-hour service SLA, and component-level warranty on battery, motor and controller. Coverage varies by component, shared in writing."
+          description="Most EV brands sell you a scooter and wish you luck. ElectricPe backs yours with 50+ Mobility Centres, a 24-hour service SLA, and component-level warranty on battery, motor and controller. Coverage varies by component, shared in writing."
         />
       </Reveal>
 

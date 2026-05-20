@@ -50,10 +50,11 @@ export function Hero() {
   const gridY = useTransform(scrollYProgress, [0, 1], [0, -30]);
 
   return (
+    <>
     <section
       ref={sectionRef}
       aria-labelledby="hero-heading"
-      className="relative isolate overflow-hidden"
+      className="relative isolate overflow-x-clip"
       style={{
         background:
           "radial-gradient(120% 80% at 50% 0%, #eefaf3 0%, #f5fbf8 35%, #fbfdfc 65%, #ffffff 100%)",
@@ -183,7 +184,7 @@ export function Hero() {
             </li>
             <li className="inline-flex items-center gap-1.5">
               <Store className="h-4 w-4 text-[var(--color-brand)]" aria-hidden />
-              30+ Mobility Centers
+              50+ Mobility Centers
             </li>
           </motion.ul>
         </div>
@@ -213,17 +214,24 @@ export function Hero() {
           />
           </motion.div>
         </motion.div>
+      </Container>
+    </section>
 
-        {/* Trust bar overlap */}
+    {/* Trust bar sits as a sibling of the hero section so its labels can
+        never be clipped by the section's overflow. The negative top margin
+        pulls it up to overlap the hero's bottom edge for the float effect,
+        and z-10 keeps it visually above the next section in the overlap zone. */}
+    <div className="relative z-10 -mt-10 md:-mt-14">
+      <Container size="2xl">
         <motion.div
           initial={reduced ? false : { opacity: 0, y: 14 }}
           animate={reduced ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: reduced ? 0 : 0.55, delay: reduced ? 0 : 0.65, ease: EASE }}
-          className="relative -mb-10 md:-mb-14 pb-4"
         >
           <TrustBar />
         </motion.div>
       </Container>
-    </section>
+    </div>
+    </>
   );
 }

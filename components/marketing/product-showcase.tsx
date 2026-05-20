@@ -42,7 +42,7 @@ export function ProductShowcase() {
         <SectionHeader
           eyebrow="Featured rides"
           title="The scooters, every Indian needs."
-          description="Pick the silhouette that fits your day. Every model is ARAI-approved, licence-free, and serviced by our 30+ Mobility Centres."
+          description="Pick the silhouette that fits your day. Every model is ARAI-approved, licence-free, and serviced by our 50+ Mobility Centres."
         />
       </Reveal>
 

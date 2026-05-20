@@ -10,7 +10,7 @@ import { PartnershipHero } from "@/components/marketing/partnership-hero";
 export const metadata: Metadata = {
   title: { absolute: "EV OEM Partnership | Distribute via ElectricPe" },
   description:
-    "Scale distribution for your electric scooter brand through ElectricPe's 30+ Mobility Centers. Retail, financing, service, all bundled.",
+    "Scale distribution for your electric scooter brand through ElectricPe's 50+ Mobility Centers. Retail, financing, service, all bundled.",
   alternates: { canonical: "/partnerships/ev-oem" },
 };
 
@@ -18,7 +18,7 @@ const PILLARS = [
   {
     icon: Users,
     title: "Real customer reach",
-    text: "30+ Mobility Centers generating 1,000+ test rides per month across Tier 1–2 cities.",
+    text: "50+ Mobility Centers generating 1,000+ test rides per month across Tier 1–2 cities.",
   },
   {
     icon: Wrench,
