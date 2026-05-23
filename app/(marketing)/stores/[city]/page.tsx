@@ -7,12 +7,10 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { StoreCard } from "@/components/locator/store-card";
-import { ProductCard } from "@/components/marketing/product-card";
 import { JsonLd, breadcrumbSchema, itemListSchema } from "@/lib/seo/jsonld";
 import { absoluteUrl } from "@/lib/utils/site";
 import { cities, getCity, allCitySlugs } from "@/content/cities";
 import { getStoresByCity } from "@/content/stores";
-import { scooters } from "@/content/scooters";
 import { getTestimonialsByCity } from "@/content/testimonials";
 
 type Params = { city: string };
@@ -54,9 +52,6 @@ export default async function CityPage({
   if (!c) notFound();
 
   const cityStores = getStoresByCity(city);
-  const bestsellers = c.bestsellerScooterVariantSlugs
-    .map((slug) => scooters.find((s) => `${s.brand}-${s.variantSlug}` === slug))
-    .filter((s): s is typeof scooters[number] => Boolean(s));
   const cityTestimonials = getTestimonialsByCity(city);
 
   return (
@@ -129,21 +124,6 @@ export default async function CityPage({
           ))}
         </div>
       </Section>
-
-      {bestsellers.length > 0 && (
-        <Section className="bg-[var(--color-surface-muted)]">
-          <SectionHeader
-            eyebrow="Bestsellers"
-            title={`${c.name} riders love these`}
-            align="left"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {bestsellers.map((s) => (
-              <ProductCard key={`${s.brand}-${s.variantSlug}`} scooter={s} />
-            ))}
-          </div>
-        </Section>
-      )}
 
       {cityTestimonials.length > 0 && (
         <Section>

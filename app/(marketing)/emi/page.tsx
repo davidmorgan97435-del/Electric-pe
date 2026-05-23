@@ -97,8 +97,8 @@ export default function EmiPage() {
               Own an ElectricPe from ₹1,999/month.
             </h1>
             <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">
-              Six finance partners. Zero down payment at select stores. One honest
-              calculator. No hidden fees: what you see is what you pay.
+              Backed by Bajaj Finserv. Zero down payment at select stores. One
+              honest calculator. No hidden fees: what you see is what you pay.
             </p>
           </div>
         </Container>
@@ -114,8 +114,9 @@ export default function EmiPage() {
 
       <Section className="bg-[var(--color-surface-muted)]">
         <SectionHeader
-          eyebrow="Six partners"
-          title="Pick the finance partner that fits your profile"
+          eyebrow="Finance partner"
+          title="Backed by Bajaj Finserv"
+          description="Fastest approval in the country, 15 minutes at any ElectricPe Mobility Center. More partners coming as we onboard them."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {financePartners.map((p) => (

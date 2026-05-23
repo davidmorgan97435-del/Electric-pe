@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
   title: "Warranty",
-  description: "ElectricPe's component-level warranty: motor 1 year, controller 1 year, lithium-ion battery 3 years or 10,000 km, charger 1 year. Coverage varies by component.",
+  description: "ElectricPe's component-level warranty: motor 1 year, controller 1 year, lithium-ion battery 3 years or 40,000 km, charger 1 year. Coverage varies by component.",
   alternates: { canonical: "/warranty" },
 };
 
@@ -38,7 +38,7 @@ export default function WarrantyPage() {
             <ul className="list-disc pl-5 space-y-1.5">
               <li><strong>Motor:</strong> 1 year.</li>
               <li><strong>Controller:</strong> 1 year.</li>
-              <li><strong>Lithium-ion battery:</strong> 3 years or 10,000 km, whichever is earlier.</li>
+              <li><strong>Lithium-ion battery:</strong> 3 years or 40,000 km, whichever is earlier.</li>
               <li><strong>Lead-acid battery:</strong> 12 months, pro-rated replacement after 6 months.</li>
               <li><strong>Charger:</strong> 1 year.</li>
             </ul>

@@ -43,7 +43,7 @@ export default function CareersPage() {
             </h1>
             <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">
               We're hiring across retail, service, engineering, marketing, and
-              operations. Come help us go from 30 stores to 50+ in the next 12 months.
+              operations. Come help us go from 30 stores to 126+ in the next 12 months.
             </p>
             <Button
               asChild

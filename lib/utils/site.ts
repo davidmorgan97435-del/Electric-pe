@@ -4,7 +4,7 @@ export const SITE = {
   legalName: "Wattapp Technologies Pvt. Ltd.",
   tagline: "India's largest trusted EV retail network",
   description:
-    "Affordable electric scooters from Xypro, Jett & 4ALL. 50+ Mobility Centers, 24-hour service, component-level warranty. No licence required. Book a free test ride today.",
+    "Affordable electric scooters from Xypro, Jett & 4ALL. 126+ Mobility Centers, 24-hour service, component-level warranty. No licence required. Book a free test ride today.",
   twitter: "@GoElectricPe",
   locale: "en_IN",
   themeColor: "#039855",

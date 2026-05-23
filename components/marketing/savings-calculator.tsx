@@ -111,7 +111,7 @@ const VEHICLE_OPTIONS: {
 ];
 
 const DEFAULT_CITY = "bengaluru";
-const EV_ON_ROAD = 64999; // Xypro Lithium (most common pick)
+const EV_ON_ROAD = 36000; // Xypro (most common pick)
 
 export function SavingsCalculatorHome() {
   const reduced = useReducedMotion();

@@ -6,11 +6,10 @@ export const scooters: Scooter[] = [
     variantSlug: "lithium-ion",
     name: "Xypro Lithium Ion",
     tagline: "Long range for city commutes. Lithium efficiency, lead-acid pricing",
-    priceOnRoad: 64999,
-    priceOriginal: 67999,
-    emiFrom: 2199,
+    priceOnRoad: 36000,
+    emiFrom: 1299,
     specs: {
-      rangeKm: 100,
+      rangeKm: 80,
       topSpeedKmh: 25,
       chargeTimeHours: 4,
       batteryType: "lithium-ion",
@@ -33,7 +32,7 @@ export const scooters: Scooter[] = [
     ],
     heroGallery: ["/img/xypro_brand_banner.webp"],
     featureBullets: [
-      "100 km real-world range on a single charge",
+      "80 km+ real-world range on a single charge",
       "Charges in 4 hours on any regular 5A socket",
       "Digital speedometer with remaining-range estimate",
       "Anti-theft alarm + remote-lock key fob",
@@ -54,9 +53,9 @@ export const scooters: Scooter[] = [
       "hubballi",
     ],
     seo: {
-      title: "Xypro Lithium Ion | 100 km Range Electric Scooter | ElectricPe",
+      title: "Xypro Lithium Ion | 80 km+ Range Electric Scooter | ElectricPe",
       description:
-        "Xypro Lithium Ion electric scooter. 100 km range, 25 km/h top speed, 4h charge, component-level warranty. No licence required. EMI from ₹2,199/month. Book a free test ride.",
+        "Xypro Lithium Ion electric scooter. 80 km+ range, 25 km/h top speed, 4h charge, component-level warranty. No licence required. EMI from ₹1,299/month. Book a free test ride.",
     },
   },
   {
@@ -64,13 +63,12 @@ export const scooters: Scooter[] = [
     variantSlug: "lead-acid",
     name: "Xypro Lead Acid",
     tagline: "Budget-friendly daily rider. Trusted chemistry, proven parts",
-    priceOnRoad: 53999,
-    priceOriginal: 56999,
-    emiFrom: 1799,
+    priceOnRoad: 36000,
+    emiFrom: 1299,
     specs: {
-      rangeKm: 60,
+      rangeKm: 80,
       topSpeedKmh: 25,
-      chargeTimeHours: 8,
+      chargeTimeHours: 4,
       batteryType: "lead-acid",
       batteryCapacityKwh: 1.44,
       motorWattage: 250,
@@ -88,7 +86,7 @@ export const scooters: Scooter[] = [
     ],
     heroGallery: ["/img/xypro_brand_banner.webp"],
     featureBullets: [
-      "60 km real-world range on a single charge",
+      "80 km+ real-world range on a single charge",
       "Lowest upfront price in the ElectricPe range",
       "Replaceable lead-acid battery, easy roadside swap",
       "Digital speedometer, anti-theft alarm",
@@ -112,9 +110,9 @@ export const scooters: Scooter[] = [
       "sonipat",
     ],
     seo: {
-      title: "Xypro Lead Acid | Affordable 60km EV Scooter | ElectricPe",
+      title: "Xypro Lead Acid | Affordable 80 km+ EV Scooter | ElectricPe",
       description:
-        "Xypro Lead Acid electric scooter. 60 km range, 25 km/h top speed, component-level warranty. No licence required. EMI from ₹1,799/month. Book a free test ride.",
+        "Xypro Lead Acid electric scooter. 80 km+ range, 25 km/h top speed, component-level warranty. No licence required. EMI from ₹1,299/month. Book a free test ride.",
     },
   },
   {
@@ -122,10 +120,10 @@ export const scooters: Scooter[] = [
     variantSlug: "lithium-ion",
     name: "Jett Lithium Ion",
     tagline: "Elegant, spacious, built for the family. Daily rides with cargo comfort",
-    priceOnRoad: 73000,
-    emiFrom: 2499,
+    priceOnRoad: 54000,
+    emiFrom: 1899,
     specs: {
-      rangeKm: 90,
+      rangeKm: 80,
       topSpeedKmh: 25,
       chargeTimeHours: 4,
       batteryType: "lithium-ion",
@@ -144,7 +142,7 @@ export const scooters: Scooter[] = [
     ],
     heroGallery: ["/img/jett_brand_banner.webp"],
     featureBullets: [
-      "90 km range, enough for two daily commutes + errands",
+      "80 km+ range, enough for two daily commutes + errands",
       "Cushioned dual-seat with lumbar support",
       "Large under-seat storage (10 kg luggage capacity)",
       "12-inch wheels for smoother Indian roads",
@@ -164,9 +162,9 @@ export const scooters: Scooter[] = [
       "belagavi",
     ],
     seo: {
-      title: "Jett Lithium Ion | 90km Family Electric Scooter | ElectricPe",
+      title: "Jett Lithium Ion | 80 km+ Family Electric Scooter | ElectricPe",
       description:
-        "Jett Lithium Ion electric scooter with 12-inch wheels, 10kg storage, 90 km range. Built for family rides. Component-level warranty. EMI from ₹2,499/month.",
+        "Jett Lithium Ion electric scooter with 12-inch wheels, 10kg storage, 80 km+ range. Built for family rides. Component-level warranty. EMI from ₹1,899/month.",
     },
   },
   {
@@ -174,12 +172,12 @@ export const scooters: Scooter[] = [
     variantSlug: "lead-acid",
     name: "Jett Lead Acid",
     tagline: "Same elegance, lighter on the wallet. Proven battery chemistry",
-    priceOnRoad: 64999,
-    emiFrom: 2199,
+    priceOnRoad: 54000,
+    emiFrom: 1899,
     specs: {
-      rangeKm: 60,
+      rangeKm: 80,
       topSpeedKmh: 25,
-      chargeTimeHours: 8,
+      chargeTimeHours: 4,
       batteryType: "lead-acid",
       batteryCapacityKwh: 1.44,
       motorWattage: 250,
@@ -196,10 +194,10 @@ export const scooters: Scooter[] = [
     ],
     heroGallery: ["/img/jett_brand_banner.webp"],
     featureBullets: [
-      "60 km range for predictable daily use",
+      "80 km+ range for predictable daily use",
       "Same seat + storage + wheels as the lithium Jett",
       "Replaceable battery, easy to service anywhere",
-      "Starting at ₹64,999 on-road",
+      "Starting at ₹54,000 on-road",
     ],
     useCases: ["commute", "family"],
     licenseRequired: false,
@@ -216,7 +214,7 @@ export const scooters: Scooter[] = [
     seo: {
       title: "Jett Lead Acid | Affordable Family EV Scooter | ElectricPe",
       description:
-        "Jett Lead Acid electric scooter. 60 km range, 12-inch wheels, 10kg storage. Component-level warranty. EMI from ₹2,199/month.",
+        "Jett Lead Acid electric scooter. 80 km+ range, 12-inch wheels, 10kg storage. Component-level warranty. EMI from ₹1,899/month.",
     },
   },
   {
@@ -224,10 +222,10 @@ export const scooters: Scooter[] = [
     variantSlug: "lithium-ion",
     name: "4ALL Lithium Ion",
     tagline: "Best range, zero hassle. No registration, no licence, no stress",
-    priceOnRoad: 75000,
-    emiFrom: 2599,
+    priceOnRoad: 56000,
+    emiFrom: 1999,
     specs: {
-      rangeKm: 95,
+      rangeKm: 80,
       topSpeedKmh: 25,
       chargeTimeHours: 4,
       batteryType: "lithium-ion",
@@ -246,7 +244,7 @@ export const scooters: Scooter[] = [
     ],
     heroGallery: ["/img/4all_brand_banner.webp"],
     featureBullets: [
-      "95 km real-world range on a single charge",
+      "80 km+ real-world range on a single charge",
       "No licence, no registration. Ride it home the same day",
       "Detachable battery, charge indoors in 4 hours",
       "LED headlamp + digital console",
@@ -266,9 +264,9 @@ export const scooters: Scooter[] = [
       "dharwad",
     ],
     seo: {
-      title: "4ALL Lithium Ion | 95km No-Licence EV Scooter | ElectricPe",
+      title: "4ALL Lithium Ion | 80 km+ No-Licence EV Scooter | ElectricPe",
       description:
-        "4ALL Lithium Ion electric scooter. 95 km range, no licence, no registration. Component-level warranty. EMI from ₹2,599/month. Book a free test ride.",
+        "4ALL Lithium Ion electric scooter. 80 km+ range, no licence, no registration. Component-level warranty. EMI from ₹1,999/month. Book a free test ride.",
     },
   },
   {
@@ -276,12 +274,12 @@ export const scooters: Scooter[] = [
     variantSlug: "lead-acid",
     name: "4ALL Lead Acid",
     tagline: "Hassle-free ownership with classic lead-acid reliability",
-    priceOnRoad: 62000,
-    emiFrom: 2099,
+    priceOnRoad: 56000,
+    emiFrom: 1999,
     specs: {
-      rangeKm: 95,
+      rangeKm: 80,
       topSpeedKmh: 25,
-      chargeTimeHours: 8,
+      chargeTimeHours: 4,
       batteryType: "lead-acid",
       batteryCapacityKwh: 1.44,
       motorWattage: 250,
@@ -298,7 +296,7 @@ export const scooters: Scooter[] = [
     ],
     heroGallery: ["/img/4all_brand_banner.webp"],
     featureBullets: [
-      "95 km range, best range in its price bracket",
+      "80 km+ range, best range in its price bracket",
       "No licence, no registration required",
       "Proven lead-acid chemistry, serviceable anywhere",
     ],
@@ -317,9 +315,9 @@ export const scooters: Scooter[] = [
       "mathura",
     ],
     seo: {
-      title: "4ALL Lead Acid | 95km Affordable EV Scooter | ElectricPe",
+      title: "4ALL Lead Acid | 80 km+ Affordable EV Scooter | ElectricPe",
       description:
-        "4ALL Lead Acid electric scooter. 95 km range, no licence required. Component-level warranty. EMI from ₹2,099/month.",
+        "4ALL Lead Acid electric scooter. 80 km+ range, no licence required. Component-level warranty. EMI from ₹1,999/month.",
     },
   },
   {
@@ -327,12 +325,12 @@ export const scooters: Scooter[] = [
     variantSlug: "swap",
     name: "Xypro Swap",
     tagline: "Own the scooter, subscribe the battery. Lowest upfront cost",
-    priceOnRoad: 35000,
+    priceOnRoad: 36000,
     emiFrom: 1299,
     specs: {
-      rangeKm: 60,
+      rangeKm: 80,
       topSpeedKmh: 25,
-      chargeTimeHours: 0,
+      chargeTimeHours: 4,
       batteryType: "lithium-ion",
       batteryCapacityKwh: 1.6,
       motorWattage: 250,
@@ -349,7 +347,7 @@ export const scooters: Scooter[] = [
     ],
     heroGallery: ["/img/xypro_brand_banner.webp"],
     featureBullets: [
-      "Lowest sticker price: ₹35,000 on-road",
+      "Lowest sticker price: ₹36,000 on-road",
       "Battery-as-a-service: swap at any partner station in seconds",
       "Ideal for delivery riders who can't afford charging downtime",
       "No charging at home, no electricity bill spike",
@@ -360,9 +358,9 @@ export const scooters: Scooter[] = [
     testimonialIds: [],
     availabilityCities: ["bengaluru", "delhi", "gurugram"],
     seo: {
-      title: "Xypro Swap | Battery Swap EV Scooter ₹35,000 | ElectricPe",
+      title: "Xypro Swap | Battery Swap EV Scooter ₹36,000 | ElectricPe",
       description:
-        "Xypro Swap electric scooter with battery-as-a-service. Lowest upfront cost at ₹35,000. Perfect for delivery partners. No charging downtime.",
+        "Xypro Swap electric scooter with battery-as-a-service. Lowest upfront cost at ₹36,000. Perfect for delivery partners. No charging downtime.",
     },
   },
 ];

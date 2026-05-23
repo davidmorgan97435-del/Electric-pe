@@ -50,7 +50,7 @@ export const faqs: Faq[] = [
     id: "service-warranty",
     question: "What does the warranty cover?",
     answerMdx:
-      "Warranty coverage varies by component. The motor and controller are covered for 1 year, the charger for 1 year, and the lithium-ion battery for 3 years or 10,000 km (whichever is earlier). Wear-and-tear items (tyres, brake pads), accidental damage and unauthorised modifications are not covered. Exact terms are shared at handover or on inquiry at any Mobility Center.",
+      "Warranty coverage varies by component. The motor and controller are covered for 1 year, the charger for 1 year, and the lithium-ion battery for 3 years or 40,000 km (whichever is earlier). Wear-and-tear items (tyres, brake pads), accidental damage and unauthorised modifications are not covered. Exact terms are shared at handover or on inquiry at any Mobility Center.",
     category: "service",
     scope: "global",
     order: 6,
@@ -68,7 +68,7 @@ export const faqs: Faq[] = [
     id: "charging-home",
     question: "Can I charge at home?",
     answerMdx:
-      "Yes. All ElectricPe scooters charge from any regular 5A domestic socket. No special wiring required. We also sell home chargers (Oakter, RIOD, Teltonika) for faster charging, and can arrange certified installation across 30+ cities.",
+      "Yes. All ElectricPe scooters charge from any regular 5A domestic socket. No special wiring required. The charger that ships with your scooter is sized for safe overnight charging at home.",
     category: "charging",
     scope: "global",
     order: 8,
@@ -95,7 +95,7 @@ export const faqs: Faq[] = [
     id: "xypro-range",
     question: "What's the real-world range of the Xypro?",
     answerMdx:
-      "The Xypro Lithium Ion delivers 90–100 km in real-world conditions: slightly better on flat roads, slightly less if you're carrying a pillion or climbing elevations. The Xypro Lead Acid delivers 55–60 km. These are rider-tested numbers, not lab figures.",
+      "Every Xypro variant delivers 80 km+ on a single charge in real-world conditions: slightly better on flat roads, slightly less if you're carrying a pillion or climbing elevations. These are rider-tested numbers, not lab figures.",
     category: "buying",
     scope: "brand",
     scopeId: "xypro",

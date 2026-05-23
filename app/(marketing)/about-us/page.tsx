@@ -37,7 +37,7 @@ const MILESTONES = [
   },
   {
     year: "2026",
-    title: "Expanding to 50+ stores",
+    title: "Expanding to 126+ stores",
     text: "Growing into Delhi NCR, West India, and Tier-2 city clusters.",
   },
 ];

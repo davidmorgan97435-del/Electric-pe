@@ -33,7 +33,7 @@ const BRAND_NAMES: Record<string, string> = {
 };
 
 const SERVICE_PILLARS = [
-  { icon: Store, title: "Real stores", text: "50+ Mobility Centers across India" },
+  { icon: Store, title: "Real stores", text: "126+ Mobility Centers across India" },
   { icon: Clock, title: "24h service", text: "SLA, not a promise" },
   { icon: ShieldCheck, title: "Component warranty", text: "Motor · Controller · Battery (details on inquiry)" },
   { icon: Wrench, title: "Genuine parts", text: "In stock, always" },
@@ -159,7 +159,7 @@ export function BrandPdp({ scooter }: { scooter: Scooter }) {
         <Reveal>
           <SectionHeader
             eyebrow="Every scooter, every store"
-            title="Backed by 50+ ElectricPe Mobility Centers"
+            title="Backed by 126+ ElectricPe Mobility Centers"
           />
         </Reveal>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">

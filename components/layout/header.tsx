@@ -16,7 +16,7 @@ const PRIMARY_NAV: NavItem[] = [
   { label: "Scooters", href: "/ev" },
   { label: "Stores", href: "/stores" },
   { label: "Service", href: "/service" },
-  { label: "App", href: "/app" },
+  { label: "EMI Calculator", href: "/emi" },
   { label: "Blog", href: "/blog" },
 ];
 

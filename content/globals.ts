@@ -7,7 +7,7 @@ export const globals: GlobalSettings = {
     communityMembers: "80,000+",
     vehiclesSold: "2,500+",
     happyOwners: "10,000+",
-    storesOpen: "50+",
+    storesOpen: "126+",
     stationsCount: "25,000+",
     networksCount: "60+",
     citiesServed: "15+",

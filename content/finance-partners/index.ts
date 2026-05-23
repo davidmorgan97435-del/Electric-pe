@@ -23,16 +23,14 @@ const PAN_INDIA_CITY_IDS = [
   "tumakuru",
 ];
 
-const METRO_CITY_IDS = [
-  "bengaluru",
-  "delhi",
-  "gurugram",
-  "ghaziabad",
-  "jaipur",
-  "meerut",
-  "mysuru",
-];
-
+/**
+ * Active finance partners.
+ *
+ * The wider partner list (HDFC, IDFC First, Shriram, Kotak, LazyPay) is on
+ * hold pending commercial finalisation. Until those agreements close, only
+ * Bajaj Finserv is surfaced on the EMI partners strip and the EMI calculator
+ * dropdown so we never advertise a partnership we can't honour.
+ */
 export const financePartners: FinancePartner[] = [
   {
     id: "bajaj-finserv",
@@ -44,66 +42,6 @@ export const financePartners: FinancePartner[] = [
     maxTenureMonths: 36,
     eligibility: ["Salaried with 12+ months of work history", "Minimum monthly income ₹15,000"],
     docs: ["Aadhaar", "PAN", "3 months bank statement"],
-    availableInCityIds: PAN_INDIA_CITY_IDS,
-  },
-  {
-    id: "hdfc-bank",
-    name: "HDFC Bank",
-    logo: "/img/partners/hdfc.svg",
-    type: "bank",
-    usp: "Lowest interest for existing HDFC customers",
-    minInterestAnnualPct: 9.9,
-    maxTenureMonths: 48,
-    eligibility: ["Existing HDFC relationship preferred", "CIBIL score 700+"],
-    docs: ["Aadhaar", "PAN", "Salary slips"],
-    availableInCityIds: METRO_CITY_IDS,
-  },
-  {
-    id: "idfc-first",
-    name: "IDFC First Bank",
-    logo: "/img/partners/idfc.svg",
-    type: "bank",
-    usp: "Zero processing fee on all EV loans",
-    minInterestAnnualPct: 10.5,
-    maxTenureMonths: 36,
-    eligibility: ["Minimum monthly income ₹20,000", "CIBIL score 680+"],
-    docs: ["Aadhaar", "PAN", "Salary slips / ITR"],
-    availableInCityIds: ["bengaluru", "delhi", "gurugram", "ghaziabad", "mysuru"],
-  },
-  {
-    id: "shriram-finance",
-    name: "Shriram Finance",
-    logo: "/img/partners/shriram.svg",
-    type: "nbfc",
-    usp: "Self-employed friendly: approvals without salary slips",
-    minInterestAnnualPct: 12.5,
-    maxTenureMonths: 36,
-    eligibility: ["1+ year of business proof", "Aadhaar & PAN mandatory"],
-    docs: ["Aadhaar", "PAN", "Business proof or ITR"],
-    availableInCityIds: PAN_INDIA_CITY_IDS,
-  },
-  {
-    id: "kotak-mahindra",
-    name: "Kotak Mahindra Bank",
-    logo: "/img/partners/kotak.svg",
-    type: "bank",
-    usp: "Up to 100% on-road financing",
-    minInterestAnnualPct: 10.25,
-    maxTenureMonths: 48,
-    eligibility: ["Salaried or self-employed", "CIBIL 720+"],
-    docs: ["Aadhaar", "PAN", "Income proof"],
-    availableInCityIds: METRO_CITY_IDS,
-  },
-  {
-    id: "lazypay",
-    name: "LazyPay",
-    logo: "/img/partners/lazypay.svg",
-    type: "nbfc",
-    usp: "EMI with just Aadhaar + PAN, no bank statements",
-    minInterestAnnualPct: 14,
-    maxTenureMonths: 24,
-    eligibility: ["Above 21 years old", "Valid Aadhaar + PAN"],
-    docs: ["Aadhaar", "PAN"],
     availableInCityIds: PAN_INDIA_CITY_IDS,
   },
 ];

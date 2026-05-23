@@ -3,14 +3,12 @@ import { SITE } from "@/lib/utils/site";
 import { scooters } from "@/content/scooters";
 import { cities } from "@/content/cities";
 import { stores } from "@/content/stores";
-import { chargers } from "@/content/chargers";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: SITE.url, changeFrequency: "weekly", priority: 1, lastModified: now },
     { url: `${SITE.url}/ev`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
-    { url: `${SITE.url}/charger`, changeFrequency: "weekly", priority: 0.7, lastModified: now },
     { url: `${SITE.url}/ev-charging-stations`, changeFrequency: "weekly", priority: 0.7, lastModified: now },
     { url: `${SITE.url}/stores`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
     { url: `${SITE.url}/book-test-ride`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
@@ -51,13 +49,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
   }));
 
-  const chargerRoutes: MetadataRoute.Sitemap = chargers.map((c) => ({
-    url: `${SITE.url}/charger/${c.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.5,
-    lastModified: now,
-  }));
-
   const cityRoutes: MetadataRoute.Sitemap = cities.map((c) => ({
     url: `${SITE.url}/stores/${c.slug}`,
     changeFrequency: "weekly",
@@ -76,7 +67,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...brandRoutes,
     ...variantRoutes,
-    ...chargerRoutes,
     ...cityRoutes,
     ...storeRoutes,
   ];

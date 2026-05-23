@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { MapPin, ArrowRight } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { StoreCard } from "@/components/locator/store-card";
 import { JsonLd, itemListSchema, autoDealerSchema } from "@/lib/seo/jsonld";
 import { cities } from "@/content/cities";
 import { stores } from "@/content/stores";
@@ -57,7 +55,6 @@ export default function StoresPage() {
             <p className="text-eyebrow mb-3">Mobility Centers</p>
             <h1 className="text-display-xl">
               {globals.stats.storesOpen} Mobility Centers across India.
-              Growing to 50+.
             </h1>
             <p className="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">
               Walk in, ride a scooter, ask any question. Each store is staffed with
@@ -82,7 +79,7 @@ export default function StoresPage() {
           title="Pick a city to see stores"
           align="left"
         />
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
           {cities.map((c) => (
             <Link
               key={c.slug}
@@ -93,22 +90,7 @@ export default function StoresPage() {
               <p className="font-semibold text-[var(--color-text)] group-hover:text-[var(--color-brand)]">
                 {c.name}
               </p>
-              <p className="text-xs text-[var(--color-text-muted)] mt-0.5">
-                {c.servedStoreSlugs.length} store
-                {c.servedStoreSlugs.length === 1 ? "" : "s"}
-              </p>
             </Link>
-          ))}
-        </div>
-
-        <SectionHeader
-          eyebrow="All stores"
-          title="Every ElectricPe Mobility Center in India"
-          align="left"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {stores.map((s) => (
-            <StoreCard key={s.slug} store={s} />
           ))}
         </div>
       </Section>

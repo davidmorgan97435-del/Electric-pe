@@ -56,26 +56,6 @@ export type Scooter = {
   seo: { title: string; description: string };
 };
 
-export type Charger = {
-  slug: string;
-  brand: "oakter" | "riod" | "teltonika";
-  name: string;
-  image: string;
-  gallery: string[];
-  powerKw: number;
-  currentType: "AC" | "DC";
-  connectorType: string;
-  ocppCompatible: boolean;
-  smart: boolean;
-  recommendedForBrands: BrandSlug[];
-  priceInr?: number;
-  requestQuoteOnly?: boolean;
-  installationIncluded: boolean;
-  specs: Record<string, string | number>;
-  faqIds: string[];
-  seo: { title: string; description: string };
-};
-
 export type StoreHours = {
   open: string;
   close: string;

@@ -106,7 +106,7 @@ export function FinalCta() {
             <ActionRow
               icon={MapPin}
               label="Find a Store"
-              sub="50+ Mobility Centers"
+              sub="126+ Mobility Centers"
               href="/stores"
             />
             <ActionRow

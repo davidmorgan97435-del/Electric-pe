@@ -13,7 +13,6 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { Reveal } from "@/components/ui/reveal";
 import { cities, getCity } from "@/content/cities";
 import { stores, getStoresByCity } from "@/content/stores";
-import { globals } from "@/content/globals";
 import { buildWhatsAppLink, WHATSAPP_DEFAULTS } from "@/lib/utils/whatsapp";
 
 // TODO: replace these with real per-store photos when shoot is delivered.
@@ -92,8 +91,8 @@ export function StorePresence() {
 
           <Reveal delay={80}>
             <p className="mt-5 max-w-xl text-base md:text-lg text-[var(--color-text-muted)] leading-relaxed">
-              {globals.stats.storesOpen} ElectricPe stores across India. Walk
-              in, test ride, ask anything. No appointment needed.
+              Some of the ElectricPe stores across India. Walk in, test ride,
+              ask anything. No appointment needed.
             </p>
           </Reveal>
         </div>
@@ -241,7 +240,7 @@ export function StorePresence() {
               <span className="font-semibold text-[var(--color-text)]">
                 {stores.length} stores live
               </span>{" "}
-              · Growing to 50+ by the end of this year.
+              · Growing to 126+ by the end of this year.
             </p>
             <Link
               href="/stores"

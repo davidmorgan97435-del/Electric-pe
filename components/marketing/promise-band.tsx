@@ -35,7 +35,7 @@ const STATS: Stat[] = [
   {
     value: "30+",
     label: "Mobility Centers",
-    sublabel: "growing to 50+ this year",
+    sublabel: "growing to 126+ this year",
   },
   {
     value: "24h",

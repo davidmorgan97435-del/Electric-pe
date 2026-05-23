@@ -42,7 +42,7 @@ export function ProductShowcase() {
         <SectionHeader
           eyebrow="Featured rides"
           title="The scooters, every Indian needs."
-          description="Pick the silhouette that fits your day. Every model is ARAI-approved, licence-free, and serviced by our 50+ Mobility Centres."
+          description="Pick the silhouette that fits your day. Every model is ARAI-approved, licence-free, and serviced by our 126+ Mobility Centres."
         />
       </Reveal>
 
@@ -144,7 +144,7 @@ export function ProductShowcase() {
                     <li className="flex flex-col items-center gap-1 rounded-lg bg-[var(--color-surface-muted)] p-3">
                       <Zap className="h-4 w-4 text-[var(--color-brand)]" aria-hidden />
                       <span className="font-semibold text-sm text-[var(--color-text)] tabular-nums">
-                        {maxRange} km
+                        {maxRange} km+
                       </span>
                       <span className="text-[10px] uppercase tracking-wider text-[var(--color-text-subtle)]">
                         Range

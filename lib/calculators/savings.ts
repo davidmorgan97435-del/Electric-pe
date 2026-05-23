@@ -21,7 +21,7 @@ export type SavingsInput = {
   fuelPrice: number;
   /** fuel type of current vehicle */
   fuelType: FuelType;
-  /** Wh the scooter consumes per km (100 km on 1.8 kWh battery ≈ 18 Wh/km) */
+  /** Wh the scooter consumes per km (80 km on 1.8 kWh battery ≈ 22 Wh/km) */
   scooterWhPerKm: number;
   /** electricity tariff (₹/kWh) */
   electricityRate: number;

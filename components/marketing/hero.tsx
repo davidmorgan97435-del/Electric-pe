@@ -109,25 +109,12 @@ export function Hero() {
       <Container size="2xl" className="relative z-10">
         {/* Top content - centered */}
         <div className="pt-14 md:pt-16 lg:pt-20 pb-4 md:pb-6 text-center max-w-4xl mx-auto">
-          <motion.span
-            initial={reduced ? false : { opacity: 0, y: 8 }}
-            animate={reduced ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: reduced ? 0 : 0.45, ease: EASE }}
-            className="inline-flex items-center gap-2 rounded-full bg-white border border-[var(--color-border)] px-3.5 py-1.5 text-xs md:text-sm font-medium text-[var(--color-text)] shadow-[var(--shadow-xs)]"
-          >
-            <span
-              className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-brand)]"
-              aria-hidden
-            />
-            For India
-          </motion.span>
-
           <motion.h1
             id="hero-heading"
             initial={reduced ? false : { opacity: 0, y: 10 }}
             animate={reduced ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: reduced ? 0 : 0.6, delay: reduced ? 0 : 0.1, ease: EASE }}
-            className="mt-5 font-display font-bold text-[var(--color-text)] tracking-[-0.035em] leading-[1.02]"
+            className="font-display font-bold text-[var(--color-text)] tracking-[-0.035em] leading-[1.02]"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.75rem)" }}
           >
             <span className="text-[var(--color-brand)]">Affordable</span> Electric
@@ -184,7 +171,7 @@ export function Hero() {
             </li>
             <li className="inline-flex items-center gap-1.5">
               <Store className="h-4 w-4 text-[var(--color-brand)]" aria-hidden />
-              50+ Mobility Centers
+              126+ Mobility Centers
             </li>
           </motion.ul>
         </div>

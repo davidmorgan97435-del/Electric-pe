@@ -11,7 +11,7 @@ import { buildWhatsAppLink, WHATSAPP_DEFAULTS } from "@/lib/utils/whatsapp";
 export const metadata: Metadata = {
   title: { absolute: "Contact ElectricPe | Phone, WhatsApp, Email, Visit" },
   description:
-    "Reach ElectricPe by phone, WhatsApp, email, or walk into any of our 50+ Mobility Centers. HQ in Bengaluru. We answer, really.",
+    "Reach ElectricPe by phone, WhatsApp, email, or walk into any of our 126+ Mobility Centers. HQ in Bengaluru. We answer, really.",
   alternates: { canonical: "/contact-us" },
 };
 
@@ -40,7 +40,7 @@ const QUICK = [
   {
     icon: MapPin,
     title: "Visit a store",
-    text: "50+ Mobility Centers",
+    text: "126+ Mobility Centers",
     href: "/stores",
     external: false,
   },

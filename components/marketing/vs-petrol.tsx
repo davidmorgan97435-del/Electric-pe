@@ -31,39 +31,39 @@ type Row = {
 const ROWS: Row[] = [
   {
     icon: Fuel,
-    label: "Fuel / energy cost per month",
-    ev: "₹300–500 electricity",
-    petrol: "₹2,800–4,000 petrol",
+    label: "Fuel / energy cost per month* (given 10k km per year usage)",
+    ev: "₹2,400",
+    petrol: "₹25,000",
   },
   {
     icon: Wrench,
     label: "Maintenance cost per year",
-    ev: "₹1,200 (single visit)",
-    petrol: "₹4,000–6,000 multiple services",
+    ev: "Lower maintenance with fewer moving parts",
+    petrol: "Higher maintenance with regular servicing",
   },
   {
     icon: KeyRound,
     label: "Driving licence",
-    ev: "Not required",
+    ev: "Not required for low-speed EVs (<25 km/h)",
     petrol: "Required",
   },
   {
     icon: Volume2,
-    label: "Road noise",
-    ev: "Silent ride",
-    petrol: "Engine + exhaust",
+    label: "Ride experience",
+    ev: "Smooth & quiet ride",
+    petrol: "Engine & exhaust noise",
   },
   {
     icon: Leaf,
     label: "Tailpipe CO₂ emissions",
-    ev: "Zero",
-    petrol: "~1,200 kg / year",
+    ev: "Zero tailpipe emissions",
+    petrol: "~1,000–1,300 kg CO₂/year",
   },
   {
     icon: TrendingDown,
-    label: "5-year running-cost savings",
-    ev: "Up to ₹1,80,000",
-    petrol: "—",
+    label: "3-year running-cost savings*",
+    ev: "Up to ₹80,000",
+    petrol: "-",
     highlight: true,
   },
 ];
@@ -108,11 +108,11 @@ export function VsPetrol() {
             </div>
             <div>
               <p className="text-[11px] md:text-xs uppercase tracking-[0.2em] text-[var(--color-brand-pressed)] font-semibold mb-1">
-                Average rider, 5 years
+                Average rider, 3 years
               </p>
               <p className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-[var(--color-text)] tabular-nums leading-tight">
                 Save up to{" "}
-                <span className="text-[var(--color-brand)]">₹1,80,000</span>
+                <span className="text-[var(--color-brand)]">₹80,000</span>
               </p>
             </div>
           </div>

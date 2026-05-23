@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Clock, ShieldCheck, Wrench, Store, Phone, MessageCircle } from "lucide-react";
+import { Clock, ShieldCheck, Wrench, Truck, Phone, MessageCircle } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
@@ -36,21 +36,21 @@ const PILLARS = [
     title: "Component-level warranty",
     stat: "Varies",
     statLabel: "By component",
-    text: "Motor and controller are covered for one year; the lithium-ion battery for three years or 10,000 km; the charger for one year. Coverage varies, exact terms shared on inquiry.",
+    text: "Motor and controller are covered for one year; the lithium-ion battery for three years or 40,000 km; the charger for one year. Coverage varies, exact terms shared on inquiry.",
   },
   {
     icon: Wrench,
     title: "Genuine parts, in stock",
     stat: "50+",
-    statLabel: "Parts depots",
-    text: "We stock our own parts across every Mobility Center. No three-week waits for a component to arrive from a warehouse in another city.",
+    statLabel: "Per centre",
+    text: "50+ parts available at each centre for service.",
   },
   {
-    icon: Store,
-    title: "In-house technicians",
-    stat: "6+",
-    statLabel: "Trained per store",
-    text: "Every technician is trained by us, not outsourced. They know your scooter by model, by year, and by quirks.",
+    icon: Truck,
+    title: "Doorstep pickup & drop",
+    stat: "Free",
+    statLabel: "Within city",
+    text: "24-hour service guarantee with at-home pickup of your vehicle. We collect from your home, service it, and drop it back, no trip to the centre required.",
   },
 ];
 
@@ -64,7 +64,7 @@ const HOW_IT_WORKS = [
 const WARRANTY_COVERED = [
   "Motor: 1 year",
   "Controller: 1 year",
-  "Lithium-Ion battery: 3 years or 10,000 km (whichever is earlier)",
+  "Lithium-Ion battery: 3 years or 40,000 km (whichever is earlier)",
   "Lead-acid battery: 12 months, pro-rated replacement after 6 months",
   "Charger: 1 year",
 ];
