@@ -12,7 +12,7 @@ import { GridPattern } from "@/components/ui/grid-pattern";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Reveal } from "@/components/ui/reveal";
 import { cities, getCity } from "@/content/cities";
-import { stores, getStoresByCity } from "@/content/stores";
+import { getStoresByCity } from "@/content/stores";
 import { buildWhatsAppLink, WHATSAPP_DEFAULTS } from "@/lib/utils/whatsapp";
 
 // TODO: replace these with real per-store photos when shoot is delivered.
@@ -59,7 +59,6 @@ export function StorePresence() {
     () =>
       cities.map((c) => ({
         label: c.name,
-        count: getStoresByCity(c.slug).length,
       })),
     [],
   );
@@ -233,15 +232,9 @@ export function StorePresence() {
           </Reveal>
         </div>
 
-        {/* Footer row - live stats */}
+        {/* Footer row - CTA only (stat line removed per client) */}
         <Reveal delay={260}>
-          <div className="mt-12 md:mt-14 flex flex-col md:flex-row md:items-center md:justify-between gap-3 pt-8 border-t border-[var(--color-border)] text-sm">
-            <p className="text-[var(--color-text-muted)]">
-              <span className="font-semibold text-[var(--color-text)]">
-                {stores.length} stores live
-              </span>{" "}
-              · Growing to 126+ by the end of this year.
-            </p>
+          <div className="mt-12 md:mt-14 flex justify-end gap-3 pt-8 border-t border-[var(--color-border)] text-sm">
             <Link
               href="/stores"
               className="inline-flex items-center gap-1.5 font-semibold text-[var(--color-brand)] hover:text-[var(--color-brand-hover)] transition-colors"
