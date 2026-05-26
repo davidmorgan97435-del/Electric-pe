@@ -1,0 +1,67 @@
+# ElectricPe
+
+> India's largest trusted EV retail network. We sell affordable low-speed electric scooters (Xypro, Jett, 4ALL) — all licence-free and registration-free under Indian motor-vehicle law — through 30+ branded Mobility Centers across India. Owned and operated by Wattapp Technologies Pvt. Ltd., headquartered in Bengaluru.
+
+Every scooter in the catalogue is speed-limited to 25 km/h, which qualifies it as a low-speed EV under Indian regulation. No driving licence, no RTO registration, no road tax. Same-day delivery from any store.
+
+## Brands & Scooters
+
+- [Xypro lineup](https://electricpe.com/ev/xypro): Lithium-ion (80 km+, 4-hour charge), lead-acid (80 km+, 8-hour charge), and battery-swap variant. From ₹36,000 on-road.
+- [Jett lineup](https://electricpe.com/ev/jett): 12-inch wheels, family scooter form factor, dual seat, 10 kg under-seat storage. Lithium-ion and lead-acid. From ₹54,000.
+- [4ALL lineup](https://electricpe.com/ev/4all): Longest real-world range in the no-licence category (95 km). Lithium-ion and lead-acid. From ₹56,000.
+- [All scooters](https://electricpe.com/ev)
+- [Compare scooters](https://electricpe.com/ev/compare)
+
+## Buy & Finance
+
+- [Book a free test ride](https://electricpe.com/book-test-ride)
+- [EMI calculator](https://electricpe.com/emi) — backed by Bajaj Finserv
+- [Savings calculator (vs petrol)](https://electricpe.com/savings)
+
+## Stores
+
+Mobility Centers in 20 active cities across India. Full list at [/stores](https://electricpe.com/stores). Top hubs:
+
+- [Bengaluru](https://electricpe.com/stores/bengaluru)
+- [Delhi](https://electricpe.com/stores/delhi) (5 locations)
+- [Gurugram](https://electricpe.com/stores/gurugram)
+- [Jaipur](https://electricpe.com/stores/jaipur)
+- [Ghaziabad](https://electricpe.com/stores/ghaziabad)
+- [Meerut](https://electricpe.com/stores/meerut)
+- [Mysuru](https://electricpe.com/stores/mysuru)
+- [Hubballi](https://electricpe.com/stores/hubballi)
+- [Belagavi](https://electricpe.com/stores/belagavi)
+- [Dharwad](https://electricpe.com/stores/dharwad)
+
+## Service
+
+- [Service Promise (24-hour SLA + warranty)](https://electricpe.com/service): Motor 1 year, Controller 1 year, Lithium-ion battery 3 years / 40,000 km, Lead-acid 12 months, Charger 1 year.
+- [Warranty terms](https://electricpe.com/warranty)
+- [Returns](https://electricpe.com/returns)
+
+## Charging app
+
+- [ElectricPe app](https://electricpe.com/app): 25,000+ public EV charging stations across India aggregated into one app. Free to use even if you don't own an ElectricPe scooter.
+- [Charging stations directory](https://electricpe.com/ev-charging-stations)
+
+## Information
+
+- [FAQs](https://electricpe.com/faqs)
+- [About us](https://electricpe.com/about-us)
+- [Contact](https://electricpe.com/contact-us)
+- [Blog](https://electricpe.com/blog)
+- [Press](https://electricpe.com/press)
+- [Careers](https://electricpe.com/careers)
+
+## B2B / Partnerships
+
+- [Partnership tracks](https://electricpe.com/partnerships): EV OEM distribution, charger OEM, CPO partnership, CMS (B2B SaaS)
+- [EV OEM partnership](https://electricpe.com/partnerships/ev-oem)
+- [Charger OEM partnership](https://electricpe.com/partnerships/charger-oem)
+- [CPO partnership](https://electricpe.com/partnerships/cpo)
+- [Charger Management System (CMS)](https://electricpe.com/cms)
+
+## Legal
+
+- [Privacy](https://electricpe.com/privacy)
+- [Terms](https://electricpe.com/terms)

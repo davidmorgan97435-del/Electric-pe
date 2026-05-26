@@ -3,6 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import "@/styles/globals.css";
 import { SITE, absoluteUrl } from "@/lib/utils/site";
 import { JsonLd, organizationSchema, websiteSchema } from "@/lib/seo/jsonld";
+import { Analytics } from "@/components/analytics/analytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -94,6 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to main content
         </a>
         <JsonLd data={[organizationSchema, websiteSchema]} />
+        <Analytics />
         {children}
       </body>
     </html>

@@ -7,6 +7,8 @@ import { VsPetrol } from "@/components/marketing/vs-petrol";
 import { StorePresence } from "@/components/marketing/store-presence";
 import { Testimonials } from "@/components/marketing/testimonials";
 import { FinalCta } from "@/components/marketing/final-cta";
+import { JsonLd, localBusinessSchema } from "@/lib/seo/jsonld";
+import { HomepageNap } from "@/components/marketing/homepage-nap";
 
 /**
  * Homepage - final composition after client feedback round 2.
@@ -17,15 +19,23 @@ import { FinalCta } from "@/components/marketing/final-cta";
  */
 
 export const metadata: Metadata = {
-  title: { absolute: "ElectricPe | Affordable Electric Scooters | India" },
+  title: {
+    absolute:
+      "ElectricPe | Affordable Electric Scooters & Mobility Centers India",
+  },
   description:
     "Reliable, easy-to-ride EV scooters with trusted service and stores near you. No licence required, low running cost. Book a free test ride today.",
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: { "en-IN": "/" },
+  },
 };
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={localBusinessSchema} />
+
       {/* HP-01 Hero */}
       <Hero />
 
@@ -49,6 +59,11 @@ export default function HomePage() {
 
       {/* HP-08 Final CTA */}
       <FinalCta />
+
+      {/* NAP block - keeps Name/Address/Phone in the homepage HTML so
+          crawlers can pick up local-business signals without parsing the
+          footer. Also surfaces the Bengaluru HQ for visitors. */}
+      <HomepageNap />
     </>
   );
 }

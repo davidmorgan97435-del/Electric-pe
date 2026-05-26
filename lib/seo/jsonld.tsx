@@ -57,6 +57,63 @@ export const organizationSchema = {
   ],
 };
 
+/**
+ * Homepage-level LocalBusiness schema. Distinct from per-store AutoDealer
+ * schemas: this represents the brand as a multi-location retail business,
+ * which Google uses for Knowledge Panel and local pack eligibility on the
+ * brand-name SERP. NAP matches the HQ address.
+ */
+export const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  "@id": `${SITE.url}#localbusiness`,
+  name: SITE.name,
+  legalName: SITE.legalName,
+  url: SITE.url,
+  logo: absoluteUrl("/img/eplogo-horiz.webp"),
+  image: absoluteUrl("/img/eplogo-horiz.webp"),
+  telephone: globals.supportPhone,
+  email: globals.supportEmail,
+  priceRange: "₹₹",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1st Floor, Hanto Orion, 14th Main Street, HSR Layout",
+    addressLocality: "Bengaluru",
+    addressRegion: "Karnataka",
+    postalCode: "560102",
+    addressCountry: "IN",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 12.9116,
+    longitude: 77.6446,
+  },
+  areaServed: "IN",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "10:00",
+      closes: "20:00",
+    },
+  ],
+  sameAs: [
+    globals.social.instagram,
+    globals.social.youtube,
+    globals.social.facebook,
+    globals.social.linkedin,
+    globals.social.twitter,
+  ],
+};
+
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",

@@ -20,6 +20,12 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      { source: "/ev-charging-station", destination: "/ev-charging-stations", permanent: true },
+      { source: "/ev-charging-station/categories/:slug*", destination: "/ev-charging-stations", permanent: true },
+      { source: "/ev-charging-station/:slug*", destination: "/ev-charging-stations", permanent: true },
+      { source: "/electric-charging-station/:slug*", destination: "/ev-charging-stations", permanent: true },
+      { source: "/tag/:slug*", destination: "/blog", permanent: true },
+      { source: "/career-category/:slug*", destination: "/careers", permanent: true },
       { source: "/about", destination: "/about-us", permanent: true },
       { source: "/contact", destination: "/contact-us", permanent: true },
       { source: "/scooters", destination: "/ev", permanent: true },
